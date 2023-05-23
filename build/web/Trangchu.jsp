@@ -3,7 +3,7 @@
     Created on : May 21, 2023, 7:17:18 PM
     Author     : ASUS
 --%>
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html class="no-js" lang="zxx">
@@ -64,10 +64,10 @@
                                     <div class="main-menu f-right d-none d-lg-block">
                                         <nav> 
                                             <ul id="navigation">
-                                                <li><a href="index.html">Trang chủ</a></li>
+                                                <li><a href="Trangchu.jsp">Trang chủ</a></li>
                                                 <li><a href="blog.html">Thông tin</a>
                                                     <ul class="submenu">
-                                                        <li><a href="blog.html">Phòng Khám</a></li>
+                                                        <li><a href="TTPhongKham.jsp">Phòng Khám</a></li>
                                                         <li><a href="blog_details.html">Bác Sĩ</a></li>
 
                                                     </ul>
@@ -308,54 +308,26 @@
                         </div>
                     </div>
                     <div class="row">
+                        <c:forEach items="${showtop3}" var="i">
                         <div class="col-lg-4 col-md-6">
                             <div class="home-blog-single mb-40">
                                 <div class="blog-img-cap">
                                     <div class="blog-img">
-                                        <img src="assets/img/gallery/blog1.png" alt="">
+                                        <img src="${i.image}" alt="">
                                     </div>
                                     <div class="blog-cap">
                                         <ul>
-                                            <li><h3 class="fa fa-user-md">  Đinh Ngọc Sơn</h3></li> <br>
-                                            <li><h3 class="fas fa-graduation-cap">  Phó giáo sư tiến sĩ</h3></li> <br>
-                                            <li><h3 class="fas fa-stethoscope">  Bệnh viện Hữu nghị Việt Đức</h3></li>
+                                            <li><h3 class="fa fa-user-md"> ${i.doctorname}</h3></li> <br>
+                                            <li><h3 class="fas fa-graduation-cap">  ${i.degree}</h3></li> <br>
+                                            <li><h3 class="fas fa-stethoscope">  ${i.specialization}</h3></li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-md-6">
-                            <div class="home-blog-single mb-40">
-                                <div class="blog-img-cap">
-                                    <div class="blog-img">
-                                        <img src="assets/img/gallery/blog2.png" alt="">
-                                    </div>
-                                    <div class="blog-cap">
-                                        <ul>
-                                            <li><h3 class="fa fa-user-md"> Phan Thị Bích Đào</h3></li> <br>
-                                            <li><h3 class="fas fa-graduation-cap"> Phó giáo sư tiến sĩ</h3></li> <br>
-                                            <li><h3 class="fas fa-stethoscope"> Chuyên khoa Tai - Mũi - Họng</h3></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
+                       </c:forEach>
                         </div>
-                        <div class="col-lg-4 col-md-6">
-                            <div class="home-blog-single mb-40">
-                                <div class="blog-img-cap">
-                                    <div class="blog-img">
-                                        <img src="assets/img/gallery/blog3.png" alt="">
-                                    </div>
-                                    <div class="blog-cap">
-                                        <ul>
-                                            <li><h3 class="fa fa-user-md"> Nguyễn Quang</h3></li> <br>
-                                            <li><h3 class="fas fa-graduation-cap"> Phó giáo sư tiến sĩ</h3></li> <br>
-                                            <li><h3 class="fas fa-stethoscope"> Chuyên khoa TT Nam học</h3></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                       
                     </div>
                 </div>
             </section>
@@ -370,10 +342,11 @@
                                     <!-- Section Tittle -->
                                     <div class="section-tittle mb-35">
                                         <br><br>
-                                        <h2 style="font-family: Arial">100% uy tín và chất lượng</h2>
+                                        <h2 style="font-family: Arial">100% Mang đến sự hài lòng cho bạn.</h2>
                                     </div>
-                                    <br><br>
-                                    <a style="font-family: Arial" href="about.html" class="border-btn">Đặt Khám</a>
+                                    <p style="font-family: Arial;" >Hãy đến với chúng tôi. Phòng khám An Tâm - Yên tâm trong từng tế bào.</p>
+                                    <a href="about.html" class="border-btn">Đặt lịch ngay!</a>
+
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-12">
@@ -399,16 +372,12 @@
                                 <div class="single-footer-caption mb-50">
                                     <!-- logo -->
                                     <div class="footer-logo mb-25">
-                                        <a href="index.html"><img src="assets/img/logo/logo2_footer.png" alt=""></a>
+                                        <a href="index.html"><img src="assets/img/logo/logo_5.png" alt=""></a>
                                     </div>
                                     <div class="header-area">
                                         <div class="main-header main-header2 d-flex align-items-center justify-content-between">
                                             <!-- social -->
-                                            <div class="footer-social">
-                                                <a href="#"><i class="fab fa-twitter"></i></a>
-                                                <a href="https://bit.ly/sai4ull"><i class="fab fa-facebook-f"></i></a>
-                                                <a href="#"><i class="fab fa-pinterest-p"></i></a>
-                                            </div>
+                                          
                                             <!-- Main-menu -->
                                             <div class="main-menu main-menu2">
                                                 <nav> 

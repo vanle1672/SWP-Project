@@ -55,6 +55,7 @@
                                 <div class="logo">
                                     <a href="index.html"><img src="assets/img/logo/logo_5.png" alt=""></a>
                                 </div>
+                                
                             </div>
                             <div class="col-xl-10 col-lg-10 col-md-10">
                                 <div class="menu-main d-flex align-items-center justify-content-end">
@@ -62,25 +63,30 @@
                                     <div class="main-menu f-right d-none d-lg-block">
                                         <nav> 
                                             <ul id="navigation">
-                                                <li><a href="index.html">Home</a></li>
-                                                <li><a href="about.html">About</a></li>
-                                                <li><a href="services.html">Services</a></li>
-                                                <li><a href="blog.html">Blog</a>
+                                                <li><a href="Trangchu.jsp">Trang chủ</a></li>
+                                                <li><a href="blog.html">Thông tin</a>
                                                     <ul class="submenu">
-                                                        <li><a href="blog.html">Blog</a></li>
-                                                        <li><a href="blog_details.html">Blog Details</a></li>
-                                                        <li><a href="elements.html">Element</a></li>
+                                                        <li><a href="blog.html">Phòng Khám</a></li>
+                                                        <li><a href="blog_details.html">Bác Sĩ</a></li>
+
                                                     </ul>
                                                 </li>
-                                                <li><a href="contact.html">Contact</a></li>
+
+                                                <li><a href="blog.html">Đặt Khám</a>
+                                                    <ul class="submenu">
+                                                        <li><a href="blog.html">Chuyên Khoa</a></li>
+
+                                                    </ul>
+                                                </li>
+
                                             </ul>
                                         </nav>
                                     </div>
                                     <div class="header-right-btn f-right d-none d-lg-block ml-15">
-                                        <a href="#" class="btn header-btn">Make an Appointment</a>
+                                        <a href="#" class="btn header-btn">Đăng nhập/Đăng kí</a>
                                     </div>
                                 </div>
-                            </div>   
+                            </div>  
                             <!-- Mobile Menu -->
                             <div class="col-12">
                                 <div class="mobile_menu d-block d-lg-none"></div>
@@ -102,9 +108,9 @@
                                 <div class="col-xl-7 col-lg-8 col-md-10 ">
                                     <div class="hero-wrapper">
                                         <div class="hero__caption">
-                                            <h1 data-animation="fadeInUp" data-delay=".3s">Phòng Khám</h1>
-                                            <p data-animation="fadeInUp" data-delay=".6s">An Tâm - Nơi bạn tìm thấy sự yên tâm
-                                                <br> cho từng tế bào.</p>
+                                            <h1 data-animation="fadeInUp" data-delay=".3s" style="font-family: Arial">Phòng Khám</h1>
+                                            <p data-animation="fadeInUp" data-delay=".6s"style="font-family: Arial">An Tâm - Nơi bạn tìm thấy sự yên tâm
+                                                <br style="font-family: Arial"> cho từng tế bào.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -124,8 +130,8 @@
                                     <img src="assets/img/gallery/team1.png" alt="">
                                 </div>
                                 <div class="cat-cap">
-                                    <h5><a href="#">Tận tâm</a></h5>
-                                    <p>Phòng khám luôn tận tâm và chu đáo đối với mỗi bệnh nhân. 
+                                    <h5><a href="#" style="font-family: Arial">Tận tâm</a></h5>
+                                    <p style="font-family: Arial; text-align: justify;">Phòng khám luôn tận tâm và chu đáo đối với mỗi bệnh nhân. 
                                         Từ việc lắng nghe tình trạng sức khỏe chi tiết của bệnh nhân đến việc cung cấp thông tin và giải đáp thắc mắc, 
                                         mọi người đều tạo ra một môi trường chăm sóc tận tâm và gần gũi.</p>
                                 </div>
@@ -137,8 +143,8 @@
                                     <img src="assets/img/gallery/team2.png" alt="">
                                 </div>
                                 <div class="cat-cap">
-                                    <h5><a href="#">Đội ngũ chuyên gia</a></h5>
-                                    <p>Phòng khám có một đội ngũ y bác sĩ và nhân viên y tế có trình độ chuyên môn cao và giàu kinh nghiệm. 
+                                    <h5><a href="#"style="font-family: Arial">Đội ngũ chuyên gia</a></h5>
+                                    <p style="font-family: Arial; text-align: justify;">Phòng khám có một đội ngũ y bác sĩ và nhân viên y tế có trình độ chuyên môn cao và giàu kinh nghiệm. 
                                         Họ là những chuyên gia được đào tạo chuyên sâu trong các lĩnh vực khác nhau, đảm bảo rằng bệnh nhân sẽ nhận 
                                         được sự chăm sóc tốt nhất.</p>
                                 </div>
@@ -150,8 +156,8 @@
                                     <img src="assets/img/gallery/team3.png" alt="">
                                 </div>
                                 <div class="cat-cap">
-                                    <h5><a href="#">Cơ sở vật chất hiện đại</a></h5>
-                                    <p>Phòng khám được trang bị các trang thiết bị y tế tiên tiến và công nghệ mới nhất để đảm bảo chẩn đoán chính xác 
+                                    <h5><a href="#" style="font-family: Arial;" >Cơ sở vật chất hiện đại</a></h5>
+                                    <p style="font-family: Arial;" >Phòng khám được trang bị các trang thiết bị y tế tiên tiến và công nghệ mới nhất để đảm bảo chẩn đoán chính xác 
                                         và điều trị hiệu quả. Môi trường phòng khám thoáng đãng, sạch sẽ và tạo cảm giác thoải mái cho bệnh nhân.</p>
                                 </div>
                             </div>
@@ -175,11 +181,10 @@
                             <div class="about-caption mb-50">
                                 <!-- Section Tittle -->
                                 <div class="section-tittle mb-35">
-                                    <h2>Chúng tôi lo lắng cho bạn!</h2>
+                                    <h2 style="font-family: Arial">Chúng tôi lo lắng cho bạn!</h2>
                                 </div>
-                                <p class="pera-top mb-40">Yêu thương và chăm sóc là một bước đi, nhưng cũng là một điều tất yếu trong phòng khám chúng tôi.</p>
-                                <p class="pera-bottom mb-30">Với nhiều năm kinh nghiệm trong lĩnh vực khám bệnh cùng với 
-                                    nhiệt huyết đam mê, phòng khám An Tâm đã xây dựng một tầm vóc vững chắc trong lĩnh vực khám bệnh. 
+                                <p class="pera-top mb-40" style="font-family: Arial; text-align: justify">Yêu thương và chăm sóc là một bước đi, nhưng cũng là một điều tất yếu trong phòng khám chúng tôi.</p>
+                                <p style="font-family: Arial; text-align: justify"> Nhiệt huyết đam mê, phòng khám An Tâm đã xây dựng một tầm vóc vững chắc trong lĩnh vực khám bệnh. 
                                     Với sự chuyên nghiệp và tận tâm, chúng tôi luôn cam kết đem đến cho bệnh nhân những trải nghiệm y tế tốt nhất. 
                                     Đội ngũ y bác sĩ giàu kinh nghiệm cùng với cơ sở vật chất hiện đại, chúng tôi đảm bảo mọi quy trình khám và điều trị diễn 
                                     ra một cách an toàn và hiệu quả. Hãy đến với An Tâm để cảm nhận sự chăm sóc chuyên nghiệp và sự yên tâm tuyệt đối trong mỗi 
@@ -217,9 +222,9 @@
                                 <div class="about-caption mb-50">
                                     <!-- Section Tittle -->
                                     <div class="section-tittle mb-35">
-                                        <h2>100% Mang đến sự hài lòng cho bạn.</h2>
+                                        <h2 style="font-family: Arial;"> 100% Mang đến sự hài lòng cho bạn.</h2>
                                     </div>
-                                    <p>Hãy đến với chúng tôi. Phòng khám An Tâm - Yên tâm trong từng tế bào.</p>
+                                    <p style="font-family: Arial;" >Hãy đến với chúng tôi. Phòng khám An Tâm - Yên tâm trong từng tế bào.</p>
                                     <a href="about.html" class="border-btn">Đặt lịch ngay!</a>
                                 </div>
                             </div>
