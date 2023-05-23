@@ -3,8 +3,12 @@
     Created on : May 21, 2023, 7:17:18 PM
     Author     : ASUS
 --%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
+
+
 <!DOCTYPE html>
 <html class="no-js" lang="zxx">
     <head>
@@ -303,32 +307,45 @@
                     <div class="row justify-content-center">
                         <div class="col-lg-7 col-md-9 col-sm-10">
                             <div class="section-tittle text-center mb-100">
-                                <h2 style="font-family: Arial; color: #009900;">Bác Sĩ Nổi Bật</h2>
+                                <h2 style="font-family: Arial;">Bác Sĩ Ưu Tú</h2>
+
+
+
+
+
+
+
+
                             </div>
                         </div>
                     </div>
                     <div class="row">
+
                         <c:forEach items="${showtop3}" var="i">
-                        <div class="col-lg-4 col-md-6">
-                            <div class="home-blog-single mb-40">
-                                <div class="blog-img-cap">
-                                    <div class="blog-img">
-                                        <img src="${i.image}" alt="">
-                                    </div>
-                                    <div class="blog-cap">
-                                        <ul>
-                                            <li><h3 class="fa fa-user-md"> ${i.doctorname}</h3></li> <br>
-                                            <li><h3 class="fas fa-graduation-cap">  ${i.degree}</h3></li> <br>
-                                            <li><h3 class="fas fa-stethoscope">  ${i.specialization}</h3></li>
-                                        </ul>
+
+                            <div class="col-lg-4 col-md-6">
+                                <div class="home-blog-single mb-40">
+                                    <div class="blog-img-cap">
+                                        <div class="blog-img">
+                                            <img src="${i.image}" alt="">
+                                        </div>
+                                        <div class="blog-cap">
+                                            <ul>
+                                                <li><h3 class="fa fa-user-md"> ${i.doctorName}</h3></li>
+                                                <br>
+                                                <li><h3 class="fas fa-graduation-cap">${i.degree}</h3></li>
+                                                <br>
+                                                <li><h3 class="fas fa-stethoscope">${i.specialization}</h3></li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                       </c:forEach>
-                        </div>
-                       
+                        </c:forEach>
+
                     </div>
+
+                </div>
                 </div>
             </section>
             <!-- Blog Area End -->
@@ -377,7 +394,7 @@
                                     <div class="header-area">
                                         <div class="main-header main-header2 d-flex align-items-center justify-content-between">
                                             <!-- social -->
-                                          
+
                                             <!-- Main-menu -->
                                             <div class="main-menu main-menu2">
                                                 <nav> 

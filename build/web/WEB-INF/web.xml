@@ -1,12 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
     <servlet>
-        <servlet-name>Top3</servlet-name>
-        <servlet-class>Control.Top3</servlet-class>
+        <servlet-name>showDoctor</servlet-name>
+        <servlet-class>Control.showDoctor</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>showAllDoctor</servlet-name>
+        <servlet-class>Control.showAllDoctor</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>searchSevlet</servlet-name>
+        <servlet-class>Control.searchSevlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>Top3</servlet-name>
-        <url-pattern>/Top3</url-pattern>
+        <servlet-name>showDoctor</servlet-name>
+        <url-pattern>/showDoctor</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>showAllDoctor</servlet-name>
+        <url-pattern>/showAllDoctor</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>searchSevlet</servlet-name>
+        <url-pattern>/search</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -1,4 +1,3 @@
-
 package DAO;
 
 import Model.Bacsi;
@@ -15,25 +14,27 @@ import java.util.List;
  * @author ASUS
  */
 public class dao {
+
     private final ArrayList<Bacsi> result = new ArrayList<>();
-    
+
     Connection con = null;
     PreparedStatement p1 = null;
     ResultSet re = null;
-      public ArrayList<Bacsi> getTop3() throws ClassNotFoundException {
+
+    public ArrayList<Bacsi> getTop3() throws ClassNotFoundException {
 //         con = null;
 
         try {
             this.con = ContactDB.makeConnection();
 
-            String stm1 = "select TOP 3  * from Doctor "
+            String stm1 = "select * from Doctor "
                     + "where Experience = 10;";
 
             p1 = con.prepareStatement(stm1);
 
             re = p1.executeQuery();
             while (re.next()) {
-                result.add(new Bacsi(re.getInt(1), re.getString(2), re.getString(3), re.getString(4), re.getInt(5), re.getInt(6), 
+                result.add(new Bacsi(re.getInt(1), re.getString(2), re.getString(3), re.getString(4), re.getInt(5), re.getInt(6),
                         re.getString(7)));
             }
 
@@ -42,9 +43,56 @@ public class dao {
         }
         return result;
     }
-      public static void main(String[] args) throws ClassNotFoundException {
+
+    public ArrayList<Bacsi> getAll() throws ClassNotFoundException {
+//         con = null;
+
+        try {
+            this.con = ContactDB.makeConnection();
+
+            String stm1 = "select * from Doctor";
+
+            p1 = con.prepareStatement(stm1);
+
+            re = p1.executeQuery();
+            while (re.next()) {
+                result.add(new Bacsi(re.getInt(1), re.getString(2), re.getString(3), re.getString(4), re.getInt(5), re.getInt(6),
+                        re.getString(7)));
+            }
+
+        } catch (SQLException e) {
+            System.out.println("Error: " + e);
+        }
+        return result;
+    }
+
+    public ArrayList<Bacsi> search(String txtSearch) throws ClassNotFoundException {
+//         con = null;
+
+        try {
+            this.con = ContactDB.makeConnection();
+
+            String stm1 = "SELECT * FROM Doctor WHERE DoctorName LIKE ? OR Degree LIKE ? OR Specialization LIKE ?";
+
+            p1 = con.prepareStatement(stm1);
+            p1.setString(1, "%" + txtSearch + "%");
+            p1.setString(2, "%" + txtSearch + "%");
+            p1.setString(3, "%" + txtSearch + "%");
+            re = p1.executeQuery();
+            while (re.next()) {
+                result.add(new Bacsi(re.getInt(1), re.getString(2), re.getString(3), re.getString(4), re.getInt(5), re.getInt(6),
+                        re.getString(7)));
+            }
+
+        } catch (SQLException e) {
+            System.out.println("Error: " + e);
+        }
+        return result;
+    }
+
+    public static void main(String[] args) throws ClassNotFoundException {
         dao DAO = new dao();
-        List<Bacsi> a = DAO.getTop3();
-          System.out.println(a);
+        List<Bacsi> a = DAO.getAll();
+        System.out.println(a);
     }
 }
