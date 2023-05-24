@@ -12,26 +12,34 @@
         <servlet-name>searchSevlet</servlet-name>
         <servlet-class>Control.searchSevlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>showSpecialty</servlet-name>
+        <servlet-class>Control.showSpecialty</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>showDoctor</servlet-name>
-        <url-pattern>/showDoctor</url-pattern>
+        <url-pattern>/trang-chu</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>showAllDoctor</servlet-name>
-        <url-pattern>/showAllDoctor</url-pattern>
+        <url-pattern>/bac-si</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>searchSevlet</servlet-name>
         <url-pattern>/search</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>showSpecialty</servlet-name>
+        <url-pattern>/Chuyen-khoa</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
             30
         </session-timeout>
     </session-config>
-     <welcome-file-list>
+    <welcome-file-list>
         <welcome-file>
-            showDoctor
+            trang-chu
         </welcome-file>
     </welcome-file-list>
 </web-app>

@@ -31,6 +31,7 @@
         <link rel="stylesheet" href="assets/css/nice-select.css">
         <link rel="stylesheet" href="assets/css/style.css">
         <link rel="stylesheet" href="assets/css/cssformdoctor.css">
+
     </head>
     <body>
         <!-- ? Preloader Start -->
@@ -54,7 +55,7 @@
                             <!-- Logo -->
                             <div class="col-xl-2 col-lg-2 col-md-1">
                                 <div class="logo" ">
-                                    <a href="showDoctor"><img src="assets/img/logo/logo_5.png" alt=""></a>
+                                    <a href="bac-si"><img src="assets/img/logo/logo_5.png" alt=""></a>
                                 </div>
                             </div >
 
@@ -68,7 +69,7 @@
                                                 <li><a href="blog.html">Thông tin</a>
                                                     <ul class="submenu">
                                                         <li><a href="TTPhongKham.jsp">Phòng Khám</a></li>
-                                                        <li><a href="showAllDoctor">Bác Sĩ</a></li>
+                                                        <li><a href="bac-si">Bác Sĩ</a></li>
 
                                                     </ul>
                                                 </li>
@@ -122,81 +123,137 @@
             </div>
             <div class="header-search"> <!-- Added a container for search form -->
                 <form action="search" method="post">
-                    <input type="text" placeholder="Tìm kiếm ..." name="txt">
+                    <input type="text" placeholder="Tên bác sĩ, chuyên khoa ..." name="txt">
                     <button type="submit"><i class="fa fa-search"></i></button>
                 </form>
             </div>
-            <!-- Slider Area End -->
-            <!--? Team Area Start-->
-            <section class="team-area pb-top">
-                <div class="container">
-                    <div class="row">
-                        <c:forEach items="${showalldoctor}" var="i">
-                            <div class="col-lg-4 col-md-6 col-sm-12">
-                                <div class="doctor-card">
-                                    <div class="blog-img-cap">
-                                        <div class="blog-img">
-                                            <img src="${i.image}" alt="">
-                                            <div class="ratings">
-                                                <span class="rating"></span>
-                                                <i class="fas fa-star"></i>
-                                            </div>
-                                        </div>
-                                        <div class="blog-cap">
-                                            <h3 class="doctor-name">${i.doctorName}</h3>
-                                            <div class="degree">${i.degree}</div>
-                                            <p class="specialization">${i.specialization}</p>
-                                            <button class="btn btn-primary">
-                                                <i class="fas fa-calendar-alt" style="color: white;"></i>
-                                                <span>Đặt Khám</span>
-                                            </button>
+
+            <br> <br> <br> 
+            <div class="container">
+
+                <h2>Chuyên khoa</h2>
+
+            </div>
+            <br>
+            <div class="specialty-list">
+
+                <c:set var="currentSpecialtyId" value="${param.cid}" />
+
+                <div class="specialty-item">
+
+
+                    <a class="h3 text-dark text-decoration-none mr-3 ${empty param.cid ? 'font-weight-bold'  : ''}" href="bac-si" onclick="setViewAll()">Tất cả</a>
+                </div>
+
+                <c:forEach items="${showlistc}" var="i">
+                    <div class="specialty-item">
+                        <a class="h3 text-dark text-decoration-none mr-3 ${i.specialtyID == currentSpecialtyId ? 'font-weight-bold' : ''}" href="Chuyen-khoa?cid=${i.specialtyID}">
+                            ${i.specialtyName}
+                        </a>
+                    </div>
+                </c:forEach>
+            </div>
+            <br> <br> <br> 
+            <div class="container">
+
+                <h2>Chọn bác sĩ</h2>
+
+            </div>
+            <br> <br> <br> 
+            <div class="container">
+
+                <div class="row">
+
+                    <c:forEach items="${showalldoctor}" var="i">
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="doctor-card">
+                                <div class="blog-img-cap">
+                                    <div class="blog-img">
+                                        <img src="${i.image}" alt="">
+                                        <div class="ratings">
+                                            <span class="rating"></span>
+                                            <i class="fas fa-star"></i>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                        </c:forEach>
-                    </div>
-
-
-
-
-
-
-                </div>
-            </section> 
-            <section class="team-area pb-top">
-                <div class="container">
-                    <div class="row">
-                        <c:forEach items="${timkiem}" var="i">
-                            <div class="col-lg-4 col-md-6 col-sm-12">
-                                <div class="doctor-card">
-                                    <div class="blog-img-cap">
-                                        <div class="blog-img">
-                                            <img src="${i.image}" alt="">
-                                            <div class="ratings">
-                                                <span class="rating"></span>
-                                                <i class="fas fa-star"></i>
-                                            </div>
-                                        </div>
-                                        <div class="blog-cap">
-                                            <h3 class="doctor-name">${i.doctorName}</h3>
-                                            <div class="degree">${i.degree}</div>
-                                            <p class="specialization">${i.specialization}</p>
+                                    <div class="blog-cap">
+                                        <h3 class="doctor-name">${i.doctorName}</h3>
+                                        <div class="degree">${i.degree}</div>
+                                        <p class="specialization">${i.specialization}</p>
+                                        <li>
                                             <button class="appointment-button">Đặt khám</button>
-                                        </div>
+                                        </li>
                                     </div>
                                 </div>
                             </div>
-                        </c:forEach>
-                    </div>
-
-
-
-
-
-
+                        </div>
+                    </c:forEach>
                 </div>
-            </section>
+
+
+
+
+
+
+            </div>
+
+
+            <div class="container">
+                <div class="row">
+                    <c:forEach items="${timkiem}" var="i">
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="doctor-card">
+                                <div class="blog-img-cap">
+                                    <div class="blog-img">
+                                        <img src="${i.image}" alt="">
+                                        <div class="ratings">
+                                            <span class="rating"></span>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <div class="blog-cap">
+                                        <h3 class="doctor-name">${i.doctorName}</h3>
+                                        <div class="degree">${i.degree}</div>
+                                        <p class="specialization">${i.specialization}</p>
+                                        <button class="appointment-button">Đặt khám</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </c:forEach>
+                </div>
+
+            </div>
+
+            <div class="container">
+                <div class="row">
+                    <c:forEach items="${showlist}" var="i">
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="doctor-card">
+                                <div class="blog-img-cap">
+                                    <div class="blog-img">
+                                        <img src="${i.image}" alt="">
+                                        <div class="ratings">
+                                            <span class="rating"></span>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <div class="blog-cap">
+                                        <h3 class="doctor-name">${i.doctorName}</h3>
+                                        <div class="degree">${i.degree}</div>
+                                        <p class="specialization">${i.specialization}</p>
+                                        <button class="appointment-button">Đặt khám</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </c:forEach>
+                </div>
+
+
+
+
+            </div>
+
 
             <!-- About Law End-->
         </main>

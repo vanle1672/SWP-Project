@@ -66,8 +66,8 @@
                                                 <li><a href="Trangchu.jsp">Trang chủ</a></li>
                                                 <li><a href="blog.html">Thông tin</a>
                                                     <ul class="submenu">
-                                                        <li><a href="blog.html">Phòng Khám</a></li>
-                                                        <li><a href="blog_details.html">Bác Sĩ</a></li>
+                                                        <li><a href="TTPhongKham.jsp">Phòng Khám</a></li>
+                                                        <li><a href="bac-si">Bác Sĩ</a></li>
 
                                                     </ul>
                                                 </li>

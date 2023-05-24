@@ -12,32 +12,52 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
-
+import java.util.ArrayList;
 import java.util.List;
 
 /**
  *
  * @author ASUS
  */
-public class showAllDoctor extends HttpServlet {
+public class showSpecialty extends HttpServlet {
 
-   
+    /**
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
+     * methods.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-       try {
+         String speID = request.getParameter("cid");
+
+        try {
             dao DAO = new dao();
-           
-            List<Bacsi> showall = DAO.getAll();
-           List<Chuyenkhoa> showspecialty = DAO.getSpecialty();
-            request.setAttribute("showalldoctor", showall);
+            ArrayList<Bacsi> listchuyenkhoa = DAO.getDoctorbySpecialtyID(speID);
+            request.setAttribute("showlist", listchuyenkhoa);
+            List<Chuyenkhoa> showspecialty = DAO.getSpecialty();
             request.setAttribute("showlistc", showspecialty);
+            
+            
+           
             request.getRequestDispatcher("Bacsifull.jsp").forward(request, response);
         } catch (Exception e) {
         }
     }
 
-   
+    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+    /**
+     * Handles the HTTP <code>GET</code> method.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -55,10 +75,7 @@ public class showAllDoctor extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        try {
-            
-        } catch (Exception e) {
-        }
+        processRequest(request, response);
     }
 
     /**

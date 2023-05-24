@@ -35,7 +35,8 @@
         <link rel="stylesheet" href="assets/css/slick.css">
         <link rel="stylesheet" href="assets/css/nice-select.css">
         <link rel="stylesheet" href="assets/css/style.css">
-        <link rel="stylesheet" href="assets/css/cssformdoctor.css">
+       
+
     </head>
     <body>
         <!-- ? Preloader Start -->
@@ -59,7 +60,7 @@
                             <!-- Logo -->
                             <div class="col-xl-2 col-lg-2 col-md-1">
                                 <div class="logo" ">
-                                    <a href="showDoctor"><img src="assets/img/logo/logo_5.png" alt=""></a>
+                                    <a href="trang-chu"><img src="assets/img/logo/logo_5.png" alt=""></a>
                                 </div>
                             </div >
 
@@ -69,11 +70,11 @@
                                     <div class="main-menu f-right d-none d-lg-block">
                                         <nav> 
                                             <ul id="navigation">
-                                                <li><a href="showDoctor">Trang chủ</a></li>
+                                                <li><a href="trang-chu">Trang chủ</a></li>
                                                 <li><a href="blog.html">Thông tin</a>
                                                     <ul class="submenu">
                                                         <li><a href="TTPhongKham.jsp">Phòng Khám</a></li>
-                                                        <li><a href="showAllDoctor">Bác Sĩ</a></li>
+                                                        <li><a href="bac-si">Bác Sĩ</a></li>
 
                                                     </ul>
                                                 </li>
@@ -347,10 +348,7 @@
                                                     <span></span>
                                                 </li>
                                                 <li>
-                                                    <button class="btn btn-primary">
-                                                        <i class="fas fa-calendar-alt" style="color: white;"></i>
-                                                        <span>Đặt Khám</span>
-                                                    </button>
+                                                    <button class="appointment-button">Đặt khám</button>
                                                 </li>
                                             </ul>
                                         </div>

@@ -22,19 +22,7 @@
 }
 
 
-.btn {
-    width: 100%;
-    border-radius: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    padding: 15px 20px;
-    color: white;
-}
 
-.btn-primary {
-    background-color: #007bff;
-    border-color: #007bff;
-      
-}
 
 
 .doctor-card {
@@ -44,7 +32,7 @@
     margin-bottom: 30px;
     transition: all 0.3s ease;
     box-shadow: 0 4px 10px rgba(0, 128, 0, 0.2);
-    background-color: #ffffff; 
+    background-color: #ffffff;
 }
 
 .doctor-card:hover {
@@ -128,6 +116,7 @@
 
 /* CSS for small screens */
 @media (max-width: 768px) {
+
     .col-lg-4,
     .col-md-6 {
         flex-basis: 50%;
@@ -159,7 +148,7 @@
     border: none;
     background-color: #008000;
     color: #fff;
-    border-radius: 20px;
+    border-radius: 100px;
     cursor: pointer;
     transition: background-color 0.3s ease;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -167,11 +156,23 @@
 }
 
 .header-search button:hover {
-    background-color: #00b300;
+    background-color: black;
 }
 
-.header-search input[type="text"]::placeholder {
-    color: #888;
+.header-search input[type="text"] {
+    padding: 12px 15px;
+    border: 1px solid #008000; /* Đường viền có màu xanh lá cây */
+    border-radius: 50px;
+    font-size: 17px;
+    width: 600px; /* Tăng chiều rộng để làm dài hơn */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-left: -13px; /* Đẩy sang trái để trải rộng ra hai bên */
+    margin-right: -15px; /* Đẩy sang phải để trải rộng ra hai bên */
+}
+
+.header-search input[type="text"]:focus {
+    outline: none;
+    border-color: #00b300; /* Đường viền có màu xanh lá cây khi được focus */
 }
 
 .fa-search {
@@ -179,4 +180,57 @@
     color: #ffffff; /* Màu xanh lá cây */
 }
 
+@media (max-width: 767px) {
+    /* CSS dành cho màn hình nhỏ hơn 1080px */
+    .header-search input[type="text"],
+    .header-search button {
+        padding: 8px;
+        font-size: 12px;
+    }
 
+    .header-search input[type="text"] {
+        width: 100%;
+    }
+}
+
+
+.specialty-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.specialty-item {
+    border: 2px solid #000;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px;
+}
+
+.specialty-item:hover {
+    background-color: #58b74f; /* Thay đổi màu nền khi di chuột vào */
+}
+
+.specialty-item:active {
+    background-color: darkblue; /* Thay đổi màu nền khi đang được bấm */
+}
+
+/* Thêm quy tắc này để tô đậm chữ khi đang hover */
+.specialty-item:hover a {
+    font-weight: bold;
+}
+
+
+
+@media (max-width: 480px) {
+    /* CSS dành cho màn hình nhỏ hơn 767px */
+    .specialty-list{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+
+
+}

@@ -6,6 +6,7 @@ package Control;
 
 import DAO.dao;
 import Model.Bacsi;
+import Model.Chuyenkhoa;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -36,6 +37,9 @@ public class searchSevlet extends HttpServlet {
              } else {
                   request.setAttribute("timkiem", search);
              }
+              List<Chuyenkhoa> showspecialty = DAO.getSpecialty();
+  
+            request.setAttribute("showlistc", showspecialty);
              request.getRequestDispatcher("Bacsifull.jsp").forward(request, response);
         } catch (Exception e) {
         }
