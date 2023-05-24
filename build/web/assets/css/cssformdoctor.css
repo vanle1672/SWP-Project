@@ -22,7 +22,19 @@
 }
 
 
+.btn {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    padding: 15px 20px;
+    color: white;
+}
 
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+      
+}
 
 
 .doctor-card {

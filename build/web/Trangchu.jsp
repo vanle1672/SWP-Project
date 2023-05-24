@@ -35,6 +35,7 @@
         <link rel="stylesheet" href="assets/css/slick.css">
         <link rel="stylesheet" href="assets/css/nice-select.css">
         <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="assets/css/cssformdoctor.css">
     </head>
     <body>
         <!-- ? Preloader Start -->
@@ -58,7 +59,7 @@
                             <!-- Logo -->
                             <div class="col-xl-2 col-lg-2 col-md-1">
                                 <div class="logo" ">
-                                    <a href="index.html"><img src="assets/img/logo/logo_5.png" alt=""></a>
+                                    <a href="showDoctor"><img src="assets/img/logo/logo_5.png" alt=""></a>
                                 </div>
                             </div >
 
@@ -68,11 +69,11 @@
                                     <div class="main-menu f-right d-none d-lg-block">
                                         <nav> 
                                             <ul id="navigation">
-                                                <li><a href="Trangchu.jsp">Trang chủ</a></li>
+                                                <li><a href="showDoctor">Trang chủ</a></li>
                                                 <li><a href="blog.html">Thông tin</a>
                                                     <ul class="submenu">
                                                         <li><a href="TTPhongKham.jsp">Phòng Khám</a></li>
-                                                        <li><a href="blog_details.html">Bác Sĩ</a></li>
+                                                        <li><a href="showAllDoctor">Bác Sĩ</a></li>
 
                                                     </ul>
                                                 </li>
@@ -322,20 +323,35 @@
                     <div class="row">
 
                         <c:forEach items="${showtop3}" var="i">
-
                             <div class="col-lg-4 col-md-6">
                                 <div class="home-blog-single mb-40">
                                     <div class="blog-img-cap">
                                         <div class="blog-img">
-                                            <img src="${i.image}" alt="">
+                                            <img src="${i.image}" alt="bacsi">
                                         </div>
                                         <div class="blog-cap">
-                                            <ul>
-                                                <li><h3 class="fa fa-user-md"> ${i.doctorName}</h3></li>
-                                                <br>
-                                                <li><h3 class="fas fa-graduation-cap">${i.degree}</h3></li>
-                                                <br>
-                                                <li><h3 class="fas fa-stethoscope">${i.specialization}</h3></li>
+                                            <ul class="doctor-info">
+                                                <li>
+                                                    <h3>${i.doctorName}</h3>
+                                                </li>
+                                                <li>
+                                                    <h4>${i.degree}</h4>
+                                                </li>
+                                                <li>
+                                                    <h4>${i.specialization}</h4>
+                                                </li>
+                                                <li class="contact-info">
+                                                    <i class="fas fa-phone" style="color: green;"></i>
+                                                    <span></span>
+                                                    <i class="fas fa-star" style="color: green;"></i>
+                                                    <span></span>
+                                                </li>
+                                                <li>
+                                                    <button class="btn btn-primary">
+                                                        <i class="fas fa-calendar-alt" style="color: white;"></i>
+                                                        <span>Đặt Khám</span>
+                                                    </button>
+                                                </li>
                                             </ul>
                                         </div>
                                     </div>

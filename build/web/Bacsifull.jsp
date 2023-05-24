@@ -46,44 +46,48 @@
         </div>
         <!-- Preloader Start -->
         <header>
-            <!-- Header Start -->
+            <!--? Header Start -->
             <div class="header-area">
                 <div class="main-header header-sticky">
                     <div class="container-fluid">
                         <div class="row align-items-center">
                             <!-- Logo -->
                             <div class="col-xl-2 col-lg-2 col-md-1">
-                                <div class="logo">
-                                    <a href="index.html"><img src="assets/img/logo/logo.png" alt=""></a>
+                                <div class="logo" ">
+                                    <a href="showDoctor"><img src="assets/img/logo/logo_5.png" alt=""></a>
                                 </div>
-                            </div>
-                            <div class="col-xl-10 col-lg-10 col-md-11"> <!-- Adjusted col size -->
-                                <div class="menu-main d-flex align-items-center justify-content-between"> <!-- Adjusted alignment and spacing -->
-                                    <!-- Main-menu -->
+                            </div >
 
-                                    <div class="main-menu d-none d-lg-block">
-                                        <nav>
+                            <div class="col-xl-10 col-lg-10 col-md-10">
+                                <div class="menu-main d-flex align-items-center justify-content-end">
+                                    <!-- Main-menu -->
+                                    <div class="main-menu f-right d-none d-lg-block">
+                                        <nav> 
                                             <ul id="navigation">
-                                                <li><a href="index.html">Home</a></li>
-                                                <li><a href="about.html">About</a></li>
-                                                <li><a href="services.html">Services</a></li>
-                                                <li><a href="blog.html">Blog</a>
+                                                <li><a href="showDoctor">Trang chủ</a></li>
+                                                <li><a href="blog.html">Thông tin</a>
                                                     <ul class="submenu">
-                                                        <li><a href="blog.html">Blog</a></li>
-                                                        <li><a href="blog_details.html">Blog Details</a></li>
-                                                        <li><a href="elements.html">Element</a></li>
+                                                        <li><a href="TTPhongKham.jsp">Phòng Khám</a></li>
+                                                        <li><a href="showAllDoctor">Bác Sĩ</a></li>
+
                                                     </ul>
                                                 </li>
-                                                <li><a href="contact.html">Contact</a></li>
+
+                                                <li><a href="blog.html">Đặt Khám</a>
+                                                    <ul class="submenu">
+                                                        <li><a href="blog.html">Chuyên Khoa</a></li>
+
+                                                    </ul>
+                                                </li>
+
                                             </ul>
                                         </nav>
                                     </div>
-
-                                    <div class="header-right-btn d-none d-lg-block ml-15">
-                                        <a href="#" class="btn header-btn">Make an Appointment</a>
+                                    <div class="header-right-btn f-right d-none d-lg-block ml-15">
+                                        <a href="#" class="btn header-btn">Đăng nhập/Đăng kí</a>
                                     </div>
                                 </div>
-                            </div>
+                            </div>   
                             <!-- Mobile Menu -->
                             <div class="col-12">
                                 <div class="mobile_menu d-block d-lg-none"></div>
@@ -142,7 +146,10 @@
                                             <h3 class="doctor-name">${i.doctorName}</h3>
                                             <div class="degree">${i.degree}</div>
                                             <p class="specialization">${i.specialization}</p>
-                                            <button class="appointment-button">Đặt khám</button>
+                                            <button class="btn btn-primary">
+                                                <i class="fas fa-calendar-alt" style="color: white;"></i>
+                                                <span>Đặt Khám</span>
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
