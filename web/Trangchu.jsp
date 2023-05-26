@@ -35,7 +35,7 @@
         <link rel="stylesheet" href="assets/css/slick.css">
         <link rel="stylesheet" href="assets/css/nice-select.css">
         <link rel="stylesheet" href="assets/css/style.css">
-       
+        <link rel="stylesheet" href="assets/css/cssformdoctor.css">
 
     </head>
     <body>
@@ -59,11 +59,11 @@
                         <div class="row align-items-center">
                             <!-- Logo -->
                             <div class="col-xl-2 col-lg-2 col-md-1">
-                                <div class="logo" ">
-                                    <a href="trang-chu"><img src="assets/img/logo/logo_5.png" alt=""></a>
+                                <div class="logo">
+                                    <a href="index.html"><img src="assets/img/logo/logo_5.png" alt=""></a>
                                 </div>
-                            </div >
 
+                            </div>
                             <div class="col-xl-10 col-lg-10 col-md-10">
                                 <div class="menu-main d-flex align-items-center justify-content-end">
                                     <!-- Main-menu -->
@@ -71,7 +71,7 @@
                                         <nav> 
                                             <ul id="navigation">
                                                 <li><a href="trang-chu">Trang chủ</a></li>
-                                                <li><a href="blog.html">Thông tin</a>
+                                                <li><a>Thông tin</a>
                                                     <ul class="submenu">
                                                         <li><a href="TTPhongKham.jsp">Phòng Khám</a></li>
                                                         <li><a href="bac-si">Bác Sĩ</a></li>
@@ -79,11 +79,8 @@
                                                     </ul>
                                                 </li>
 
-                                                <li><a href="blog.html">Đặt Khám</a>
-                                                    <ul class="submenu">
-                                                        <li><a href="blog.html">Chuyên Khoa</a></li>
+                                                <li><a href="blog.html">Cẩm Nang</a>
 
-                                                    </ul>
                                                 </li>
 
                                             </ul>
@@ -93,7 +90,7 @@
                                         <a href="#" class="btn header-btn">Đăng nhập/Đăng kí</a>
                                     </div>
                                 </div>
-                            </div>   
+                            </div>  
                             <!-- Mobile Menu -->
                             <div class="col-12">
                                 <div class="mobile_menu d-block d-lg-none"></div>
@@ -324,33 +321,29 @@
                     <div class="row">
 
                         <c:forEach items="${showtop3}" var="i">
-                            <div class="col-lg-4 col-md-6">
-                                <div class="home-blog-single mb-40">
+                            <div class="col-lg-4 col-md-6 col-sm-12">
+                                <div class="doctor-card">
                                     <div class="blog-img-cap">
                                         <div class="blog-img">
-                                            <img src="${i.image}" alt="bacsi">
+                                            <img src="${i.image}" alt="">
+                                            <div class="ratings">
+                                                <span class="rating"></span>
+                                                <i class="fas fa-star"></i>
+                                            </div>
                                         </div>
                                         <div class="blog-cap">
-                                            <ul class="doctor-info">
-                                                <li>
-                                                    <h3>${i.doctorName}</h3>
-                                                </li>
-                                                <li>
-                                                    <h4>${i.degree}</h4>
-                                                </li>
-                                                <li>
-                                                    <h4>${i.specialization}</h4>
-                                                </li>
-                                                <li class="contact-info">
-                                                    <i class="fas fa-phone" style="color: green;"></i>
-                                                    <span></span>
-                                                    <i class="fas fa-star" style="color: green;"></i>
-                                                    <span></span>
-                                                </li>
-                                                <li>
-                                                    <button class="appointment-button">Đặt khám</button>
-                                                </li>
-                                            </ul>
+                                            <h3 class="doctor-name">${i.doctorName}</h3>
+                                            <div class="degree">${i.degree}</div>
+                                            <p class="specialization">${i.specialization}</p>
+
+
+                                            <li>
+                                                <button class="btn appointment-button">
+                                                    <i class="fas fa-calendar-alt" style="color: white;"></i>
+                                                    <span>Đặt Khám</span>
+                                                </button>
+                                            </li>
+                                     
                                         </div>
                                     </div>
                                 </div>

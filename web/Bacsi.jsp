@@ -53,31 +53,28 @@
                         <div class="row align-items-center">
                             <!-- Logo -->
                             <div class="col-xl-2 col-lg-2 col-md-1">
-                                <div class="logo" ">
+                                <div class="logo">
                                     <a href="index.html"><img src="assets/img/logo/logo_5.png" alt=""></a>
                                 </div>
-                            </div >
 
+                            </div>
                             <div class="col-xl-10 col-lg-10 col-md-10">
                                 <div class="menu-main d-flex align-items-center justify-content-end">
                                     <!-- Main-menu -->
                                     <div class="main-menu f-right d-none d-lg-block">
                                         <nav> 
                                             <ul id="navigation">
-                                                <li><a href="Trangchu.jsp">Trang chủ</a></li>
-                                                <li><a href="blog.html">Thông tin</a>
+                                                <li><a href="trang-chu">Trang chủ</a></li>
+                                                <li><a>Thông tin</a>
                                                     <ul class="submenu">
                                                         <li><a href="TTPhongKham.jsp">Phòng Khám</a></li>
-                                                        <li><a href="blog_details.html">Bác Sĩ</a></li>
+                                                        <li><a href="bac-si">Bác Sĩ</a></li>
 
                                                     </ul>
                                                 </li>
 
-                                                <li><a href="blog.html">Đặt Khám</a>
-                                                    <ul class="submenu">
-                                                        <li><a href="blog.html">Chuyên Khoa</a></li>
+                                                <li><a href="blog.html">Cẩm Nang</a>
 
-                                                    </ul>
                                                 </li>
 
                                             </ul>
@@ -87,7 +84,7 @@
                                         <a href="#" class="btn header-btn">Đăng nhập/Đăng kí</a>
                                     </div>
                                 </div>
-                            </div>   
+                            </div>  
                             <!-- Mobile Menu -->
                             <div class="col-12">
                                 <div class="mobile_menu d-block d-lg-none"></div>
@@ -164,24 +161,24 @@
                     </div>
                     <div class="row">
                         <c:forEach items="${showtop3}" var="i">
-                        <div class="col-lg-4 col-md-6">
-                            <div class="home-blog-single mb-40">
-                                <div class="blog-img-cap">
-                                    <div class="blog-img">
-                                        <img src="${i.image}" alt="">
-                                    </div>
-                                    <div class="blog-cap">
-                                        <ul>
-                                            <li><h3 class="fa fa-user-md">  ${i.doctorName}</h3></li> <br>
-                                            <li><h3 class="fas fa-graduation-cap">${i.degree}</h3></li> <br>
-                                            <li><h3 class="fas fa-stethoscope">  ${i.specialization}</h3></li>
-                                        </ul>
+                            <div class="col-lg-4 col-md-6">
+                                <div class="home-blog-single mb-40">
+                                    <div class="blog-img-cap">
+                                        <div class="blog-img">
+                                            <img src="${i.image}" alt="">
+                                        </div>
+                                        <div class="blog-cap">
+                                            <ul>
+                                                <li><h3 class="fa fa-user-md">  ${i.doctorName}</h3></li> <br>
+                                                <li><h3 class="fas fa-graduation-cap">${i.degree}</h3></li> <br>
+                                                <li><h3 class="fas fa-stethoscope">  ${i.specialization}</h3></li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
                         </c:forEach>
-                        
+
                     </div>
                 </div>
             </section>
@@ -231,7 +228,7 @@
                                     <div class="header-area">
                                         <div class="main-header main-header2 d-flex align-items-center justify-content-between">
                                             <!-- social -->
-                                          
+
                                             <!-- Main-menu -->
                                             <div class="main-menu main-menu2">
                                                 <nav> 

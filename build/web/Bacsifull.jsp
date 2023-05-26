@@ -54,19 +54,19 @@
                         <div class="row align-items-center">
                             <!-- Logo -->
                             <div class="col-xl-2 col-lg-2 col-md-1">
-                                <div class="logo" ">
-                                    <a href="bac-si"><img src="assets/img/logo/logo_5.png" alt=""></a>
+                                <div class="logo">
+                                    <a href="index.html"><img src="assets/img/logo/logo_5.png" alt=""></a>
                                 </div>
-                            </div >
 
+                            </div>
                             <div class="col-xl-10 col-lg-10 col-md-10">
                                 <div class="menu-main d-flex align-items-center justify-content-end">
                                     <!-- Main-menu -->
                                     <div class="main-menu f-right d-none d-lg-block">
                                         <nav> 
                                             <ul id="navigation">
-                                                <li><a href="showDoctor">Trang chủ</a></li>
-                                                <li><a href="blog.html">Thông tin</a>
+                                                <li><a href="trang-chu">Trang chủ</a></li>
+                                                <li><a>Thông tin</a>
                                                     <ul class="submenu">
                                                         <li><a href="TTPhongKham.jsp">Phòng Khám</a></li>
                                                         <li><a href="bac-si">Bác Sĩ</a></li>
@@ -74,11 +74,8 @@
                                                     </ul>
                                                 </li>
 
-                                                <li><a href="blog.html">Đặt Khám</a>
-                                                    <ul class="submenu">
-                                                        <li><a href="blog.html">Chuyên Khoa</a></li>
+                                                <li><a href="blog.html">Cẩm Nang</a>
 
-                                                    </ul>
                                                 </li>
 
                                             </ul>
@@ -88,7 +85,7 @@
                                         <a href="#" class="btn header-btn">Đăng nhập/Đăng kí</a>
                                     </div>
                                 </div>
-                            </div>   
+                            </div>  
                             <!-- Mobile Menu -->
                             <div class="col-12">
                                 <div class="mobile_menu d-block d-lg-none"></div>
@@ -179,9 +176,12 @@
                                         <h3 class="doctor-name">${i.doctorName}</h3>
                                         <div class="degree">${i.degree}</div>
                                         <p class="specialization">${i.specialization}</p>
-                                        <li>
-                                            <button class="appointment-button">Đặt khám</button>
-                                        </li>
+             
+                                            <button class="btn appointment-button">
+                                                <i class="fas fa-calendar-alt" style="color: white;"></i>
+                                                <span>Đặt khám</span>
+                                            </button>
+                                
                                     </div>
                                 </div>
                             </div>

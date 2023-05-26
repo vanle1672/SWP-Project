@@ -1,6 +1,7 @@
 package DAO;
 
 import Model.Bacsi;
+import Model.Camnang;
 import Model.Chuyenkhoa;
 import contact.ContactDB;
 import java.sql.Connection;
@@ -18,6 +19,7 @@ public class dao {
 
     private final ArrayList<Bacsi> result = new ArrayList<>();
     private final ArrayList<Chuyenkhoa> resultc = new ArrayList<>();
+    private final ArrayList<Camnang> resultcn = new ArrayList<>();
     Connection con = null;
     PreparedStatement p1 = null;
     ResultSet re = null;
@@ -91,9 +93,8 @@ public class dao {
         return result;
     }
 
-    
-    public ArrayList<Chuyenkhoa> getSpecialty () throws ClassNotFoundException{
-         try {
+    public ArrayList<Chuyenkhoa> getSpecialty() throws ClassNotFoundException {
+        try {
             this.con = ContactDB.makeConnection();
 
             String stm1 = "select *from Specialty;";
@@ -109,10 +110,10 @@ public class dao {
             System.out.println("Error: " + e);
         }
         return resultc;
-        
+
     }
-    
-        public ArrayList<Bacsi> getDoctorbySpecialtyID(String cid) throws ClassNotFoundException {
+
+    public ArrayList<Bacsi> getDoctorbySpecialtyID(String cid) throws ClassNotFoundException {
 //         con = null;
 
         try {
@@ -134,9 +135,77 @@ public class dao {
         }
         return result;
     }
+
+    public Camnang getBlogByID(String bid) throws ClassNotFoundException {
+//         con = null;
+
+        try {
+            this.con = ContactDB.makeConnection();
+
+            String stm1 = "SELECT * FROM Blog where BlogID = ?";
+
+            p1 = con.prepareStatement(stm1);
+            p1.setString(1, bid);
+            re = p1.executeQuery();
+            while (re.next()) {
+              return new Camnang(re.getInt(1),re.getInt(2), re.getString(3), re.getString(4), re.getString(5), 
+                        re.getString(6), re.getString(7));
+            }
+
+        } catch (SQLException e) {
+            System.out.println("Error: " + e);
+        }
+      return null;
+    }
+     public ArrayList<Camnang> getAllBlog() throws ClassNotFoundException {
+//         con = null;
+
+        try {
+            this.con = ContactDB.makeConnection();
+
+            String stm1 = "select * from Blog;";
+
+            p1 = con.prepareStatement(stm1);
+            re = p1.executeQuery();
+            while (re.next()) {
+                resultcn.add(new Camnang(re.getInt(1),re.getInt(2), re.getString(3), re.getString(4), re.getString(5), 
+                        re.getString(6), re.getString(7)));
+            }
+
+        } catch (SQLException e) {
+            System.out.println("Error: " + e);
+        }
+        return resultcn;
+    }
+
+    public ArrayList<Camnang> searchBlog(String txtSearch) throws ClassNotFoundException {
+//         con = null;
+
+        try {
+            this.con = ContactDB.makeConnection();
+
+            String stm1 = "SELECT * FROM Blog WHERE [Day] LIKE ? OR [Month] LIKE ? OR Title LIKE ? OR ScriptShort LIKE ?";
+
+            p1 = con.prepareStatement(stm1);
+            p1.setString(1, "%" + txtSearch + "%");
+            p1.setString(2, "%" + txtSearch + "%");
+            p1.setString(3, "%" + txtSearch + "%");
+            p1.setString(4, "%" + txtSearch + "%");
+            re = p1.executeQuery();
+            while (re.next()) {
+                 resultcn.add(new Camnang(re.getInt(1),re.getInt(2), re.getString(3), re.getString(4), re.getString(5), 
+                        re.getString(6), re.getString(7)));
+            }
+
+        } catch (SQLException e) {
+            System.out.println("Error: " + e);
+        }
+        return resultcn;
+    }
+
     public static void main(String[] args) throws ClassNotFoundException {
         dao DAO = new dao();
-        List<Bacsi> a = DAO.getAll();
+        Camnang a = DAO.getBlogByID("1");
         System.out.println(a);
     }
 }

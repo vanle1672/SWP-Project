@@ -1,10 +1,11 @@
 <%-- 
-    Document   : Tatcabacsi
-    Created on : May 23, 2023, 7:59:07 PM
+    Document   : Camnangchitiet
+    Created on : May 25, 2023, 10:07:50 PM
     Author     : ASUS
 --%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <!doctype html>
 <html class="no-js" lang="zxx">
     <head>
@@ -13,28 +14,23 @@
         <title>Health | Template</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="manifest" href="site.webmanifest">
         <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
 
         <!-- CSS here -->
         <link rel="stylesheet" href="assets/css/bootstrap.min.css">
         <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
         <link rel="stylesheet" href="assets/css/slicknav.css">
-        <link rel="stylesheet" href="assets/css/flaticon.css">
-        <link rel="stylesheet" href="assets/css/gijgo.css">
         <link rel="stylesheet" href="assets/css/animate.min.css">
-        <link rel="stylesheet" href="assets/css/animated-headline.css">
         <link rel="stylesheet" href="assets/css/magnific-popup.css">
         <link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
         <link rel="stylesheet" href="assets/css/themify-icons.css">
         <link rel="stylesheet" href="assets/css/slick.css">
         <link rel="stylesheet" href="assets/css/nice-select.css">
         <link rel="stylesheet" href="assets/css/style.css">
-        <link rel="stylesheet" href="assets/css/cssformdoctor.css">
-
     </head>
+
     <body>
-        <!-- ? Preloader Start -->
+        <!--? Preloader Start -->
         <div id="preloader-active">
             <div class="preloader d-flex align-items-center justify-content-center">
                 <div class="preloader-inner position-relative">
@@ -55,9 +51,8 @@
                             <!-- Logo -->
                             <div class="col-xl-2 col-lg-2 col-md-1">
                                 <div class="logo">
-                                    <a href="index.html"><img src="assets/img/logo/logo_5.png" alt=""></a>
+                                    <a href="index.html"><img src="assets/img/logo/logo.png" alt=""></a>
                                 </div>
-
                             </div>
                             <div class="col-xl-10 col-lg-10 col-md-10">
                                 <div class="menu-main d-flex align-items-center justify-content-end">
@@ -65,27 +60,25 @@
                                     <div class="main-menu f-right d-none d-lg-block">
                                         <nav> 
                                             <ul id="navigation">
-                                                <li><a href="trang-chu">Trang chủ</a></li>
-                                                <li><a>Thông tin</a>
+                                                <li><a href="index.html">Home</a></li>
+                                                <li><a href="about.html">About</a></li>
+                                                <li><a href="services.html">Services</a></li>
+                                                <li><a href="blog.html">Blog</a>
                                                     <ul class="submenu">
-                                                        <li><a href="TTPhongKham.jsp">Phòng Khám</a></li>
-                                                        <li><a href="bac-si">Bác Sĩ</a></li>
-
+                                                        <li><a href="blog.html">Blog</a></li>
+                                                        <li><a href="blog_details.html">Blog Details</a></li>
+                                                        <li><a href="elements.html">Element</a></li>
                                                     </ul>
                                                 </li>
-
-                                                <li><a href="blog.html">Cẩm Nang</a>
-
-                                                </li>
-
+                                                <li><a href="contact.html">Contact</a></li>
                                             </ul>
                                         </nav>
                                     </div>
                                     <div class="header-right-btn f-right d-none d-lg-block ml-15">
-                                        <a href="#" class="btn header-btn">Đăng nhập/Đăng kí</a>
+                                        <a href="#" class="btn header-btn">Make an Appointment</a>
                                     </div>
                                 </div>
-                            </div>  
+                            </div>   
                             <!-- Mobile Menu -->
                             <div class="col-12">
                                 <div class="mobile_menu d-block d-lg-none"></div>
@@ -96,7 +89,6 @@
             </div>
             <!-- Header End -->
         </header>
-
         <main>
             <!--? Slider Area Start-->
             <div class="slider-area slider-area2">
@@ -108,8 +100,8 @@
                                 <div class="col-xl-7 col-lg-8 col-md-10 ">
                                     <div class="hero-wrapper">
                                         <div class="hero__caption">
-                                            <h1 data-animation="fadeInUp" data-delay=".3s" style="font-family: Arial">Đội Ngũ Bác Sĩ</h1>
-                                            <p data-animation="fadeInUp" data-delay=".6s" style="font-family: Arial">Chuyên nghiệp, tận tâm<br></p>
+                                            <h1 data-animation="fadeInUp" data-delay=".3s">Blog Details</h1>
+                                            <p data-animation="fadeInUp" data-delay=".6s">Almost before we knew it, we<br> had left the ground</p>
                                         </div>
                                     </div>
                                 </div>
@@ -118,143 +110,83 @@
                     </div>    
                 </div>
             </div>
-            <div class="header-search"> <!-- Added a container for search form -->
-                <form action="search" method="post">
-                    <input type="text" placeholder="Tên bác sĩ, chuyên khoa ..." name="txt">
-                    <button type="submit"><i class="fa fa-search"></i></button>
-                </form>
-            </div>
+            <!-- Slider Area End -->
+            <!--? Blog Area Start -->
+            <section class="blog_area single-post-area section-padding">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 posts-list">
+                            <div class="single-post">
+                                <div class="feature-img">
+                                    <img class="img-fluid" src="${detail.image}" alt="">
+                                </div>
+                                <div class="blog_details">
+                                    <h2 style="color: #2d2d2d;">${detail.title}
+                                    </h2>
+                                  
+                                    <p class="excert">
+                                        ${detail.scriptShort}
+                                    </p>
+                                    <p class="excert">
+                                        ${detail.scriptFull}
+                                    </p>
+                                   
+                                </div>
+                            </div>
+                         
+                            <div class="blog-author">
+                                <div class="media align-items-center">
+                                    <img src="assets/img/blog/author.png" alt="">
+                                    <div class="media-body">
+                                        <a>
+                                            <h4>Harvard milan</h4>
+                                        </a>
+                                        <p>Second divided from form fish beast made. Every of seas all gathered use saying you're, he
+                                            our dominion twon Second divided from</p>
+                                    </div>
+                                </div>
+                            </div>
+ 
 
-            <br> <br> <br> 
-            <div class="container">
+                        </div>
+                      
 
-                <h2>Chuyên khoa</h2>
+ 
 
-            </div>
-            <br>
-            <div class="specialty-list">
-
-                <c:set var="currentSpecialtyId" value="${param.cid}" />
-
-                <div class="specialty-item">
-
-
-                    <a class="h3 text-dark text-decoration-none mr-3 ${empty param.cid ? 'font-weight-bold'  : ''}" href="bac-si" onclick="setViewAll()">Tất cả</a>
-                </div>
-
-                <c:forEach items="${showlistc}" var="i">
-                    <div class="specialty-item">
-                        <a class="h3 text-dark text-decoration-none mr-3 ${i.specialtyID == currentSpecialtyId ? 'font-weight-bold' : ''}" href="Chuyen-khoa?cid=${i.specialtyID}">
-                            ${i.specialtyName}
-                        </a>
+                               
+                            </div>
+                        </div>
                     </div>
-                </c:forEach>
-            </div>
-            <br> <br> <br> 
-            <div class="container">
-
-                <h2>Chọn bác sĩ</h2>
-
-            </div>
-            <br> <br> <br> 
-            <div class="container">
-
-                <div class="row">
-
-                    <c:forEach items="${showalldoctor}" var="i">
-                        <div class="col-lg-4 col-md-6 col-sm-12">
-                            <div class="doctor-card">
-                                <div class="blog-img-cap">
-                                    <div class="blog-img">
-                                        <img src="${i.image}" alt="">
-                                        <div class="ratings">
-                                            <span class="rating"></span>
-                                            <i class="fas fa-star"></i>
-                                        </div>
+                </div>
+            </section>
+            <!-- Blog Area End -->
+            <!--? About Law Start-->
+            <section class="about-low-area mt-60">
+                <div class="container">
+                    <div class="about-cap-wrapper">
+                        <div class="row">
+                            <div class="col-xl-5  col-lg-6 col-md-10 offset-xl-1">
+                                <div class="about-caption mb-50">
+                                    <!-- Section Tittle -->
+                                    <div class="section-tittle mb-35">
+                                        <h2>100% satisfaction guaranteed.</h2>
                                     </div>
-                                    <div class="blog-cap">
-                                        <h3 class="doctor-name">${i.doctorName}</h3>
-                                        <div class="degree">${i.degree}</div>
-                                        <p class="specialization">${i.specialization}</p>
-             
-                                            <button class="btn appointment-button">
-                                                <i class="fas fa-calendar-alt" style="color: white;"></i>
-                                                <span>Đặt khám</span>
-                                            </button>
-                                
+                                    <p>Almost before we knew it, we had left the ground</p>
+                                    <a href="about.html" class="border-btn">Make an Appointment</a>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-12">
+                                <!-- about-img -->
+                                <div class="about-img">
+                                    <div class="about-font-img">
+                                        <img src="assets/img/gallery/about2.png" alt="">
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </c:forEach>
+                    </div>
                 </div>
-
-
-
-
-
-
-            </div>
-
-
-            <div class="container">
-                <div class="row">
-                    <c:forEach items="${timkiem}" var="i">
-                        <div class="col-lg-4 col-md-6 col-sm-12">
-                            <div class="doctor-card">
-                                <div class="blog-img-cap">
-                                    <div class="blog-img">
-                                        <img src="${i.image}" alt="">
-                                        <div class="ratings">
-                                            <span class="rating"></span>
-                                            <i class="fas fa-star"></i>
-                                        </div>
-                                    </div>
-                                    <div class="blog-cap">
-                                        <h3 class="doctor-name">${i.doctorName}</h3>
-                                        <div class="degree">${i.degree}</div>
-                                        <p class="specialization">${i.specialization}</p>
-                                        <button class="appointment-button">Đặt khám</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </c:forEach>
-                </div>
-
-            </div>
-
-            <div class="container">
-                <div class="row">
-                    <c:forEach items="${showlist}" var="i">
-                        <div class="col-lg-4 col-md-6 col-sm-12">
-                            <div class="doctor-card">
-                                <div class="blog-img-cap">
-                                    <div class="blog-img">
-                                        <img src="${i.image}" alt="">
-                                        <div class="ratings">
-                                            <span class="rating"></span>
-                                            <i class="fas fa-star"></i>
-                                        </div>
-                                    </div>
-                                    <div class="blog-cap">
-                                        <h3 class="doctor-name">${i.doctorName}</h3>
-                                        <div class="degree">${i.degree}</div>
-                                        <p class="specialization">${i.specialization}</p>
-                                        <button class="appointment-button">Đặt khám</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </c:forEach>
-                </div>
-
-
-
-
-            </div>
-
-
+            </section>
             <!-- About Law End-->
         </main>
         <footer>
@@ -359,22 +291,15 @@
         <!-- Jquery Slick , Owl-Carousel Plugins -->
         <script src="./assets/js/owl.carousel.min.js"></script>
         <script src="./assets/js/slick.min.js"></script>
+
         <!-- One Page, Animated-HeadLin -->
         <script src="./assets/js/wow.min.js"></script>
         <script src="./assets/js/animated.headline.js"></script>
         <script src="./assets/js/jquery.magnific-popup.js"></script>
 
-        <!-- Date Picker -->
-        <script src="./assets/js/gijgo.min.js"></script>
         <!-- Nice-select, sticky -->
         <script src="./assets/js/jquery.nice-select.min.js"></script>
         <script src="./assets/js/jquery.sticky.js"></script>
-
-        <!-- counter , waypoint,Hover Direction -->
-        <script src="./assets/js/jquery.counterup.min.js"></script>
-        <script src="./assets/js/waypoints.min.js"></script>
-        <script src="./assets/js/jquery.countdown.min.js"></script>
-        <script src="./assets/js/hover-direction-snake.min.js"></script>
 
         <!-- contact js -->
         <script src="./assets/js/contact.js"></script>

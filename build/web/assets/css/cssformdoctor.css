@@ -1,15 +1,16 @@
 .appointment-button {
     display: inline-block;
     margin-top: 10px;
-    padding: 10px 20px;
-    border-radius: 5px;
+    padding: 20px 50px;
+    border-radius: 25px;
     background-color: #008000; /* Màu xanh đậm */
     color: #fff;
     font-size: 16px;
     font-weight: bold;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.5s ease;
     border: none;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px;
+    width: 100%
 }
 
 .appointment-button:hover {
@@ -23,8 +24,6 @@
 
 
 
-
-
 .doctor-card {
     border: 1px solid #ccc;
     border-radius: 10px;
@@ -33,6 +32,7 @@
     transition: all 0.3s ease;
     box-shadow: 0 4px 10px rgba(0, 128, 0, 0.2);
     background-color: #ffffff;
+
 }
 
 .doctor-card:hover {

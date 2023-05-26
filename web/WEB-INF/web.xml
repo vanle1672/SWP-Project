@@ -16,6 +16,18 @@
         <servlet-name>showSpecialty</servlet-name>
         <servlet-class>Control.showSpecialty</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>showBlog</servlet-name>
+        <servlet-class>Control.showBlog</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>detailBlog</servlet-name>
+        <servlet-class>Control.detailBlog</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>searchBlog</servlet-name>
+        <servlet-class>Control.searchBlog</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>showDoctor</servlet-name>
         <url-pattern>/trang-chu</url-pattern>
@@ -31,6 +43,18 @@
     <servlet-mapping>
         <servlet-name>showSpecialty</servlet-name>
         <url-pattern>/Chuyen-khoa</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>showBlog</servlet-name>
+        <url-pattern>/cam-nang</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>detailBlog</servlet-name>
+        <url-pattern>/chi-tiet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>searchBlog</servlet-name>
+        <url-pattern>/searchBlog</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

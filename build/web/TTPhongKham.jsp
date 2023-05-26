@@ -63,8 +63,8 @@
                                     <div class="main-menu f-right d-none d-lg-block">
                                         <nav> 
                                             <ul id="navigation">
-                                                <li><a href="Trangchu.jsp">Trang chủ</a></li>
-                                                <li><a href="blog.html">Thông tin</a>
+                                                <li><a href="trang-chu">Trang chủ</a></li>
+                                                <li><a>Thông tin</a>
                                                     <ul class="submenu">
                                                         <li><a href="TTPhongKham.jsp">Phòng Khám</a></li>
                                                         <li><a href="bac-si">Bác Sĩ</a></li>
@@ -72,11 +72,8 @@
                                                     </ul>
                                                 </li>
 
-                                                <li><a href="blog.html">Đặt Khám</a>
-                                                    <ul class="submenu">
-                                                        <li><a href="blog.html">Chuyên Khoa</a></li>
-
-                                                    </ul>
+                                                <li><a href="blog.html">Cẩm Nang</a>
+                                                    
                                                 </li>
 
                                             </ul>
