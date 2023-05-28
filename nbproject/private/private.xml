@@ -3,19 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/SWP/web/assets/css/cssformdoctor.css</file>
-            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/SWP/web/Camnang.jsp</file>
-            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/SWP/web/WEB-INF/web.xml</file>
-            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/SWP/src/java/Control/showAllDoctor.java</file>
-            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/SWP/src/java/DAO/dao.java</file>
-            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/SWP/src/java/Control/searchBlog.java</file>
-            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/SWP/web/Bacsifull.jsp</file>
-            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/SWP/src/java/Model/Camnang.java</file>
-            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/SWP/web/Camnangchitiet.jsp</file>
-            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/SWP/src/java/Control/detailBlog.java</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/SWP/web/Quenmatkhau.jsp</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/SWP/src/java/Control/login.java</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/SWP/web/TTPhongKham.jsp</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/SWP/src/java/Control/signup.java</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/SWP/web/Login.jsp</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/SWP/src/java/Control/forgotPass.java</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/SWP/src/java/Control/CRUDBenhnhan.java</file>
             <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/SWP/web/Trangchu.jsp</file>
-            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/SWP/src/java/Control/showBlog.java</file>
-            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/SWP/src/java/Control/searchSevlet.java</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/SWP/web/assets/css/login.css</file>
         </group>
     </open-files>
 </project-private>

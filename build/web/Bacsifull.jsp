@@ -10,7 +10,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Health | Template</title>
+        <title>An Tâm</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="manifest" href="site.webmanifest">
@@ -40,7 +40,7 @@
                 <div class="preloader-inner position-relative">
                     <div class="preloader-circle"></div>
                     <div class="preloader-img pere-text">
-                        <img src="assets/img/logo/loder.png" alt="">
+                        <img src="assets/img/logo/logo_3.png" alt="">
                     </div>
                 </div>
             </div>
@@ -55,7 +55,7 @@
                             <!-- Logo -->
                             <div class="col-xl-2 col-lg-2 col-md-1">
                                 <div class="logo">
-                                    <a href="index.html"><img src="assets/img/logo/logo_5.png" alt=""></a>
+                                    <a href="trang-chu"><img src="assets/img/logo/logo_5.png" alt=""></a>
                                 </div>
 
                             </div>
@@ -74,7 +74,7 @@
                                                     </ul>
                                                 </li>
 
-                                                <li><a href="blog.html">Cẩm Nang</a>
+                                                <li><a href="cam-nang">Cẩm Nang</a>
 
                                                 </li>
 
@@ -124,7 +124,8 @@
                     <button type="submit"><i class="fa fa-search"></i></button>
                 </form>
             </div>
-
+            <br><br>
+            <div class="header-search" style="font-size: 2.0em; color: red">${none}</div>
             <br> <br> <br> 
             <div class="container">
 
@@ -173,15 +174,15 @@
                                         </div>
                                     </div>
                                     <div class="blog-cap">
-                                        <h3 class="doctor-name">${i.doctorName}</h3>
+                                        <h3 class="doctor-name">1</h3>
                                         <div class="degree">${i.degree}</div>
                                         <p class="specialization">${i.specialization}</p>
-             
-                                            <button class="btn appointment-button">
-                                                <i class="fas fa-calendar-alt" style="color: white;"></i>
-                                                <span>Đặt khám</span>
-                                            </button>
-                                
+
+                                        <button class="btn appointment-button">
+                                            <i class="fas fa-calendar-alt" style="color: white;"></i>
+                                            <span>Đặt khám</span>
+                                        </button>
+
                                     </div>
                                 </div>
                             </div>
@@ -211,7 +212,7 @@
                                         </div>
                                     </div>
                                     <div class="blog-cap">
-                                        <h3 class="doctor-name">${i.doctorName}</h3>
+                                        <h3 class="doctor-name">1</h3>
                                         <div class="degree">${i.degree}</div>
                                         <p class="specialization">${i.specialization}</p>
                                         <button class="appointment-button">Đặt khám</button>
@@ -219,6 +220,7 @@
                                 </div>
                             </div>
                         </div>
+
                     </c:forEach>
                 </div>
 
@@ -238,7 +240,7 @@
                                         </div>
                                     </div>
                                     <div class="blog-cap">
-                                        <h3 class="doctor-name">${i.doctorName}</h3>
+                                        <h3 class="doctor-name">1</h3>
                                         <div class="degree">${i.degree}</div>
                                         <p class="specialization">${i.specialization}</p>
                                         <button class="appointment-button">Đặt khám</button>
@@ -266,23 +268,13 @@
                                 <div class="single-footer-caption mb-50">
                                     <!-- logo -->
                                     <div class="footer-logo mb-25">
-                                        <a href="index.html"><img src="assets/img/logo/logo2_footer.png" alt=""></a>
+                                        <a href="trang-chu"><img src="assets/img/logo/logo_5.png" alt=""></a>
                                     </div>
                                     <d iv class="header-area">
                                         <div class="main-header main-header2">
                                             <div class="menu-main d-flex align-items-center justify-content-start">
                                                 <!-- Main-menu -->
-                                                <div class="main-menu main-menu2">
-                                                    <nav> 
-                                                        <ul>
-                                                            <li><a href="index.html">Home</a></li>
-                                                            <li><a href="about.html">About</a></li>
-                                                            <li><a href="services.html">Services</a></li>
-                                                            <li><a href="blog.html">Blog</a></li>
-                                                            <li><a href="contact.html">Contact</a></li>
-                                                        </ul>
-                                                    </nav>
-                                                </div>
+
                                             </div>  
                                         </div>
                                     </d>

@@ -4,23 +4,21 @@
  */
 package Control;
 
-
+import DAO.LoginDAO;
 import DAO.dao;
-
-import Model.Bacsi;
-
+import Model.Account;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
-import java.util.List;
 
 /**
  *
  * @author ASUS
  */
-public class showDoctor extends HttpServlet {
+public class login extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,14 +31,20 @@ public class showDoctor extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
         try {
-          
-           dao DAO1  = new dao();
-            List<Bacsi> show = DAO1.getTop3();
-            request.setAttribute("showtop3", show);
-            
-            request.getRequestDispatcher("Trangchu.jsp").forward(request, response);
+            String email = request.getParameter("email");
+            String pass = request.getParameter("pass");
+            LoginDAO DAO = new LoginDAO();
+            Account a = DAO.login(email, pass);
+             if (a == null) {
+                request.setAttribute("mess", "Sai email hoặc mật khẩu!");
+                request.getRequestDispatcher("Login.jsp").forward(request, response);
+            } else {
+                HttpSession session = request.getSession();
+                session.setAttribute("acc", a);
+                session.setMaxInactiveInterval(108000);            
+               response.sendRedirect("trang-chu");
+            }
         } catch (Exception e) {
         }
     }

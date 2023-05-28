@@ -10,7 +10,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>An | Tâm</title>
+        <title>An Tâm</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="manifest" href="site.webmanifest">
@@ -230,15 +230,7 @@
                                             <!-- social -->
 
                                             <!-- Main-menu -->
-                                            <div class="main-menu main-menu2">
-                                                <nav> 
-                                                    <ul>
-                                                        <li><a href="index.html">Trang Chủ</a></li>
-                                                        <li><a href="about.html">Thông Tin</a></li>
-                                                        <li><a href="services.html">Đặt Khám</a></li>
-                                                    </ul>
-                                                </nav>
-                                            </div>
+ 
                                         </div>
                                     </div>
                                 </div>

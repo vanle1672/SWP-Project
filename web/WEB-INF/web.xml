@@ -28,6 +28,26 @@
         <servlet-name>searchBlog</servlet-name>
         <servlet-class>Control.searchBlog</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>login</servlet-name>
+        <servlet-class>Control.login</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>signup</servlet-name>
+        <servlet-class>Control.signup</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>logOut</servlet-name>
+        <servlet-class>Control.logOut</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CRUDBenhnhan</servlet-name>
+        <servlet-class>Control.CRUDBenhnhan</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>forgotPass</servlet-name>
+        <servlet-class>Control.forgotPass</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>showDoctor</servlet-name>
         <url-pattern>/trang-chu</url-pattern>
@@ -55,6 +75,26 @@
     <servlet-mapping>
         <servlet-name>searchBlog</servlet-name>
         <url-pattern>/searchBlog</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>login</servlet-name>
+        <url-pattern>/dang-nhap</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>signup</servlet-name>
+        <url-pattern>/dang-ki</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>logOut</servlet-name>
+        <url-pattern>/dang-xuat</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CRUDBenhnhan</servlet-name>
+        <url-pattern>/chinh-sua</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>forgotPass</servlet-name>
+        <url-pattern>/quen-mat-khau</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -1,6 +1,8 @@
 package DAO;
 
+
 import Model.Bacsi;
+
 import Model.Camnang;
 import Model.Chuyenkhoa;
 import contact.ContactDB;
@@ -9,7 +11,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  *
@@ -20,6 +21,7 @@ public class dao {
     private final ArrayList<Bacsi> result = new ArrayList<>();
     private final ArrayList<Chuyenkhoa> resultc = new ArrayList<>();
     private final ArrayList<Camnang> resultcn = new ArrayList<>();
+   
     Connection con = null;
     PreparedStatement p1 = null;
     ResultSet re = null;
@@ -37,8 +39,8 @@ public class dao {
 
             re = p1.executeQuery();
             while (re.next()) {
-                result.add(new Bacsi(re.getInt(1), re.getString(2), re.getString(3), re.getString(4), re.getInt(5), re.getInt(6),
-                        re.getString(7)));
+                  result.add(new Bacsi(re.getInt(1), re.getString(2), re.getString(3), re.getInt(4), 
+                        re.getInt(5), re.getString(6), re.getString(7)));
             }
 
         } catch (SQLException e) {
@@ -59,8 +61,8 @@ public class dao {
 
             re = p1.executeQuery();
             while (re.next()) {
-                result.add(new Bacsi(re.getInt(1), re.getString(2), re.getString(3), re.getString(4), re.getInt(5), re.getInt(6),
-                        re.getString(7)));
+                  result.add(new Bacsi(re.getInt(1), re.getString(2), re.getString(3), re.getInt(4), 
+                        re.getInt(5), re.getString(6), re.getString(7)));
             }
 
         } catch (SQLException e) {
@@ -75,7 +77,7 @@ public class dao {
         try {
             this.con = ContactDB.makeConnection();
 
-            String stm1 = "SELECT * FROM Doctor WHERE DoctorName LIKE ? OR Degree LIKE ? OR Specialization LIKE ?";
+            String stm1 = "SELECT * FROM Doctor WHERE DoctorID LIKE ? OR Degree LIKE ? OR Specialization LIKE ?";
 
             p1 = con.prepareStatement(stm1);
             p1.setString(1, "%" + txtSearch + "%");
@@ -83,8 +85,8 @@ public class dao {
             p1.setString(3, "%" + txtSearch + "%");
             re = p1.executeQuery();
             while (re.next()) {
-                result.add(new Bacsi(re.getInt(1), re.getString(2), re.getString(3), re.getString(4), re.getInt(5), re.getInt(6),
-                        re.getString(7)));
+                 result.add(new Bacsi(re.getInt(1), re.getString(2), re.getString(3), re.getInt(4), 
+                        re.getInt(5), re.getString(6), re.getString(7)));
             }
 
         } catch (SQLException e) {
@@ -126,8 +128,8 @@ public class dao {
             p1.setString(1, cid);
             re = p1.executeQuery();
             while (re.next()) {
-                result.add(new Bacsi(re.getInt(1), re.getString(2), re.getString(3), re.getString(4), re.getInt(5), re.getInt(6),
-                        re.getString(7)));
+                result.add(new Bacsi(re.getInt(1), re.getString(2), re.getString(3), re.getInt(4), 
+                        re.getInt(5), re.getString(6), re.getString(7)));
             }
 
         } catch (SQLException e) {
@@ -148,16 +150,17 @@ public class dao {
             p1.setString(1, bid);
             re = p1.executeQuery();
             while (re.next()) {
-              return new Camnang(re.getInt(1),re.getInt(2), re.getString(3), re.getString(4), re.getString(5), 
+                return new Camnang(re.getInt(1), re.getInt(2), re.getString(3), re.getString(4), re.getString(5),
                         re.getString(6), re.getString(7));
             }
 
         } catch (SQLException e) {
             System.out.println("Error: " + e);
         }
-      return null;
+        return null;
     }
-     public ArrayList<Camnang> getAllBlog() throws ClassNotFoundException {
+
+    public ArrayList<Camnang> getAllBlog() throws ClassNotFoundException {
 //         con = null;
 
         try {
@@ -168,7 +171,7 @@ public class dao {
             p1 = con.prepareStatement(stm1);
             re = p1.executeQuery();
             while (re.next()) {
-                resultcn.add(new Camnang(re.getInt(1),re.getInt(2), re.getString(3), re.getString(4), re.getString(5), 
+                resultcn.add(new Camnang(re.getInt(1), re.getInt(2), re.getString(3), re.getString(4), re.getString(5),
                         re.getString(6), re.getString(7)));
             }
 
@@ -193,7 +196,7 @@ public class dao {
             p1.setString(4, "%" + txtSearch + "%");
             re = p1.executeQuery();
             while (re.next()) {
-                 resultcn.add(new Camnang(re.getInt(1),re.getInt(2), re.getString(3), re.getString(4), re.getString(5), 
+                resultcn.add(new Camnang(re.getInt(1), re.getInt(2), re.getString(3), re.getString(4), re.getString(5),
                         re.getString(6), re.getString(7)));
             }
 
@@ -202,6 +205,9 @@ public class dao {
         }
         return resultcn;
     }
+
+   
+
 
     public static void main(String[] args) throws ClassNotFoundException {
         dao DAO = new dao();

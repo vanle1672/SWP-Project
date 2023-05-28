@@ -4,23 +4,21 @@
  */
 package Control;
 
+import DAO.LoginDAO;
 
-import DAO.dao;
-
-import Model.Bacsi;
-
+import Model.Account;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.List;
+import static org.apache.coyote.http11.Constants.a;
 
 /**
  *
  * @author ASUS
  */
-public class showDoctor extends HttpServlet {
+public class signup extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -35,13 +33,34 @@ public class showDoctor extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try {
-          
-           dao DAO1  = new dao();
-            List<Bacsi> show = DAO1.getTop3();
-            request.setAttribute("showtop3", show);
-            
-            request.getRequestDispatcher("Trangchu.jsp").forward(request, response);
+            String email = request.getParameter("email");
+            String pass = request.getParameter("pass");
+            String name = request.getParameter("name");
+            String confirmpass = request.getParameter("confirm");
+            String phone = request.getParameter("phone");
+
+        
+            String passwordRegex = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[a-zA-Z\\d]{8,16}$";
+            if (!pass.matches(passwordRegex)) {
+                request.setAttribute("mess0", "Mật khẩu phải có 8-16 kí tự, bao gồm ít nhất một chữ hoa, một chữ thường và một số!");
+                request.getRequestDispatcher("Login.jsp").forward(request, response);
+            } else if (!pass.equals(confirmpass)) {
+                request.setAttribute("mess1", "Mật khẩu không trùng khớp!");
+                request.getRequestDispatcher("Login.jsp").forward(request, response);
+            } else {
+                LoginDAO DAO = new LoginDAO();
+                Account a = DAO.checkAccountExist(email);
+                if (a == null) {
+                    DAO.signup(email, pass, name, phone);
+                    request.setAttribute("mess2", "Tạo tài khoản thành công!");
+                    request.getRequestDispatcher("Login.jsp").forward(request, response);
+                } else {
+                    request.setAttribute("mess3", "Email đã tồn tại!");
+                    request.getRequestDispatcher("Login.jsp").forward(request, response);
+                }
+            }
         } catch (Exception e) {
+           
         }
     }
 

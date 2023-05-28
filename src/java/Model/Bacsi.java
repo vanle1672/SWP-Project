@@ -10,25 +10,36 @@ package Model;
  */
 public class Bacsi {
     private int doctorID;
-    private String doctorName;
+
     private String specialization;
     private String degree;
     private int experience;
     private int specialtyID;
      private String image;
+     private String accountID;
 
     public Bacsi() {
     }
 
-    public Bacsi(int doctorID, String doctorName, String specialization, String degree, int experience, int specialtyID, String image) {
+    public Bacsi(int doctorID, String specialization, String degree, int experience, int specialtyID, String image, String accountID) {
         this.doctorID = doctorID;
-        this.doctorName = doctorName;
         this.specialization = specialization;
         this.degree = degree;
         this.experience = experience;
         this.specialtyID = specialtyID;
         this.image = image;
+        this.accountID = accountID;
     }
+
+    public String getAccountID() {
+        return accountID;
+    }
+
+    public void setAccountID(String accountID) {
+        this.accountID = accountID;
+    }
+
+   
 
     public int getDoctorID() {
         return doctorID;
@@ -38,14 +49,7 @@ public class Bacsi {
         this.doctorID = doctorID;
     }
 
-    public String getDoctorName() {
-        return doctorName;
-    }
-
-    public void setDoctorName(String doctorName) {
-        this.doctorName = doctorName;
-    }
-
+  
     public String getSpecialization() {
         return specialization;
     }
@@ -88,7 +92,8 @@ public class Bacsi {
 
     @Override
     public String toString() {
-        return "Bacsi{" + "doctorID=" + doctorID + ", doctorName=" + doctorName + ", specialization=" + specialization + ", degree=" + degree + ", experience=" + experience + ", specialtyID=" + specialtyID + ", image=" + image + '}';
+        return "Bacsi{" + "doctorID=" + doctorID + ", specialization=" + specialization + ", degree=" + degree + ", experience=" + experience + ", specialtyID=" + specialtyID + ", image=" + image + ", accountID=" + accountID + '}';
     }
-          
+
+  
 }

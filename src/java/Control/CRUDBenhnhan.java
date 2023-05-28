@@ -4,11 +4,7 @@
  */
 package Control;
 
-
 import DAO.dao;
-
-import Model.Bacsi;
-
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -20,7 +16,7 @@ import java.util.List;
  *
  * @author ASUS
  */
-public class showDoctor extends HttpServlet {
+public class CRUDBenhnhan extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -35,12 +31,11 @@ public class showDoctor extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try {
-          
-           dao DAO1  = new dao();
-            List<Bacsi> show = DAO1.getTop3();
-            request.setAttribute("showtop3", show);
+            String bnid = request.getParameter("bnid");
+      
             
-            request.getRequestDispatcher("Trangchu.jsp").forward(request, response);
+     
+            request.getRequestDispatcher("Trangcanhan.jsp").forward(request, response);
         } catch (Exception e) {
         }
     }
@@ -71,7 +66,7 @@ public class showDoctor extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+          processRequest(request, response);
     }
 
     /**

@@ -11,7 +11,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Health | Template</title>
+        <title>An Tâm</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
@@ -51,7 +51,7 @@
                             <!-- Logo -->
                             <div class="col-xl-2 col-lg-2 col-md-1">
                                 <div class="logo">
-                                    <a href="index.html"><img src="assets/img/logo/logo.png" alt=""></a>
+                                    <a href="trang-chu"><img src="assets/img/logo/logo_5.png" alt=""></a>
                                 </div>
                             </div>
                             <div class="col-xl-10 col-lg-10 col-md-10">
@@ -60,22 +60,24 @@
                                     <div class="main-menu f-right d-none d-lg-block">
                                         <nav> 
                                             <ul id="navigation">
-                                                <li><a href="index.html">Home</a></li>
-                                                <li><a href="about.html">About</a></li>
-                                                <li><a href="services.html">Services</a></li>
-                                                <li><a href="blog.html">Blog</a>
+                                                <li><a href="trang-chu">Trang chủ</a></li>
+                                                <li><a>Thông tin</a>
                                                     <ul class="submenu">
-                                                        <li><a href="blog.html">Blog</a></li>
-                                                        <li><a href="blog_details.html">Blog Details</a></li>
-                                                        <li><a href="elements.html">Element</a></li>
+                                                        <li><a href="TTPhongKham.jsp">Phòng Khám</a></li>
+                                                        <li><a href="bac-si">Bác Sĩ</a></li>
+
                                                     </ul>
                                                 </li>
-                                                <li><a href="contact.html">Contact</a></li>
+
+                                                <li><a href="cam-nang">Cẩm Nang</a>
+
+                                                </li>
+
                                             </ul>
                                         </nav>
                                     </div>
                                     <div class="header-right-btn f-right d-none d-lg-block ml-15">
-                                        <a href="#" class="btn header-btn">Make an Appointment</a>
+                                        <a href="#" class="btn header-btn">Đăng nhập/Đăng kí</a>
                                     </div>
                                 </div>
                             </div>   
@@ -100,8 +102,8 @@
                                 <div class="col-xl-7 col-lg-8 col-md-10 ">
                                     <div class="hero-wrapper">
                                         <div class="hero__caption">
-                                            <h1 data-animation="fadeInUp" data-delay=".3s">Blog Details</h1>
-                                            <p data-animation="fadeInUp" data-delay=".6s">Almost before we knew it, we<br> had left the ground</p>
+                                            <h1 data-animation="fadeInUp" data-delay=".3s">Cẩm Nang Y Tế</h1>
+                                            <p data-animation="fadeInUp" data-delay=".6s">Kiến thức y tế - Kho báu <br> quý giá giúp bạn sống khỏe và hạnh phúc.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -123,17 +125,17 @@
                                 <div class="blog_details">
                                     <h2 style="color: #2d2d2d;">${detail.title}
                                     </h2>
-                                  
+
                                     <p class="excert">
                                         ${detail.scriptShort}
                                     </p>
                                     <p class="excert">
                                         ${detail.scriptFull}
                                     </p>
-                                   
+
                                 </div>
                             </div>
-                         
+
                             <div class="blog-author">
                                 <div class="media align-items-center">
                                     <img src="assets/img/blog/author.png" alt="">
@@ -146,22 +148,22 @@
                                     </div>
                                 </div>
                             </div>
- 
+
 
                         </div>
-                      
 
- 
 
-                               
-                            </div>
-                        </div>
+
+
+
                     </div>
+                </div>
+                </div>
                 </div>
             </section>
             <!-- Blog Area End -->
             <!--? About Law Start-->
-            <section class="about-low-area mt-60">
+            <section class="about-low-area mt-30">
                 <div class="container">
                     <div class="about-cap-wrapper">
                         <div class="row">
@@ -169,10 +171,12 @@
                                 <div class="about-caption mb-50">
                                     <!-- Section Tittle -->
                                     <div class="section-tittle mb-35">
-                                        <h2>100% satisfaction guaranteed.</h2>
+                                        <br><br>
+                                        <h2 style="font-family: Arial">100% Mang đến sự hài lòng cho bạn.</h2>
                                     </div>
-                                    <p>Almost before we knew it, we had left the ground</p>
-                                    <a href="about.html" class="border-btn">Make an Appointment</a>
+                                    <p style="font-family: Arial;" >Hãy đến với chúng tôi. Phòng khám An Tâm - Yên tâm trong từng tế bào.</p>
+                                   
+
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-12">
@@ -198,23 +202,13 @@
                                 <div class="single-footer-caption mb-50">
                                     <!-- logo -->
                                     <div class="footer-logo mb-25">
-                                        <a href="index.html"><img src="assets/img/logo/logo2_footer.png" alt=""></a>
+                                        <a href="trang-chu"><img src="assets/img/logo/logo_5.png" alt=""></a>
                                     </div>
                                     <d iv class="header-area">
                                         <div class="main-header main-header2">
                                             <div class="menu-main d-flex align-items-center justify-content-start">
                                                 <!-- Main-menu -->
-                                                <div class="main-menu main-menu2">
-                                                    <nav> 
-                                                        <ul>
-                                                            <li><a href="index.html">Home</a></li>
-                                                            <li><a href="about.html">About</a></li>
-                                                            <li><a href="services.html">Services</a></li>
-                                                            <li><a href="blog.html">Blog</a></li>
-                                                            <li><a href="contact.html">Contact</a></li>
-                                                        </ul>
-                                                    </nav>
-                                                </div>
+
                                             </div>  
                                         </div>
                                     </d>

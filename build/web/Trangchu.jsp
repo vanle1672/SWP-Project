@@ -14,7 +14,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>An | Tâm</title>
+        <title>An Tâm</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="manifest" href="site.webmanifest">
@@ -45,7 +45,7 @@
                 <div class="preloader-inner position-relative">
                     <div class="preloader-circle"></div>
                     <div class="preloader-img pere-text">
-                        <img src="assets/img/logo/loder.png" alt="">
+                        <img src="assets/img/logo/logo_3.png" alt="">
                     </div>
                 </div>
             </div>
@@ -60,7 +60,7 @@
                             <!-- Logo -->
                             <div class="col-xl-2 col-lg-2 col-md-1">
                                 <div class="logo">
-                                    <a href="index.html"><img src="assets/img/logo/logo_5.png" alt=""></a>
+                                    <a href="trang-chu"><img src="assets/img/logo/logo_5.png" alt=""></a>
                                 </div>
 
                             </div>
@@ -74,12 +74,12 @@
                                                 <li><a>Thông tin</a>
                                                     <ul class="submenu">
                                                         <li><a href="TTPhongKham.jsp">Phòng Khám</a></li>
-                                                        <li><a href="bac-si">Bác Sĩ</a></li>
+                                                        <li><a href="bac-si">Bác Sĩ </a></li>
 
                                                     </ul>
                                                 </li>
 
-                                                <li><a href="blog.html">Cẩm Nang</a>
+                                                <li><a href="cam-nang">Cẩm Nang</a>
 
                                                 </li>
 
@@ -87,18 +87,38 @@
                                         </nav>
                                     </div>
                                     <div class="header-right-btn f-right d-none d-lg-block ml-15">
-                                        <a href="#" class="btn header-btn">Đăng nhập/Đăng kí</a>
-                                    </div>
+                                        <c:if test="${sessionScope.acc == null}">
+
+                                            <a href="Login.jsp" class="btn header-btn">Đăng nhập/Đăng kí</a>
+                                        </c:if>
+                                    </div> 
+                                     <div class="main-menu f-right d-none d-lg-block">
+                                    <c:if test="${sessionScope.acc != null}">
+                                        <ul id="navigation">
+                                           
+                                            <li><a > <i class="fa fa-user" aria-hidden="true"> Hello ${sessionScope.acc.name} </i> </a>                                         
+                                                <ul class="submenu">
+                                                    <li><a href="dang-xuat">Đăng xuất</a></li>
+                                                   
+                                                    <li><a href="chinh-sua?bnid=${sessionScope.acc.id}">Trang cá nhân </a></li>
+                                                    
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </c:if>
+                                     </div>
+
                                 </div>
-                            </div>  
-                            <!-- Mobile Menu -->
-                            <div class="col-12">
-                                <div class="mobile_menu d-block d-lg-none"></div>
                             </div>
+                        </div>  
+                        <!-- Mobile Menu -->
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
                         </div>
                     </div>
                 </div>
             </div>
+
             <!-- Header End -->
         </header>
         <main>
@@ -213,7 +233,7 @@
                                     <p style="font-family: Arial; text-align: justify;" >Hệ tuần hoàn là hệ thống cấp máu nuôi dưỡng toàn cơ thể. 
                                         Để đảm bảo cơ thể luôn khỏe mạnh, các bác sĩ vẫn khuyên bạn đi khám tim mạch định kỳ hoặc ngay khi có dấu hiệu 
                                         gợi ý bệnh tim mạch. </p>
-                                    <a href="services.html" class="plus-btn"><i class="ti-plus"></i></a>
+
                                 </div>
                             </div>
                         </div>
@@ -226,7 +246,6 @@
                                     <h1><a style="font-family: Arial" href="services.html">Bệnh viêm phổi <br> Nguyên nhân, triệu chứng, phân loại</a></h1>
                                     <p style="font-family: Arial; text-align: justify;">Bệnh viêm phổi được biết đến như là bệnh lý nhiễm trùng đường hô hấp dưới gặp phổ biến nhất. 
                                         Bệnh gặp ở mọi lứa tuổi và con số tử vong hàng năm do bệnh viêm phổi lên đến hàng triệu người trên thế giới.</p>
-                                    <a href="services.html" class="plus-btn"><i class="ti-plus"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -239,7 +258,7 @@
                                     <h1><a style="font-family: Arial" href="services.html">10 nguyên nhân <br> đau xương khớp ở người cao tuổi</a></h1>
                                     <p style="font-family: Arial; text-align: justify;">Bệnh xương khớp ở người cao tuổi là bệnh của hệ thống cơ, xương và khớp, 
                                         thường được biểu hiện bằng các triệu chứng đau, sưng khớp, hạn chế vận động, yếu cơ, biến dạng xương… </p>
-                                    <a href="services.html" class="plus-btn"><i class="ti-plus"></i></a>
+
                                 </div>
                             </div>
                         </div>
@@ -332,7 +351,7 @@
                                             </div>
                                         </div>
                                         <div class="blog-cap">
-                                            <h3 class="doctor-name">${i.doctorName}</h3>
+                                            <h3 class="doctor-name">1</h3>
                                             <div class="degree">${i.degree}</div>
                                             <p class="specialization">${i.specialization}</p>
 
@@ -340,10 +359,10 @@
                                             <li>
                                                 <button class="btn appointment-button">
                                                     <i class="fas fa-calendar-alt" style="color: white;"></i>
-                                                    <span>Đặt Khám</span>
+                                                    <span>Đặt khám</span>
                                                 </button>
                                             </li>
-                                     
+
                                         </div>
                                     </div>
                                 </div>
@@ -399,20 +418,7 @@
                                         <a href="index.html"><img src="assets/img/logo/logo_5.png" alt=""></a>
                                     </div>
                                     <div class="header-area">
-                                        <div class="main-header main-header2 d-flex align-items-center justify-content-between">
-                                            <!-- social -->
 
-                                            <!-- Main-menu -->
-                                            <div class="main-menu main-menu2">
-                                                <nav> 
-                                                    <ul>
-                                                        <li><a href="index.html">Trang Chủ</a></li>
-                                                        <li><a href="about.html">Thông Tin</a></li>
-                                                        <li><a href="services.html">Đặt Khám</a></li>
-                                                    </ul>
-                                                </nav>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
                                 <!-- Contact Information -->

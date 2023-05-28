@@ -4,23 +4,19 @@
  */
 package Control;
 
-
-import DAO.dao;
-
-import Model.Bacsi;
-
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
-import java.util.List;
+import java.io.PrintWriter;
 
 /**
  *
  * @author ASUS
  */
-public class showDoctor extends HttpServlet {
+public class logOut extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -35,12 +31,9 @@ public class showDoctor extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try {
-          
-           dao DAO1  = new dao();
-            List<Bacsi> show = DAO1.getTop3();
-            request.setAttribute("showtop3", show);
-            
-            request.getRequestDispatcher("Trangchu.jsp").forward(request, response);
+            HttpSession session = request.getSession();
+            session.removeAttribute("acc");
+            response.sendRedirect("trang-chu");
         } catch (Exception e) {
         }
     }
