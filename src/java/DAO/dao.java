@@ -1,6 +1,6 @@
 package DAO;
 
-
+import Model.Account;
 import Model.Bacsi;
 
 import Model.Camnang;
@@ -10,7 +10,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  *
@@ -21,7 +23,8 @@ public class dao {
     private final ArrayList<Bacsi> result = new ArrayList<>();
     private final ArrayList<Chuyenkhoa> resultc = new ArrayList<>();
     private final ArrayList<Camnang> resultcn = new ArrayList<>();
-   
+    private final ArrayList<Account> resultac = new ArrayList<>();
+
     Connection con = null;
     PreparedStatement p1 = null;
     ResultSet re = null;
@@ -39,7 +42,7 @@ public class dao {
 
             re = p1.executeQuery();
             while (re.next()) {
-                  result.add(new Bacsi(re.getInt(1), re.getString(2), re.getString(3), re.getInt(4), 
+                result.add(new Bacsi(re.getInt(1), re.getString(2), re.getString(3), re.getInt(4),
                         re.getInt(5), re.getString(6), re.getString(7)));
             }
 
@@ -61,7 +64,7 @@ public class dao {
 
             re = p1.executeQuery();
             while (re.next()) {
-                  result.add(new Bacsi(re.getInt(1), re.getString(2), re.getString(3), re.getInt(4), 
+                result.add(new Bacsi(re.getInt(1), re.getString(2), re.getString(3), re.getInt(4),
                         re.getInt(5), re.getString(6), re.getString(7)));
             }
 
@@ -85,7 +88,7 @@ public class dao {
             p1.setString(3, "%" + txtSearch + "%");
             re = p1.executeQuery();
             while (re.next()) {
-                 result.add(new Bacsi(re.getInt(1), re.getString(2), re.getString(3), re.getInt(4), 
+                result.add(new Bacsi(re.getInt(1), re.getString(2), re.getString(3), re.getInt(4),
                         re.getInt(5), re.getString(6), re.getString(7)));
             }
 
@@ -128,7 +131,7 @@ public class dao {
             p1.setString(1, cid);
             re = p1.executeQuery();
             while (re.next()) {
-                result.add(new Bacsi(re.getInt(1), re.getString(2), re.getString(3), re.getInt(4), 
+                result.add(new Bacsi(re.getInt(1), re.getString(2), re.getString(3), re.getInt(4),
                         re.getInt(5), re.getString(6), re.getString(7)));
             }
 
@@ -136,6 +139,51 @@ public class dao {
             System.out.println("Error: " + e);
         }
         return result;
+    }
+
+    public ArrayList<Bacsi> getDoctorbyID(int accountID) throws ClassNotFoundException {
+//         con = null;
+
+        try {
+            this.con = ContactDB.makeConnection();
+
+            String stm1 = "select * from Doctor\n"
+                    + "where ID = ?";
+
+            p1 = con.prepareStatement(stm1);
+            p1.setInt(1, accountID);
+            re = p1.executeQuery();
+            while (re.next()) {
+                result.add(new Bacsi(re.getInt(1), re.getString(2), re.getString(3), re.getInt(4),
+                        re.getInt(5), re.getString(6), re.getString(7)));
+            }
+
+        } catch (SQLException e) {
+            System.out.println("Error: " + e);
+        }
+        return result;
+    }
+
+    public ArrayList<Account> getID(String cid) throws ClassNotFoundException {
+//         con = null;
+
+        try {
+            this.con = ContactDB.makeConnection();
+
+            String stm1 = "select * from accounts\n"
+                    + "where ID = ?";
+
+            p1 = con.prepareStatement(stm1);
+            p1.setString(1, cid);
+            re = p1.executeQuery();
+            while (re.next()) {
+                resultac.add(new Account(re.getInt(1), re.getString(2), re.getString(3), re.getString(4), re.getString(5)));
+            }
+
+        } catch (SQLException e) {
+            System.out.println("Error: " + e);
+        }
+        return resultac;
     }
 
     public Camnang getBlogByID(String bid) throws ClassNotFoundException {
@@ -206,12 +254,51 @@ public class dao {
         return resultcn;
     }
 
-   
-
-
     public static void main(String[] args) throws ClassNotFoundException {
         dao DAO = new dao();
         Camnang a = DAO.getBlogByID("1");
         System.out.println(a);
     }
+
+ public String getInfoDoctor(String accountId) throws ClassNotFoundException {
+    String result = "";
+    Connection con = null;
+    Statement statement = null;
+
+    try {
+        con = ContactDB.makeConnection();
+        statement = con.createStatement();
+
+        String sql = "SELECT Doctor.Image, Doctor.DoctorName, Doctor.Degree, Doctor.Experience, Doctor.Specialization, accounts.DOB, accounts.phoneNumber " +
+                "FROM accounts " +
+                "JOIN Doctor ON Doctor.DoctorID = accounts.id " +
+                "WHERE accounts.isDoctor = 1 AND accounts.id = " + accountId;
+
+        ResultSet resultSet = statement.executeQuery(sql);
+
+        if (resultSet.next()) {
+            String image = resultSet.getString("Image");
+            String doctorName = resultSet.getString("DoctorName");
+            String degree = resultSet.getString("Degree");
+            int experience = resultSet.getInt("Experience");
+            String specialization = resultSet.getString("Specialization");
+            Date dob = resultSet.getDate("DOB");
+            String phoneNumber = resultSet.getString("phoneNumber");
+
+            // Do something with the retrieved data
+            result += "Image: " + image + "\n";
+            result += "Doctor Name: " + doctorName + "\n";
+            result += "Degree: " + degree + "\n";
+            result += "Experience: " + experience + "\n";
+            result += "Specialization: " + specialization + "\n";
+            result += "DOB: " + dob + "\n";
+            result += "Phone Number: " + phoneNumber + "\n";
+            result += "----------------------------------\n";
+        }
+
+    } catch (SQLException e) {
+        System.out.println("Error: " + e);
+    }
+    return result;
+  }
 }

@@ -15,34 +15,34 @@
                 </div>
                 <div class="col-md-5 border-right">
                     <form action="chinh-sua" method="post">
-                    <div class="p-3 py-5">
-                        <div class="d-flex justify-content-between align-items-center mb-3">
-                            <h4 class="text-right">Chỉnh sửa trang cá nhân</h4>
-                        </div>
-                       
-                        <div class="row mt-3">
-                            <div class="col-md-12"><label class="labels">Họ và tên</label><input type="text" class="form-control" 
-                                                                                                 placeholder="Nhập đầy đủ họ và tên" value="${sessionScope.acc.name}" name="name"></div>
-                            <div class="col-md-12">
-                                <label class="labels">Ngày sinh</label>
-                                <input type="date" class="form-control" placeholder="Nhập ngày sinh" name="DOB" >
+                        <div class="p-3 py-5">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h4 class="text-right">Chỉnh sửa trang cá nhân</h4>
                             </div>
-                            <div class="col-md-12">
-                                <label class="labels">Giới tính</label>
-                                <select class="form-control" name="gender">
-                                    <option value="Nam">Nam</option>
-                                    <option value="Nữ">Nữ</option>
-                                </select>
+
+                            <div class="row mt-3">
+                                <div class="col-md-12"><label class="labels">Họ và tên</label><input type="text" class="form-control" 
+                                                                                                     placeholder="Nhập đầy đủ họ và tên" value="${patient.name}" name="name"></div>
+                                <div class="col-md-12">
+                                    <label class="labels">Ngày sinh</label>
+                                    <input class="form-control" placeholder="Nhập ngày sinh" value="${patient.dob}" name="DOB" >
+                                </div>
+                                <div class="col-md-12">
+                                    <label class="labels">Giới tính</label>
+                                    <select class="form-control" name="gender">
+                                        <option value="Nam">Nam</option>
+                                        <option value="Nữ">Nữ</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-12"><label class="labels">Địa chỉ</label><input type="text" class="form-control" placeholder="Nhập địa chỉ"value="${patient.address}" name="address"></div>
+                                <div class="col-md-12"><label class="labels">Email</label><input type="text" class="form-control" placeholder="Nhập email" value="${patient.email}"name="email"></div>
+                                <div class="col-md-12"><label class="labels">Số điện thoại</label><input type="number" class="form-control" placeholder="Nhập số điện thoại" value="${patient.phone}" name="phone"></div>
+
                             </div>
-                            <div class="col-md-12"><label class="labels">Địa chỉ</label><input type="text" class="form-control" placeholder="Nhập địa chỉ" name="address"></div>
-                            <div class="col-md-12"><label class="labels">Email</label><input type="text" class="form-control" placeholder="Nhập email" value="${sessionScope.acc.email}"name="email"></div>
-                            <div class="col-md-12"><label class="labels">Số điện thoại</label><input type="number" class="form-control" placeholder="Nhập số điện thoại" value="${sessionScope.acc.phone}" name="phone"></div>
 
+                            <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">Lưu thay đổi</button></div>
                         </div>
-
-                        <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">Lưu thay đổi</button></div>
-                    </div>
-                            </form>
+                    </form>
                 </div>
                 <div class="col-md-4">
                     <div class="p-3 py-5">

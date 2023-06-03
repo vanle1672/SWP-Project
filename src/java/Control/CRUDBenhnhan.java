@@ -5,10 +5,12 @@
 package Control;
 
 import DAO.dao;
+import Model.Account;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.List;
 
@@ -31,10 +33,12 @@ public class CRUDBenhnhan extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try {
-            String bnid = request.getParameter("bnid");
-      
-            
-     
+            HttpSession session = request.getSession();
+          String bnid = session.getId();
+            dao DAO = new dao();
+            List<Account> a = DAO.getID(bnid);
+            request.setAttribute("patient", a);
+
             request.getRequestDispatcher("Trangcanhan.jsp").forward(request, response);
         } catch (Exception e) {
         }
@@ -66,7 +70,7 @@ public class CRUDBenhnhan extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-          processRequest(request, response);
+        processRequest(request, response);
     }
 
     /**

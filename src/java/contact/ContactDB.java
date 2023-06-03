@@ -9,11 +9,11 @@ public class ContactDB {
     public static Connection makeConnection() throws ClassNotFoundException {
 
         try {
-            String serverName = "LAPTOP-JG837OIA";
+            String serverName = "LAPTOP-OJB14J1C";
             String databaseName = "SWP391";
             String url = "jdbc:sqlserver://" + serverName + ";databaseName=" + databaseName + ";encrypt=false";
             String username = "sa";
-            String password = "sa";
+            String password = "123";
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
             Connection con = (Connection) DriverManager.getConnection(url, username, password);
             return con;

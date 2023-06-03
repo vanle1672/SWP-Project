@@ -4,23 +4,26 @@
  */
 package Control;
 
+import DAO.LoginDAO;
 import DAO.dao;
-
+import Model.Account;
 import Model.Bacsi;
-
+import Model.Camnang;
+import java.io.IOException;
+import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.util.HashSet;
+import jakarta.servlet.http.HttpSession;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
  *
- * @author ASUS
+ * @author HP
  */
-public class showDoctor extends HttpServlet {
+public class CRUDBsi extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -36,10 +39,12 @@ public class showDoctor extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try {
 
+            String bnid = request.getParameter("bnid");
             dao DAO1 = new dao();
-            List<Bacsi> show = DAO1.getTop3();
-            request.setAttribute("showtop3", show);
-            request.getRequestDispatcher("Trangchu.jsp").forward(request, response);
+            String doctor = DAO1.getInfoDoctor(bnid);
+            request.setAttribute("acc1", doctor);
+       
+            request.getRequestDispatcher("hosobacsi.jsp").forward(request, response);
         } catch (Exception e) {
         }
     }

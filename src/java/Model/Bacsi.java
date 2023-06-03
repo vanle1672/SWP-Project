@@ -9,14 +9,14 @@ package Model;
  * @author ASUS
  */
 public class Bacsi {
-    private int doctorID;
 
+    private int doctorID;
     private String specialization;
     private String degree;
     private int experience;
     private int specialtyID;
-     private String image;
-     private String accountID;
+    private String image;
+    private String accountID;
 
     public Bacsi() {
     }
@@ -39,8 +39,6 @@ public class Bacsi {
         this.accountID = accountID;
     }
 
-   
-
     public int getDoctorID() {
         return doctorID;
     }
@@ -49,7 +47,6 @@ public class Bacsi {
         this.doctorID = doctorID;
     }
 
-  
     public String getSpecialization() {
         return specialization;
     }
@@ -95,5 +92,4 @@ public class Bacsi {
         return "Bacsi{" + "doctorID=" + doctorID + ", specialization=" + specialization + ", degree=" + degree + ", experience=" + experience + ", specialtyID=" + specialtyID + ", image=" + image + ", accountID=" + accountID + '}';
     }
 
-  
 }

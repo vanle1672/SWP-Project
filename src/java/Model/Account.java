@@ -24,7 +24,8 @@ public class Account {
     public Account() {
     }
 
-    public Account(String email, String pass, String name, String phone) {
+    public Account(int id,String email, String pass, String name, String phone) {
+        this.id = id;
         this.email = email;
         this.pass = pass;
         this.name = name;
@@ -48,6 +49,13 @@ public class Account {
         this.isDoctor = isDoctor;
         this.isAdmin = isAdmin;
     }
+
+    public Account(int id) {
+        this.id = id;
+    }
+
+
+
 
     public int getId() {
         return id;

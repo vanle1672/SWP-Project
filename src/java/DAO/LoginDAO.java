@@ -10,6 +10,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 /**
  *
@@ -20,6 +21,7 @@ public class LoginDAO {
     Connection con = null;
     PreparedStatement p1 = null;
     ResultSet re = null;
+    private final ArrayList<Account> resultac = new ArrayList<>();
 
     public Account login(String email, String pass) {
         String stm1 = "SELECT * FROM accounts\n"
@@ -76,8 +78,30 @@ public class LoginDAO {
             p1.executeUpdate();
             con.close();
         } catch (Exception e) {
-            e.printStackTrace(); 
+            e.printStackTrace();
         }
+    }
+
+    public ArrayList<Account> getID(String cid) throws ClassNotFoundException {
+//         con = null;
+
+        try {
+            this.con = ContactDB.makeConnection();
+
+            String stm1 = "select * from accounts\n"
+                    + "where ID = ?";
+
+            p1 = con.prepareStatement(stm1);
+            p1.setString(1, cid);
+            re = p1.executeQuery();
+            while (re.next()) {
+                resultac.add(new Account(re.getInt(1), re.getString(2), re.getString(3), re.getString(4), re.getString(5)));
+            }
+
+        } catch (SQLException e) {
+            System.out.println("Error: " + e);
+        }
+        return resultac;
     }
 
 }

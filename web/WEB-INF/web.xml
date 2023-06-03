@@ -48,6 +48,14 @@
         <servlet-name>forgotPass</servlet-name>
         <servlet-class>Control.forgotPass</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CRUDBacsi</servlet-name>
+        <servlet-class>Control.CRUDBacsi</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CRUDBsi</servlet-name>
+        <servlet-class>Control.CRUDBsi</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>showDoctor</servlet-name>
         <url-pattern>/trang-chu</url-pattern>
@@ -95,6 +103,10 @@
     <servlet-mapping>
         <servlet-name>forgotPass</servlet-name>
         <url-pattern>/quen-mat-khau</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CRUDBsi</servlet-name>
+        <url-pattern>/chinhsua-bs</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
