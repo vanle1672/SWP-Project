@@ -9,7 +9,7 @@ public class ContactDB {
     public static Connection makeConnection() throws ClassNotFoundException {
 
         try {
-            String serverName = "LAPTOP-JG837OIA";
+            String serverName = "HABEE";
             String databaseName = "SWP391";
             String url = "jdbc:sqlserver://" + serverName + ";databaseName=" + databaseName + ";encrypt=false";
             String username = "sa";

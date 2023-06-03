@@ -3,15 +3,18 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/SWP/web/Quenmatkhau.jsp</file>
-            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/SWP/src/java/Control/login.java</file>
-            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/SWP/web/TTPhongKham.jsp</file>
-            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/SWP/src/java/Control/signup.java</file>
-            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/SWP/web/Login.jsp</file>
-            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/SWP/src/java/Control/forgotPass.java</file>
-            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/SWP/src/java/Control/CRUDBenhnhan.java</file>
-            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/SWP/web/Trangchu.jsp</file>
-            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/SWP/web/assets/css/login.css</file>
+            <file>file:/C:/Users/Habee/Documents/NetBeansProjects/SWP-Project/web/assets/css/admincss/style.css</file>
+            <file>file:/C:/Users/Habee/Documents/NetBeansProjects/SWP-Project/src/java/DAO/LoginDAO.java</file>
+            <file>file:/C:/Users/Habee/Documents/NetBeansProjects/SWP-Project/src/java/Control/adBenhNhan.java</file>
+            <file>file:/C:/Users/Habee/Documents/NetBeansProjects/SWP-Project/src/java/Control/adbacsi.java</file>
+            <file>file:/C:/Users/Habee/Documents/NetBeansProjects/SWP-Project/web/assets/css/admincss/util.css</file>
+            <file>file:/C:/Users/Habee/Documents/NetBeansProjects/SWP-Project/web/admin.jsp</file>
+            <file>file:/C:/Users/Habee/Documents/NetBeansProjects/SWP-Project/web/admin-benhnhan.jsp</file>
+            <file>file:/C:/Users/Habee/Documents/NetBeansProjects/SWP-Project/src/java/contact/ContactDB.java</file>
+            <file>file:/C:/Users/Habee/Documents/NetBeansProjects/SWP-Project/web/assets/css/admincss/main.css</file>
+            <file>file:/C:/Users/Habee/Documents/NetBeansProjects/SWP-Project/src/java/DAO/dao.java</file>
+            <file>file:/C:/Users/Habee/Documents/NetBeansProjects/SWP-Project/web/WEB-INF/web.xml</file>
+            <file>file:/C:/Users/Habee/Documents/NetBeansProjects/SWP-Project/web/admin-bacsi.jsp</file>
         </group>
     </open-files>
 </project-private>

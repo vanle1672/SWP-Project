@@ -83,6 +83,8 @@
 
                                                 </li>
 
+
+
                                             </ul>
                                         </nav>
                                     </div>
@@ -92,21 +94,25 @@
                                             <a href="Login.jsp" class="btn header-btn">Đăng nhập/Đăng kí</a>
                                         </c:if>
                                     </div> 
-                                     <div class="main-menu f-right d-none d-lg-block">
-                                    <c:if test="${sessionScope.acc != null}">
-                                        <ul id="navigation">
-                                           
-                                            <li><a > <i class="fa fa-user" aria-hidden="true"> Hello ${sessionScope.acc.name} </i> </a>                                         
-                                                <ul class="submenu">
-                                                    <li><a href="dang-xuat">Đăng xuất</a></li>
-                                                   
-                                                    <li><a href="chinh-sua?bnid=${sessionScope.acc.id}">Trang cá nhân </a></li>
-                                                    
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </c:if>
-                                     </div>
+                                    <div class="main-menu f-right d-none d-lg-block">
+                                        <c:if test="${sessionScope.acc != null}">
+                                            <ul id="navigation">
+
+                                                <c:if test="${sessionScope.acc.isAdmin == 1}">
+                                                    <li><a href="admin.jsp"><i class="fa fa-user" aria-hidden="true"> Admin ${sessionScope.acc.name}</i></a>
+                                                        <ul class="submenu">
+                                                            <li><a href="dang-xuat">Đăng xuất</a></li>
+
+
+
+                                                        </ul>
+                                                    </li>      
+                                                </c:if></i> </a>                                          
+
+
+                                            </ul>
+                                        </c:if>
+                                    </div>
 
                                 </div>
                             </div>

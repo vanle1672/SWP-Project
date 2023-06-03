@@ -48,6 +48,18 @@
         <servlet-name>forgotPass</servlet-name>
         <servlet-class>Control.forgotPass</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>admin</servlet-name>
+        <servlet-class>Control.admin</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>adbacsi</servlet-name>
+        <servlet-class>Control.adbacsi</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>adBenhNhan</servlet-name>
+        <servlet-class>Control.adBenhNhan</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>showDoctor</servlet-name>
         <url-pattern>/trang-chu</url-pattern>
@@ -95,6 +107,18 @@
     <servlet-mapping>
         <servlet-name>forgotPass</servlet-name>
         <url-pattern>/quen-mat-khau</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>admin</servlet-name>
+        <url-pattern>/admin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>adbacsi</servlet-name>
+        <url-pattern>/admin-bacsi</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>adBenhNhan</servlet-name>
+        <url-pattern>/admin-benhnhan</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

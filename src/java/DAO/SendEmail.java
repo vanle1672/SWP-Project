@@ -4,16 +4,11 @@
  */
 package DAO;
 
-import com.sun.xml.internal.ws.wsdl.writer.document.Message;
-import jakarta.websocket.Session;
-import java.net.Authenticator;
-import java.net.PasswordAuthentication;
 import java.util.Properties;
 import java.util.Random;
+import javax.mail.*;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
-import sun.rmi.transport.Transport;
-
 /**
  *
  * @author ASUS
