@@ -11,7 +11,7 @@
                 </div>
                 <div class="form-group">
                     <label for="mail">Tháng đăng</label>
-                    <input class="form-control" type="email" id="month" name="month" placeholder="Nhập tháng đăng">
+                    <input class="form-control" type="text" id="month" name="month" placeholder="Nhập tháng đăng">
                 </div>
                 <div class="form-group">
                     <label for="password">Tiêu đề</label>
@@ -60,7 +60,7 @@
                 <td>${item.getTitle()}</td>
                 <td>${item.getScriptShort()}</td>
                 <td>${item.getScriptFull()}</td>
-                <td><img src="${item.getImage()}" alt="${item.getImage()}"/></td>
+                <td><img src="${pageContext.request.contextPath}/${item.getImage()}" style="width: 300px; object-fit: cover" alt="${item.getImage()}"/></td>
              
                 <th>
                     <form action="" method="post">

@@ -21,6 +21,7 @@ public class DoctorViewAppointment extends HttpServlet {
             req.setAttribute(a.split("\\|")[0], a.split("\\|")[1]);
             req.getSession().removeAttribute("session_para");
         }
+      
         Data data;
         try {
             data = new AppointmentDao().getDetail(app_id, doctor.id);

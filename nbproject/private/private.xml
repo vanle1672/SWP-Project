@@ -4,38 +4,84 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/web/WEB-INF/views/master/assets/img/blog/slide_thumb_1.png</file>
-            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/web/WEB-INF/views/master/assets/img/blog/single_blog_4.png</file>
             <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/src/java/Control/MakeAppointmentServlet.java</file>
-            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/src/java/Model/Blog.java</file>
-            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/src/java/Control/DoctorScheduleServlet.java</file>
-            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/web/WEB-INF/views/master/assets/img/blog/single_blog_3.png</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/web/WEB-INF/views/admin/patient-control.jsp</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/src/java/Control/LogoutServlet.java</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/src/java/Control/Admin/DoctorControl.java</file>
             <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/web/WEB-INF/test.jsp</file>
-            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/web/WEB-INF/web.xml</file>
-            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/web/WEB-INF/views/admin/update-doctor.jsp</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/src/java/Dao/AuthDao.java</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/web/WEB-INF/views/auth/login.jsp</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/web/WEB-INF/views/user-profile.jsp</file>
             <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/src/java/Control/Admin/UpdateDoctor.java</file>
-            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/src/java/Control/Admin/BlogControl.java</file>
             <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/src/java/Dao/DoctorScheduleDao.java</file>
-            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/src/java/Control/PatientViewAppointments.java</file>
-            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/web/WEB-INF/views/master/assets/img/blog/single_blog_2.png</file>
             <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/src/java/Control/DoctorProfileServlet.java</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/src/java/Control/Admin/UpdatePatient.java</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/web/WEB-INF/views/blog.jsp</file>
             <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/src/java/Dao/BlogDao.java</file>
-            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/src/java/Control/DoctorViewAppointment.java</file>
-            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/src/java/Dao/DoctorDao.java</file>
-            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/src/java/Control/DetailBlogServlet.java</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/web/WEB-INF/views/admin/speciality-control.jsp</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/src/java/Control/PatientChangePass.java</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/src/java/Control/Admin/ControlPatientAppointment.java</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/web/WEB-INF/views/infoClinic.jsp</file>
             <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/src/java/Control/BlogServlet.java</file>
-            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/src/java/Control/PatientCancelAppointment.java</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/src/java/Filter/DoctorFilter.java</file>
             <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/web/WEB-INF/views/admin/doctor-control.jsp</file>
             <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/web/WEB-INF/views/master/assets/img/blog/single_blog_1.png</file>
-            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/web/WEB-INF/views/master/assets/img/blog/learn_about_bg.png</file>
-            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/web/WEB-INF/views/master/assets/img/blog/single_blog_5.png</file>
-            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/src/java/Control/Table.java</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/src/java/Control/Admin/ViewPatientAppointment.java</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/web/WEB-INF/views/patient-view-appointments.jsp</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/src/java/Filter/AdminFilter.java</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/web/WEB-INF/views/auth/login_new.jsp</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/web/WEB-INF/views/admin/control.jsp</file>
             <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/web/WEB-INF/views/admin/update-blog.jsp</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/src/java/Dao/AppointmentDao.java</file>
             <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/src/java/Control/PatientViewOneAppointments.java</file>
             <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/src/java/Control/Admin/UpdateBlog.java</file>
-            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/web/WEB-INF/views/admin/blog-control.jsp</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/web/WEB-INF/views/doctor/profile.jsp</file>
             <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/web/WEB-INF/views/master/assets/img/blog/author.png</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/src/java/Control/Admin/SearchUserServlet.java</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/web/WEB-INF/views/doctor/change-pass.jsp</file>
             <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/src/java/Control/DoctorChangePass.java</file>
             <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/src/java/Control/InfoClinic.java</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/web/WEB-INF/views/master/assets/img/blog/single_blog_4.png</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/src/java/Control/Admin/UpdatePatients.java</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/src/java/Model/Blog.java</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/src/java/Control/DoctorScheduleServlet.java</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/src/java/Control/Admin/LoadPatients.java</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/web/WEB-INF/views/master/assets/img/blog/single_blog_3.png</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/web/WEB-INF/web.xml</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/src/java/Control/Admin/DeleteControl.java</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/web/WEB-INF/views/admin/update-doctor.jsp</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/src/java/Control/Admin/BlogControl.java</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/web/WEB-INF/views/doctor/schedule.jsp</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/src/java/Control/Admin/SpecialityControl.java</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/src/java/Control/Admin/AdminviewAppointment.java</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/src/java/Control/PatientViewAppointments.java</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/src/java/Filter/LoginFilter.java</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/web/WEB-INF/views/master/assets/img/blog/single_blog_2.png</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/src/java/Control/Admin/ControlDoctorSchedule.java</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/web/WEB-INF/views/admin/view-doctor-appointment.jsp</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/web/WEB-INF/views/admin/control-patient-appointment.jsp</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/src/java/Control/DoctorViewAppointment.java</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/src/java/Control/Admin/AdminControlPage.java</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/web/WEB-INF/views/admin/view-appointments-of-patient.jsp</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/src/java/Dao/DoctorDao.java</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/web/WEB-INF/views/admin/update-patients.jsp</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/web/META-INF/context.xml</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/src/java/Control/DetailBlogServlet.java</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/web/WEB-INF/views/search-doctor.jsp</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/src/java/Control/PatientCancelAppointment.java</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/web/WEB-INF/views/patient-view-appointment.jsp</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/web/WEB-INF/views/make-appointment.jsp</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/web/WEB-INF/views/doctor/doctor-view-appointment.jsp</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/web/WEB-INF/views/master/assets/img/blog/learn_about_bg.png</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/web/WEB-INF/views/blogDetail.jsp</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/web/WEB-INF/views/master/assets/img/blog/single_blog_5.png</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/src/java/Control/Table.java</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/web/WEB-INF/views/patient-change-pass.jsp</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/web/WEB-INF/views/home.jsp</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/web/WEB-INF/views/admin/control-doctor-schedule.jsp</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/web/WEB-INF/views/admin/blog-control.jsp</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/web/WEB-INF/views/admin/update-patient.jsp</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/swp_github/src/java/Control/LoginServlet.java</file>
         </group>
     </open-files>
 </project-private>

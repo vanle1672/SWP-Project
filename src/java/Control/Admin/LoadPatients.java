@@ -12,9 +12,10 @@ import Model.User;
 import java.io.IOException;
 import java.util.List;
 import java.util.UUID;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
-@WebServlet(name = "LoadPatients", urlPatterns = {"/LoadPatients"})
 public class LoadPatients extends HttpServlet {
 
 
@@ -42,7 +43,10 @@ public class LoadPatients extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
-
+        boolean gender = true;
+        if(request.getParameter("gender").equals("0")){
+             gender = false;
+        }
         String name = request.getParameter("name");
         String email = request.getParameter("email");
         String password = request.getParameter("password");
@@ -50,11 +54,11 @@ public class LoadPatients extends HttpServlet {
         String verify_key = UUID.randomUUID().toString();
         AuthDao dao = new AuthDao();
         try {
-            dao.createPatients(name,email,password,phone,verify_key,true);
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
+            dao.createPatients(name,email,password,gender, phone,verify_key);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(LoadPatients.class.getName()).log(Level.SEVERE, null, ex);
         }
-        response.sendRedirect("LoadPatients");
+        response.sendRedirect(request.getContextPath() +"/admin/patients-control");
     }
 
 

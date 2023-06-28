@@ -5,7 +5,6 @@
 package Control.Admin;
 
 import Dao.BlogDao;
-import Dao.DoctorDao;
 import Model.Blog;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.MultipartConfig;
@@ -80,7 +79,7 @@ public class BlogControl extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         if (req.getParameter("_method").equals("DELETE")) {
             this.doDelete(req, resp);
-        }
+        } else {
         int day = Integer.parseInt(req.getParameter("day"));
         String month = req.getParameter("month");
         String title = req.getParameter("title");
@@ -104,6 +103,7 @@ public class BlogControl extends HttpServlet {
             req.setAttribute("message", "có lỗi");
             req.getRequestDispatcher("/WEB-INF/views/admin/blog-control.jsp").forward(req, resp);
         }
+    }
     }
 
     @Override

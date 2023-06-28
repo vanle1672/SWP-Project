@@ -67,8 +67,7 @@ public class AuthDao {
         }
         return true;
     }*/
-
-    public boolean createPatients(String name, String email, String password, String phone, String verify_key, boolean is_verified) throws ClassNotFoundException {
+    public boolean createPatients(String name, String email, String password,boolean gender, String phone, String verify_key) throws ClassNotFoundException {
         String sql = "insert into patients(name, email, password, phone,verify_key) values(?, ?, ?, ?, ?,?)";
         try {
             this.connection = ContactDB.makeConnection();
@@ -215,5 +214,7 @@ public class AuthDao {
         }
         return doctorArrayList;
     }*/
+
+
 
 }

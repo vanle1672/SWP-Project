@@ -100,6 +100,7 @@ public class Table {
                         if (cell_time_start.compareTo(doctor_schedule_start) >=0 && cell_time_end.compareTo(doctor_schedule_end) <=0){
                             if (doctorScheduleArrayList.get(k).getApp_id() != 0){ // co hen
                                 table[i][j] = "patient app|" + doctorScheduleArrayList.get(k).getApp_id() + "|" + doctorScheduleArrayList.get(k).getStatus() + "|" + doctorScheduleArrayList.get(k).id;
+                                // patient app|1|finished|1
                             } else {
                                 table[i][j] = "doctor schedule|" + doctorScheduleArrayList.get(k).id;
                             }

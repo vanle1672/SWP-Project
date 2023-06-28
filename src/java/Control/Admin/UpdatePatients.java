@@ -51,8 +51,6 @@ public class UpdatePatients extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        System.out.println(request.getParameter("gender"));
-        System.out.println("vô do post");
         int id = Integer.parseInt(request.getParameter("pid"));
         String name = request.getParameter("name");
         String email = request.getParameter("email");

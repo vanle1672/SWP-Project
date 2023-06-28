@@ -74,7 +74,7 @@
                                             out.print("<td " + style + "><a title='Nhấn để xem' href='"+request.getContextPath()+"/doctor/appointment-detail?app_id="+table[i][j].split("\\|")[1]+"'>Đã khám</a></td>");
                                         }
                                     } else {
-                                        style = "style='background-color: #B8B6B4'";
+                                        style = "style='background-color: #B8B6B4'";// xam
                                         out.print("<td " + style + ">chưa có hẹn</td>");
                                     }
                                 } else {

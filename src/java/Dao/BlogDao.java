@@ -26,7 +26,7 @@ public class BlogDao {
     public ArrayList<Blog> getAllBlog() throws ClassNotFoundException, SQLException {
 
         ArrayList<Blog> blogArrayList = new ArrayList<>();
-        String sql = "select * from Blog;";
+        String sql = "select * from Blog order by BlogID desc;";
         connection = new ContactDB().makeConnection();
         preparedStatement = connection.prepareStatement(sql);
         resultSet = preparedStatement.executeQuery();

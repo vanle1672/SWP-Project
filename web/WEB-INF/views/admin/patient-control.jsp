@@ -41,8 +41,8 @@
                     </select>
                 </div>
             </div>
-            <a role="button" class="btn btn-primary text-white" type="submit">Submit</a>
-            <a role="button" class="btn btn-warning text-white" type="reset">Reset</a>
+            <button class="btn btn-primary text-white" type="submit">Submit</button> 
+            <button class="btn btn-warning text-white" type="reset">Reset</button>
         </form>
         <%--        Form End--%>
         <br>

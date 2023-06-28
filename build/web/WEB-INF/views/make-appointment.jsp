@@ -9,7 +9,7 @@
 
         <div class="row">
             <div class="form-group mb-1 mt-1 col-md-6">
-            
+
                 <h1>Bạn đang đặt lịch với bác sĩ ${doctor.name}</h1>
                 <h1>Chuyên ngành : ${doctor.speciality_name}</h1>
                 <h1>Số năm kinh nghiệm : ${doctor.experience}</h1>
@@ -29,7 +29,7 @@
 
             <div class="col-md-6 d-flex">
 
-                <div class="">
+                <div class="col-md-6">
                     <c:if test="${fn:length(available) > 0}">
                         <c:set var="current_date" value="${fn:split(available.get(0).getStart(), ' ')[0]}" />
                         <strong><c:out value="${current_date}"/></strong>  
@@ -49,19 +49,15 @@
                         <h1>Bác sĩ này không có lịch rảnh.</h1>
                     </c:if>
                 </div>
-                <div class="col-md-6" style="padding-left: 25%">
-                    <c:forEach items="${review}" var="item"  >
+                <div class="col-md-6" style="float: right;">
+                    <c:forEach items="${review}" var="item">
                         <c:forEach begin="1" end="${item.rating}">
                             <i class="bi bi-star-fill" style="color: #ffcc00"></i>
                         </c:forEach><br>
-                       
-                            <label > <strong>${item.namePatient}</strong></label>
-                            <label>${item.dateUp}</label><br>
-                            <label>${item.comment}</label><br>
-
-                      
-
-                    </c:forEach> 
+                        <label><strong>${item.namePatient}</strong></label>
+                        <label>${item.dateUp}</label><br>
+                        <label style="word-wrap: break-word;">${item.comment}</label><br>
+                    </c:forEach>
                 </div>
             </div>
 
