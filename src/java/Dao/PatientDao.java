@@ -7,6 +7,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class PatientDao {
     Connection connection = null;
@@ -88,5 +90,46 @@ public class PatientDao {
             e.printStackTrace();
             return false;
         }
+    }
+    
+     public void insertReview(String cmt, int rating, int doctorid, int patientID) {
+        LocalDateTime currentDate = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        String formattedDate = currentDate.format(formatter);
+
+        String query = "insert into review(cmt, rating, dateUp ,doctorid, patientID)\n"
+                + " values(?,?,?,?,?);";
+        try {
+            connection = ContactDB.makeConnection();
+            preparedStatement = connection.prepareStatement(query);
+             preparedStatement.setString(1, cmt);
+            preparedStatement.setInt(2, rating);
+            preparedStatement.setString(3, formattedDate);
+            preparedStatement.setInt(4, doctorid);
+            preparedStatement.setInt(5, patientID);
+            preparedStatement.executeUpdate();
+        } catch (Exception e) {
+        }
+     }
+       public boolean updatePassPatient(int id, String pass) {
+        String sql = "update patients set password = ? where id = ?";
+        try {
+            connection = ContactDB.makeConnection();
+            preparedStatement = connection.prepareStatement(sql);
+
+            preparedStatement.setString(1, pass);
+            preparedStatement.setInt(2, id);
+            preparedStatement.execute();
+            return true;
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    
+     public static void main(String[] args) {
+        PatientDao pt = new PatientDao();
+//        pt.insertReview("1", "2", 1, 1);
     }
 }

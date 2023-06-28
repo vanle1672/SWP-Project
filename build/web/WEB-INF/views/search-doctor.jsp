@@ -29,41 +29,66 @@
             </form>
         </div>
         <div class="col-md-7">
-            <h1>kết quả tìm kiếm</h1>
             <div class="container-fluid">
                 <c:forEach var="item" items="${doctors}">
-                <div class="row m-5">
-                    <div class="col-md-3" style="position: relative;">
-                        <img style="border-radius: 50%;width: 100%; height: 100%; object-fit: cover" src="${pageContext.request.contextPath}/${item.image}" alt="">
-                    </div>
-                    <div class="col-md-9">
-                        <div class="row">
-                            <div class="col-md-9 mt-3">
-                                <h2 class="font-weight-bold">${item.name}</h2>
-                                <h3>Chuyên ngành : ${item.speciality_name}</h3>
-                                <h3>Liên hệ : ${item.phone}</h3>
-                                <h3>trình độ : ${item.degree}</h3>
-                            </div>
-                            <div class="col-md-3">
+                    <div class="row m-5">
+                        <div class="col-md-3" style="position: relative;">
+                            <img style="border-radius: 50%;width: 100%; height: 100%; object-fit: cover" src="${pageContext.request.contextPath}/${item.image}" alt="">
+                        </div>
+                        <div class="col-md-9">
+                            <div class="row">
+                                <div class="col-md-9 mt-3">
+                                    <h2 class="font-weight-bold">${item.name}</h2>
+                                    <h3>Chuyên khoa: ${item.speciality_name}</h3>
+                                    <h3>Trình độ : ${item.degree}</h3>
+                                    <h3>Kinh nghiệm : ${item.experience} năm</h3>
+                                    <h3>Liên hệ : ${item.phone}</h3>
+
+                                </div>
+                                <div class="col-md-3">
                                     <a href="${pageContext.request.contextPath}/patient/make-appointment?doc_id=${item.id}">
-                                        <button class="btn btn-block">đặt lịch</button>
+                                        <button class="btn btn-block">Đặt lịch</button>
                                     </a>
-                                </form>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
                 </c:forEach>
             </div>
-
+            <div class="container-fluid">
+                <c:forEach var="item" items="${showalldoctor}">
+                    <div class="row m-5">
+                        <div class="col-md-3" style="">
+                            <img style="border-radius: 50%;width: 100%; height: 100%; object-fit: cover" src="${pageContext.request.contextPath}/${item.getImage()}" alt="">
+                        </div>
+                        <div class="col-md-9">
+                            <div class="row">
+                                <div class="col-md-9 mt-3">
+                                    <h2 class="font-weight-bold">${item.name}</h2>
+                                    <h3>Chuyên ngành : ${item.getSpeciality_name()}</h3>
+                                    <h3>Liên hệ : ${item.getPhone()}</h3>
+                                    <h3>Trình độ : ${item.getDegree()}</h3>
+                                </div>
+                                <div class="col-md-3">
+                                    <a href="${pageContext.request.contextPath}/patient/make-appointment?doc_id=${item.getId()}">
+                                        <button class="btn btn-block">Đặt lịch</button>
+                                    </a>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </c:forEach>
+            </div>
         </div>
     </div>
 </div>
 <jsp:include page="master/foot.jsp"/>
 <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
         var squareContainers = $('.col-md-3');
-        squareContainers.each(function() {
+        squareContainers.each(function () {
             var containerWidth = $(this).width();
             $(this).css('height', containerWidth);
         });

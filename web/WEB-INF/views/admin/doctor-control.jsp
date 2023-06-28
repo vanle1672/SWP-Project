@@ -73,22 +73,22 @@
     <br>
     <table class="table" border="1">
         <tr>
-            <th>id</th>
-            <th>name</th>
+            
+            <th>Tên</th>
             <th>email</th>
-            <th>degree</th>
-            <th>năm kinh nghiệm</th>
-            <th>chuyên môn</th>
-            <th style="max-width: 700px">image</th>
-            <th>điện thoại</th>
-            <th>gender</th>
-            <th>dob</th>
-            <th>address</th>
-            <th>action</th>
+            <th>Bằng cấp</th>
+            <th>Năm kinh nghiệm</th>
+            <th>Chuyên khoa</th>
+            <th style="max-width: 700px">Ảnh</th>
+            <th>Điện thoại</th>
+            <th>Giới tính</th>
+            <th>Ngày sinh</th>
+            <th>Địa chỉ</th>
+            <th></th>
         </tr>
         <c:forEach var="item" items="${doctor_list}">
             <tr>
-                <td>${item.id}</td>
+               
                 <td>${item.getName()}</td>
                 <td>${item.getEmail()}</td>
                 <td>${item.getDegree()}</td>
@@ -104,9 +104,11 @@
                     <form action="" method="post">
                         <input class="form-control" type="hidden" name="_method" value="DELETE">
                         <input class="form-control" type="hidden" name="id" value="${item.id}">
-                        <button class="btn btn-block">delete</button>
+                        <button class="fas fa fa-trash" title="Xóa" style="color:red;margin-top: 60px;border:none;"> Xóa</button>
                     </form>
-                    <a href="${pageContext.request.contextPath}/admin/update-doctor?doc_id=${item.id}"><button class="btn btn-block">update</button></a>
+                        <a href="${pageContext.request.contextPath}/admin/update-doctor?doc_id=${item.id}"><button class="fa fa-edit" title="Chỉnh sửa" 
+                                                              style="color:black; margin-top: 10px; border:none;">
+                             Chỉnh sửa</button></a>
                 </th>
             </tr>
         </c:forEach>

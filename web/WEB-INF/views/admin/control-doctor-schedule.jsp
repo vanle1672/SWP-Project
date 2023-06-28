@@ -27,7 +27,7 @@
         <% Doctor doctor = null;%>
         <c:if test="${not empty doctor}" >
             <% doctor = (Doctor) request.getAttribute("doctor");%>
-                <p>Bạn đang xem lịch của basc sĩ ${doctor.getName()}</p>
+                <p>Bạn đang xem lịch của bác sĩ ${doctor.getName()}</p>
                 <form class="ml-5 mr-5" action="" method="post">
                     <input type="hidden" name="_method" value="get_date">
                     <input type="hidden" name="doctor_id" value="${doctor.getId()}">

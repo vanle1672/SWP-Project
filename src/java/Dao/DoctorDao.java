@@ -2,14 +2,17 @@ package Dao;
 
 import Contact.ContactDB;
 import Model.Doctor;
+import Model.Review;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class DoctorDao {
+
     Connection connection = null;
     PreparedStatement preparedStatement = null;
     ResultSet resultSet = null;
@@ -159,7 +162,8 @@ public class DoctorDao {
             return null;
         }
     }
-    public boolean UpdateDoctorNoImg(int id, String name, String email, String password, String degree, int experience, int speciality_id, String phone, String dob, boolean gender, String address){
+
+    public boolean UpdateDoctorNoImg(int id, String name, String email, String password, String degree, int experience, int speciality_id, String phone, String dob, boolean gender, String address) {
         try {
             String sql = "update doctors set name = ?, email = ?, password = ?, degree = ?, experience = ?, speciality_id = ?, phone = ?, dob = ?, gender = ?, address = ? where id = ? ;";
             connection = ContactDB.makeConnection();
@@ -178,12 +182,13 @@ public class DoctorDao {
             preparedStatement.execute();
             return true;
 
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             return false;
         }
     }
-    public boolean UpdateDoctorImg(int id, String name, String email, String password, String degree, int experience, int speciality_id, String phone, String dob, boolean gender, String address, String img){
+
+    public boolean UpdateDoctorImg(int id, String name, String email, String password, String degree, int experience, int speciality_id, String phone, String dob, boolean gender, String address, String img) {
         try {
             String sql = "update doctors set name = ?, email = ?, password = ?, degree = ?, experience = ?, speciality_id = ?, phone = ?, dob = ?, gender = ?, address = ?,image = ?  where id = ? ;";
             connection = ContactDB.makeConnection();
@@ -203,12 +208,78 @@ public class DoctorDao {
             preparedStatement.execute();
             return true;
 
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             return false;
         }
     }
-    public static void main(String[] args) {
-        System.out.println(new DoctorDao().findById(21));
+
+    public ArrayList<Review> getReviewByIdDoctor(int doctorid) throws ClassNotFoundException, SQLException {
+        ArrayList<Review> reviewArray = new ArrayList<>();
+        String sql = "select r.* , p.name from review r, patients p \n"
+                + "where r.patientid = p.id and r.doctorid = ?";
+        connection = new ContactDB().makeConnection();
+        preparedStatement = connection.prepareStatement(sql);
+        preparedStatement.setInt(1, doctorid);
+        resultSet = preparedStatement.executeQuery();
+        while (resultSet.next()) {
+            reviewArray.add(new Review(
+                    resultSet.getInt(1),
+                    resultSet.getString(2),
+                    resultSet.getInt(3),
+                    resultSet.getString(4),
+                    resultSet.getInt(5),
+                    resultSet.getInt(6),
+                    resultSet.getString(7)));
+        }
+        return reviewArray;
+    }
+
+    public boolean updateDoctor( String name, String degree, int experience,
+            int speciality_id, String phone, String dob, boolean gender, String address, int id) {
+        String sql = "update doctors set name = ?, degree = ?, experience = ?, speciality_id = ?,"
+                + "phone = ?,  dob = ?, gender = ?, address = ? where id = ?";
+        try {
+            connection = ContactDB.makeConnection();
+            preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, name);
+            preparedStatement.setString(2, degree);
+            preparedStatement.setInt(3, experience);
+            preparedStatement.setInt(4, speciality_id);
+            preparedStatement.setString(5, phone);
+            preparedStatement.setString(6, dob);
+            preparedStatement.setBoolean(7, gender);
+            preparedStatement.setString(8, address);
+            preparedStatement.setInt(9, id);
+            preparedStatement.execute();
+            return true;
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    public boolean updatePassDoctor(int id, String pass) {
+        String sql = "update doctors set password = ?  where id = ?";
+        try {
+            connection = ContactDB.makeConnection();
+            preparedStatement = connection.prepareStatement(sql);
+
+            preparedStatement.setString(1, pass);
+            preparedStatement.setInt(2, id);
+            preparedStatement.execute();
+            return true;
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+
+
+    public static void main(String[] args) throws ClassNotFoundException, SQLException {
+        DoctorDao a = new DoctorDao();
+       a.updateDoctor("son", "thac si", 10, 2, "099921232", "2012/12/30", true, "Quang nam", 1);
+      
     }
 }

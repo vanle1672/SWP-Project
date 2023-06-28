@@ -7,7 +7,7 @@
         <div class="col-md-4">
             <form action="" method="post">
                 <input type="hidden" name="_method" value="">
-                <label for="name">Nhập tên chuyên khoa</label>
+                <label for="name">Nhập tên chuyên khoa để thêm</label>
                 <input class="form-control" id="name" type="text" name="name">
                 <button class="btn">submit</button>
             </form>
@@ -15,20 +15,21 @@
         <div class="col-md-8">
             <table class="table" border="1">
                 <tr>
-                    <th>id</th>
-                    <th>name</th>
-                    <th>action</th>
+               
+                    <th>Tên chuyên khoa</th>
+                    <th></th>
                 </tr>
                 <c:forEach var="item" items="${speciality_list}">
                     <tr>
-                        <td>${item.id}</td>
+                       
                         <td> ${item.getName()}</td>
                         <td>
                             <div  class="row ml-5">
                                 <form action="" method="POST">
                                     <input type="hidden" name="_method" value="DELETE">
                                     <input type="hidden" value="${item.id}" name="id">
-                                    <button class="btn" >delete</button>
+                                    <button class="fas fa fa-trash" title="Xóa"style="color:red; margin-top: 10px; border:none;">  
+                              Xóa</button>
                                 </form>
                             </div>
                         </td>

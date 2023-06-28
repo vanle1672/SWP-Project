@@ -3,7 +3,6 @@
 <jsp:include page="../master/head.jsp"/>
 <div class="row d-flex justify-content-center">
     <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
-        <a href="${pageContext.request.contextPath}/admin/doctor-control">doctor control</a>
         <h1>Views Patients</h1>
         <%--        Form Start--%>
         <form action="${pageContext.request.contextPath}/admin/patients-control" method="post" class="bd-example">
@@ -35,7 +34,7 @@
                 </div>
                 <div class="form-group col-md-6">
                     <label>Gender</label>
-                    <select id="inputGender" name="gender">
+                    <select id="gender" name="gender">
                         <option selected>Select Gender...</option>
                         <option value="0">Nữ</option>
                         <option value="1">Nam</option>
@@ -52,33 +51,36 @@
         <table class="table" border="1" id="table">
             <thead>
             <tr>
-                <th>index</th>
-                <th>id</th>
-                <th>name</th>
-                <th>email</th>
-                <th>password</th>
-                <th>phone</th>
-                <th>gender</th>
-                <th>dob</th>
-                <th>address</th>
-                <th colspan="2">action</th>
+                <th></th>
+             
+                <th>Tên</th>
+                <th>Email</th>
+                <th>Mật khẩu</th>
+                <th>Số điện thoại</th>
+                <th>Giới tính</th>
+                <th>Ngày sinh</th>
+                <th>Địa chỉ</th>
+                <th colspan="2"></th>
             </tr>
             </thead>
             <tbody>
             <c:forEach items="${list}" var="x" varStatus="status">
                 <tr>
                     <td>${status.index + 1}</td>
-                    <td>${x.id}</td>
+                    
                     <td>${x.name}</td>
                     <td>${x.email}</td>
                     <td>${x.password}</td>
                     <td>${x.phone}</td>
-                    <td>${x.gender == false ? "Nữ" : "Nam"}</td>
+                    <td>${x.gender ? "Nam" : "Nữ"} </td>
                     <td>${x.dob}</td>
                     <td>${x.address}</td>
                     <td>
-                        <a role="button" class="btn btn-info" href="${pageContext.request.contextPath}/admin/update-patients?pid=${x.id}">Update</a>
-                        <a role="button" class="btn btn-danger" href="${pageContext.request.contextPath}/admin/delete-patients?pid=${x.id}">Delete</a>
+                        <a role="button" class="fa fa-edit" title="Chỉnh sửa" 
+                  style="color:black; margin-top: 10px; border:none;" 
+                  href="${pageContext.request.contextPath}/admin/update-patients?pid=${x.id}"> Chỉnh sửa</a><br>
+                        <a role="button" class="fas fa fa-trash" title="Xóa"style="color:red; margin-top: 10px; border:none;" 
+                           href="${pageContext.request.contextPath}/admin/delete-patients?pid=${x.id}">   Xóa</a>
                     </td>
                 </tr>
             </c:forEach>

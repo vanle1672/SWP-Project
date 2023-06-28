@@ -1,15 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
-
     <servlet>
         <servlet-name>HelloServlet</servlet-name>
         <servlet-class>HelloServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>BlogServlet</servlet-name>
+        <servlet-class>Control.BlogServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SearchBlog</servlet-name>
+        <servlet-class>Control.SearchBlog</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DetailBlogServlet</servlet-name>
+        <servlet-class>Control.DetailBlogServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ReviewServlet</servlet-name>
+        <servlet-class>Control.ReviewServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DoctorChangePass</servlet-name>
+        <servlet-class>Control.DoctorChangePass</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>PatientChangePass</servlet-name>
+        <servlet-class>Control.PatientChangePass</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>BlogControl</servlet-name>
+        <servlet-class>Control.Admin.BlogControl</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UpdateBlog</servlet-name>
+        <servlet-class>Control.Admin.UpdateBlog</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>HelloServlet</servlet-name>
         <url-pattern>/home</url-pattern>
     </servlet-mapping>
-
     <servlet>
         <servlet-name>AuthServlet</servlet-name>
         <servlet-class>Control.AuthServlet</servlet-class>
@@ -18,7 +48,6 @@
         <servlet-name>AuthServlet</servlet-name>
         <url-pattern>/auth</url-pattern>
     </servlet-mapping>
-
     <servlet>
         <servlet-name>RegisterServlet</servlet-name>
         <servlet-class>Control.RegisterServlet</servlet-class>
@@ -27,7 +56,6 @@
         <servlet-name>RegisterServlet</servlet-name>
         <url-pattern>/register</url-pattern>
     </servlet-mapping>
-
     <servlet>
         <servlet-name>TestServlet</servlet-name>
         <servlet-class>TestServlet</servlet-class>
@@ -36,7 +64,6 @@
         <servlet-name>TestServlet</servlet-name>
         <url-pattern>/test</url-pattern>
     </servlet-mapping>
-
     <servlet>
         <servlet-name>LoginServlet</servlet-name>
         <servlet-class>Control.LoginServlet</servlet-class>
@@ -45,7 +72,6 @@
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/login</url-pattern>
     </servlet-mapping>
-
     <servlet>
         <servlet-name>InfoClinic</servlet-name>
         <servlet-class>Control.InfoClinic</servlet-class>
@@ -54,7 +80,6 @@
         <servlet-name>InfoClinic</servlet-name>
         <url-pattern>/about</url-pattern>
     </servlet-mapping>
-
     <servlet>
         <servlet-name>LogoutServlet</servlet-name>
         <servlet-class>Control.LogoutServlet</servlet-class>
@@ -63,7 +88,7 @@
         <servlet-name>LogoutServlet</servlet-name>
         <url-pattern>/logout</url-pattern>
     </servlet-mapping>
-<!--    ==================FILTER PART-->
+    <!--    ==================FILTER PART-->
     <filter>
         <filter-name>LoginFilter</filter-name>
         <filter-class>Filter.LoginFilter</filter-class>
@@ -92,8 +117,7 @@
         <filter-name>AdminFilter</filter-name>
         <url-pattern>/admin/*</url-pattern>
     </filter-mapping>
-<!--    ==================END FILTER PART-->
-
+    <!--    ==================END FILTER PART-->
     <servlet>
         <servlet-name>AdminLogin</servlet-name>
         <servlet-class>Control.AdminLogin</servlet-class>
@@ -102,7 +126,6 @@
         <servlet-name>AdminLogin</servlet-name>
         <url-pattern>/admin/login</url-pattern>
     </servlet-mapping>
-
     <servlet>
         <servlet-name>AdminControlPage</servlet-name>
         <servlet-class>Control.Admin.AdminControlPage</servlet-class>
@@ -167,7 +190,6 @@
         <servlet-name>ControlPatientAppointment</servlet-name>
         <url-pattern>/admin/patient-appointment-control</url-pattern>
     </servlet-mapping>
-
     <servlet>
         <servlet-name>ViewPatientAppointment</servlet-name>
         <servlet-class>Control.Admin.ViewPatientAppointment</servlet-class>
@@ -176,7 +198,6 @@
         <servlet-name>ViewPatientAppointment</servlet-name>
         <url-pattern>/admin/patient-appointment</url-pattern>
     </servlet-mapping>
-
     <servlet>
         <servlet-name>UpdateDoctor</servlet-name>
         <servlet-class>Control.Admin.UpdateDoctor</servlet-class>
@@ -185,7 +206,6 @@
         <servlet-name>UpdateDoctor</servlet-name>
         <url-pattern>/admin/update-doctor</url-pattern>
     </servlet-mapping>
-
     <servlet>
         <servlet-name>DoctorProfileServlet</servlet-name>
         <servlet-class>Control.DoctorProfileServlet</servlet-class>
@@ -216,9 +236,8 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>SearchDoctor</servlet-name>
-        <url-pattern>/patient/search-doctor</url-pattern>
+        <url-pattern>/search-doctor</url-pattern>
     </servlet-mapping>
-
     <servlet>
         <servlet-name>PatientCancelAppointment</servlet-name>
         <servlet-class>Control.PatientCancelAppointment</servlet-class>
@@ -227,7 +246,6 @@
         <servlet-name>PatientCancelAppointment</servlet-name>
         <url-pattern>/patient/cancel-appointment</url-pattern>
     </servlet-mapping>
-
     <servlet>
         <servlet-name>MakeAppointmentServlet</servlet-name>
         <servlet-class>Control.MakeAppointmentServlet</servlet-class>
@@ -252,7 +270,6 @@
         <servlet-name>PatientViewAppointments</servlet-name>
         <url-pattern>/patient/view-appointments</url-pattern>
     </servlet-mapping>
-
     <servlet>
         <servlet-name>PatientViewOneAppointments</servlet-name>
         <servlet-class>Control.PatientViewOneAppointments</servlet-class>
@@ -261,7 +278,6 @@
         <servlet-name>PatientViewOneAppointments</servlet-name>
         <url-pattern>/patient/appointment-detail</url-pattern>
     </servlet-mapping>
-
     <servlet>
         <servlet-name>DeleteSchedule</servlet-name>
         <servlet-class>Control.DeleteSchedule</servlet-class>
@@ -270,7 +286,38 @@
         <servlet-name>DeleteSchedule</servlet-name>
         <url-pattern>/doctor/delete-schedule</url-pattern>
     </servlet-mapping>
-
+    <servlet-mapping>
+        <servlet-name>BlogServlet</servlet-name>
+        <url-pattern>/show-blog</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SearchBlog</servlet-name>
+        <url-pattern>/search-blog</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DetailBlogServlet</servlet-name>
+        <url-pattern>/detail-blog</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ReviewServlet</servlet-name>
+        <url-pattern>/patient/review</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DoctorChangePass</servlet-name>
+        <url-pattern>/doctor-change-pass</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PatientChangePass</servlet-name>
+        <url-pattern>/patient-change-pass</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>BlogControl</servlet-name>
+        <url-pattern>/admin/blog-control</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UpdateBlog</servlet-name>
+        <url-pattern>/admin/update-blog</url-pattern>
+    </servlet-mapping>
     <welcome-file-list>
         <welcome-file>
             home

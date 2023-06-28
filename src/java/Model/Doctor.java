@@ -26,6 +26,10 @@ public class Doctor {
     public Doctor() {
     }
 
+    public Doctor(String password) {
+        this.password = password;
+    }
+
     public Doctor(int id, String name, String email, String degree, int experience, String speciality_name, String image, String phone, String dob, boolean gender, String address) {
         this.id = id;
         this.name = name;

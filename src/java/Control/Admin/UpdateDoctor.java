@@ -71,7 +71,10 @@ public class UpdateDoctor extends HttpServlet {
         int speciality_id = Integer.parseInt(req.getParameter("update_speciality_id"));
         String phone = req.getParameter("update_phone");
         String dob = req.getParameter("update_dob");
-        boolean gender = Boolean.parseBoolean(req.getParameter("update_gender"));
+        boolean gender = false;
+        if(req.getParameter("update_gender").equals("1")){
+            gender = true;
+        }
         String address = req.getParameter("update_address");
         Part filePart = req.getPart("update_image");
         DoctorDao doctorDao = new DoctorDao();

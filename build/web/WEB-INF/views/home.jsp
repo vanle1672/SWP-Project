@@ -19,7 +19,7 @@
                             <div class="hero__caption">
                                 <h1 style="font-family: Arial" data-animation="fadeInUp" data-delay=".3s">"Tài Sản Đầu Tiên Là Sức Khỏe"</h1>
                                 <p style="font-family: Arial" data-animation="fadeInUp" data-delay=".6s">Người có sức khỏe, có hy vọng;<br> người có hy vọng, có tất cả mọi thứ.</p>
-                                <a href="${pageContext.request.contextPath}/patient/search-doctor" class="btn" data-animation="fadeInLeft" data-delay=".3s">Đặt Khám</a>
+                                <a href="${pageContext.request.contextPath}/search-doctor" class="btn" data-animation="fadeInLeft" data-delay=".3s">Đặt Khám</a>
                             </div>
                         </div>
                     </div>
@@ -41,7 +41,7 @@
                             <div class="hero__caption">
                                 <h1 style="font-family: Arial" data-animation="fadeInUp" data-delay=".3s">"Tài Sản Đầu Tiên Là Sức Khỏe"</h1>
                                 <p style="font-family: Arial" data-animation="fadeInUp" data-delay=".6s">Người có sức khỏe, có hy vọng;<br> người có hy vọng, có tất cả mọi thứ.</p>
-                                <a style="font-family: Arial" href="#" class="btn" data-animation="fadeInLeft" data-delay=".3s">Đặt Khám</a>
+                                <a style="font-family: Arial" href="${pageContext.request.contextPath}/search-doctor" class="btn" data-animation="fadeInLeft" data-delay=".3s">Đặt Khám</a>
                             </div>
                         </div>
                     </div>
@@ -92,7 +92,7 @@
                     </div>
                 </div>
                 <div class="col-xl-2 col-lg-3 col-md-4">
-                    <a style="font-family: Arial" href="services.html" class="btn f-right sm-left">Đặt Khám</a>
+                    <a style="font-family: Arial" href="${pageContext.request.contextPath}/search-doctor" class="btn f-right sm-left">Đặt Khám</a>
                 </div>
             </div>
         </div>
@@ -108,7 +108,7 @@
                         <img src="assets/img/icon/services1.svg" alt="">
                     </div>
                     <div class="cat-cap">
-                        <h1><a style="font-family: Arial" href="services.html">Khi nào chúng ta cần đi khám <br> sức khỏe tim mạch?</a></h1>
+                        <h1><a style="font-family: Arial">Khi nào chúng ta cần đi khám <br> sức khỏe tim mạch?</a></h1>
                         <p style="font-family: Arial; text-align: justify;" >Hệ tuần hoàn là hệ thống cấp máu nuôi dưỡng toàn cơ thể.
                             Để đảm bảo cơ thể luôn khỏe mạnh, các bác sĩ vẫn khuyên bạn đi khám tim mạch định kỳ hoặc ngay khi có dấu hiệu
                             gợi ý bệnh tim mạch. </p>
@@ -122,7 +122,7 @@
                         <img src="assets/img/icon/services2.svg" alt="">
                     </div>
                     <div class="cat-cap">
-                        <h1><a style="font-family: Arial" href="services.html">Bệnh viêm phổi <br> Nguyên nhân, triệu chứng, phân loại</a></h1>
+                        <h1><a style="font-family: Arial">Bệnh viêm phổi <br> Nguyên nhân, triệu chứng, phân loại</a></h1>
                         <p style="font-family: Arial; text-align: justify;">Bệnh viêm phổi được biết đến như là bệnh lý nhiễm trùng đường hô hấp dưới gặp phổ biến nhất.
                             Bệnh gặp ở mọi lứa tuổi và con số tử vong hàng năm do bệnh viêm phổi lên đến hàng triệu người trên thế giới.</p>
                     </div>
@@ -134,7 +134,7 @@
                         <img src="assets/img/icon/services3.svg" alt="">
                     </div>
                     <div class="cat-cap">
-                        <h1><a style="font-family: Arial" href="services.html">10 nguyên nhân <br> đau xương khớp ở người cao tuổi</a></h1>
+                        <h1><a style="font-family: Arial">10 nguyên nhân <br> đau xương khớp ở người cao tuổi</a></h1>
                         <p style="font-family: Arial; text-align: justify;">Bệnh xương khớp ở người cao tuổi là bệnh của hệ thống cơ, xương và khớp,
                             thường được biểu hiện bằng các triệu chứng đau, sưng khớp, hạn chế vận động, yếu cơ, biến dạng xương… </p>
 
@@ -255,7 +255,7 @@
                             <h2 style="font-family: Arial">100% Mang đến sự hài lòng cho bạn.</h2>
                         </div>
                         <p style="font-family: Arial;" >Hãy đến với chúng tôi. Phòng khám An Tâm - Yên tâm trong từng tế bào.</p>
-                        <a href="about.html" class="border-btn">Đặt lịch ngay!</a>
+                        <a href="${pageContext.request.contextPath}/search-doctor" class="border-btn">Đặt lịch ngay!</a>
 
                     </div>
                 </div>

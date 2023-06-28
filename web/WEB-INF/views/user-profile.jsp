@@ -32,12 +32,12 @@
 
                         <div class="col-md-12">
                             <label class="labels">Email</label>
-                            <input type="text" class="form-control" value="${listinfo.email}" name="email">
+                            <input type="text" class="form-control" value="${listinfo.email}" name="email" readonly="">
                         </div>
 
                         <div class="col-md-12">
                             <label class="labels">Password</label>
-                            <input type="password" class="form-control" value="${listinfo.password}" name="password">
+                            <input type="password" class="form-control" value="${listinfo.password}" name="password"readonly="" >
                         </div>
 
                         <div class="col-md-12">

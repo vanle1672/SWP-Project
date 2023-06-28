@@ -42,10 +42,8 @@ public class UpdatePatients extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         int user = Integer.parseInt(request.getParameter("pid"));
-
         UpdateUser dao = new UpdateUser();
         User list = dao.getPatientById(user);
-        System.out.println(list);
         request.setAttribute("x", list);
         request.getRequestDispatcher("/WEB-INF/views/admin/update-patients.jsp").forward(request, response);
     }
@@ -53,6 +51,7 @@ public class UpdatePatients extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        System.out.println(request.getParameter("gender"));
         System.out.println("vô do post");
         int id = Integer.parseInt(request.getParameter("pid"));
         String name = request.getParameter("name");
@@ -61,7 +60,10 @@ public class UpdatePatients extends HttpServlet {
         String phone = request.getParameter("phone");
         String dob = request.getParameter("dob");
         String address = request.getParameter("address");
-        boolean gender = Boolean.parseBoolean(request.getParameter("gender"));
+        boolean gender = false;
+        if(request.getParameter("gender").equals("1")){
+            gender = true;
+        }
         UpdateUser dao = new UpdateUser();
         dao.updatePatients(id, name, email, password, phone,dob,address,gender);
         response.sendRedirect(request.getContextPath() + "/admin/patients-control");
