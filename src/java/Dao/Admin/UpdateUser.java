@@ -30,18 +30,19 @@ public class UpdateUser {
                                 rs.getString("email"),
                                 rs.getString("password"),
                                 rs.getString("phone"),
-                                rs.getString("verify_key"),
-                                rs.getBoolean("is_verified"),
+                                rs.getString("dob"),
+                                rs.getBoolean("gender"),
                                 rs.getString("address"),
                                 rs.getBoolean("is_admin"),
-                                rs.getString("dob"),
-                                rs.getBoolean("gender")
+                                rs.getString("verify_key"),
+                                rs.getBoolean("is_verified")
                         )
                 );
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
+        System.out.println("gender line 45 updateusers "+list.get(0).isGender());
         return list;
     }
 
@@ -54,7 +55,6 @@ public class UpdateUser {
             ps.setInt(1, id);
             rs = ps.executeQuery();
             if (rs.next()) {
-                System.out.println("giowi tinh : "+rs.getBoolean("gender"));
                 user = new User(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getBoolean(7), rs.getString(8), rs.getBoolean(9), rs.getString(10), rs.getBoolean(11));
             }
         } catch (Exception e) {

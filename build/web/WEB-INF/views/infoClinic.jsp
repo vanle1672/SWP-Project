@@ -135,7 +135,7 @@
                                         <h2 style="font-family: Arial;"> 100% Mang đến sự hài lòng cho bạn.</h2>
                                     </div>
                                     <p style="font-family: Arial;" >Hãy đến với chúng tôi. Phòng khám An Tâm - Yên tâm trong từng tế bào.</p>
-                                    <a href="about.html" class="border-btn">Đặt lịch ngay!</a>
+                                    <a href="${pageContext.request.contextPath}/search-doctor" class="border-btn">Đặt lịch ngay!</a>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-12">

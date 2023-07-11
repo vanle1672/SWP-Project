@@ -33,6 +33,7 @@ public class LoadPatients extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         UpdateUser dao = new UpdateUser();
         List<User> list = dao.getPatientsList();
+        System.out.println("gender line 36 loadpatient : "+list.get(0).gender);
         request.setAttribute("list", list);
         request.getRequestDispatcher("/WEB-INF/views/admin/patient-control.jsp").forward(request, response);
     }

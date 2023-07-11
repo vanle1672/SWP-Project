@@ -16,9 +16,13 @@ import java.util.Date;
 
 public class Table {
     public static String[] getDateOfWeek(int year, int week) {
+        //khoi tao mang 8 ki tu (0-7)
         String[] dateArray = new String[8];
+        //LocalDate được tạo ra từ LocalDate.ofYearDay(year, 1) để đại diện cho ngày đầu tiên của năm. .monday de di chuyen den thu 2 cua tuan do
+        //plusweek them so tuan vao ngay dau tuan de tinh cho ngay dau tien cua tuan do.
         LocalDate firstDayOfWeek = LocalDate.ofYearDay(year, 1).with(DayOfWeek.MONDAY).plusWeeks(week);
         for (int i = 1; i < 8; i++) {
+            //plusday để tính ra t
             LocalDate date = firstDayOfWeek.plusDays(i - 1);
             String formattedDate = date.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
             dateArray[i] = formattedDate;
@@ -42,7 +46,9 @@ public class Table {
         if (doctorScheduleArrayList == null) {
             return table;
         } else {
-            for (int i = 2; i < 11; i++) {
+            //duyet qua tat ca gio
+            for (int i = 2; i < 11; i++) {  
+                //duyet qua tat ca ngay 
                 for (int j = 1; j < 8; j++) {
                     int table_date = Integer.parseInt(table[1][j].split("-")[2]);
                     for (int k = 0; k < doctorScheduleArrayList.size(); k++) {

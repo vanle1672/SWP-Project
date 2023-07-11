@@ -139,19 +139,13 @@ public class User {
         this.gender = gender;
     }
 
-//    public User(int id, String name, String email, String password, String phone, String verify_key, boolean is_verified, String address, boolean is_admin, String dob, boolean gender) {
-//        this.id = id;
-//        this.name = name;
-//        this.email = email;
-//        this.password = password;
-//        this.phone = phone;
-//        this.verify_key = verify_key;
-//        this.is_verified = is_verified;
-//        this.address = address;
-//        this.is_admin = is_admin;
-//        this.dob = dob;
-//        this.gender = gender;
-//    }
+    public boolean isIs_admin() {
+        return is_admin;
+    }
+
+    public boolean isGender() {
+        return gender;
+    }
 
 
     public User(String name, String email, String password, String phone, String verify_key, boolean is_verified) {

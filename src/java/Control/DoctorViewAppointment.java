@@ -14,11 +14,12 @@ import java.sql.SQLException;
 public class DoctorViewAppointment extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        int app_id = Integer.parseInt(req.getParameter("app_id"));
-        Doctor doctor= (Doctor) req.getSession().getAttribute("doctor");
-        if (req.getSession().getAttribute("session_para")!=null){
+        int app_id = Integer.parseInt(req.getParameter("app_id")); //lấy giá trị của tham số app_id từ yêu cầu và chuyển đổi nó thành kiểu số nguyên.
+        Doctor doctor= (Doctor) req.getSession().getAttribute("doctor"); //lấy đối tượng Doctor từ session bằng cách sử dụng phương thức getAttribute với tên thuộc tính là "doctor".
+        if (req.getSession().getAttribute("session_para")!=null)//Dòng này kiểm tra xem có thuộc tính "session_para" trong session hay không. Nếu có, nó lấy giá trị của thuộc tính và gán vào biến a.
+        {
             String a = (String)req.getSession().getAttribute("session_para");
-            req.setAttribute(a.split("\\|")[0], a.split("\\|")[1]);
+            req.setAttribute(a.split("\\|")[0], a.split("\\|")[1]);//phương thức split của chuỗi để tách giá trị của a thành một mảng, sử dụng ký tự "|" làm dấu phân cách.
             req.getSession().removeAttribute("session_para");
         }
         Data data;
@@ -44,7 +45,7 @@ public class DoctorViewAppointment extends HttpServlet {
         Doctor doctor= (Doctor) req.getSession().getAttribute("doctor");
         AppointmentDao appointmentDao = new AppointmentDao();
         try {
-            Status.valueOf(status);
+            Status.valueOf(status);//Kiểm tra giá trị của biến status có thuộc vào danh sách các giá trị hợp lệ hay không bằng cách sử dụng Status.valueOf(status).
             if (appointmentDao.updateAppointmentStatus(status, app_id, doctor.id)){
 //                req.getSession().setAttribute("session_para", "success|Thay đổi thành công!");
 //                resp.sendRedirect(req.getContextPath() + "/doctor/appointment-detail?app_id=" + app_id);
@@ -59,3 +60,13 @@ public class DoctorViewAppointment extends HttpServlet {
         }
     }
 }
+
+/*Kiểm tra giá trị của biến status có thuộc vào danh sách các giá trị hợp lệ hay không bằng cách sử dụng Status.valueOf(status). 
+Nếu giá trị hợp lệ, tiếp tục thực hiện các bước sau, nếu không, điều hướng đến trang xử lý lỗi.
+Gọi phương thức updateAppointmentStatus trong AppointmentDao để cập nhật trạng thái của cuộc hẹn. Truyền vào các tham số: status, app_id, và doctor.id.
+Nếu việc cập nhật thành công, 
+điều hướng người dùng đến trang "/doctor/schedule" bằng phương thức resp.sendRedirect.
+Nếu việc cập nhật không thành công, 
+gán giá trị cho thuộc tính session_para là "error|Thay đổi Thất bại!" và điều hướng người dùng đến trang "/doctor/appointment-detail?app_id=" + app_id.
+Nếu giá trị của biến status không thuộc vào danh sách các giá trị hợp lệ, gán giá trị cho thuộc tính session_para là "success|Thay đổi Thất bại!" 
+và điều hướng người dùng đến trang "/doctor/appointment-detail?app_id=" + app_id.*/

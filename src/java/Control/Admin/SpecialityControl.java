@@ -22,8 +22,10 @@ public class SpecialityControl extends HttpServlet {
         if (req.getParameter("_method").equalsIgnoreCase("delete")){
             this.doDelete(req, resp);
         } else {
+            //lay gia tri cua name va gan cho bien name
             String name = req.getParameter("name");
             SpecialityDao specialityDao = new SpecialityDao();
+            //goi pt create tu specDAo vs tham so name
             boolean check = specialityDao.createSpeciality(name);
             if (check){
                 resp.sendRedirect("speciality-control");

@@ -58,9 +58,9 @@
                 <div class="form-group">
                     <div class="row ml-2">
                         <h4 class="mr-2 mt-4">Chọn giới tính</h4>
-                        <select name="update_gender" class="ml-2" id="gender">
-                            <option ${doctor.gender == false ? "selected" : ""} value="false">nữ</option>
-                            <option ${doctor.gender == true ? "selected" : ""} value="true">nam</option>
+                        <select name="update_gender" class="ml-2" id="update_gender">
+                            <option ${doctor.gender == false ? "selected" : ""} value="0">Nữ</option>
+                            <option ${doctor.gender == true ? "selected" : ""} value="1">Nam</option>
                         </select>
                     </div>
                 </div>

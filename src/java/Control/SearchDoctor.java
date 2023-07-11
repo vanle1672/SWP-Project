@@ -17,6 +17,12 @@ public class SearchDoctor extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         SpecialityDao specialityDao = new SpecialityDao();
         req.setAttribute("speciality_list", specialityDao.getAllSpeciality());
+        DoctorDao doctordao = new DoctorDao();
+        try {
+             ArrayList<Doctor> showall = doctordao.getAllDoctor();
+             req.setAttribute("showalldoctor", showall);
+        } catch (Exception e) {
+        }
         req.getRequestDispatcher("/WEB-INF/views/search-doctor.jsp").forward(req,resp);
     }
     @Override

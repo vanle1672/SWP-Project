@@ -1,3 +1,5 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page contentType="text/html; charset=UTF-8" %>
 </main>
 <footer>
     <div class="footer-wrappr section-bg3" data-background="${pageContext.request.contextPath}/assets/img/gallery/footer-bg.png">
@@ -8,7 +10,7 @@
                         <div class="single-footer-caption mb-50">
                             <!-- logo -->
                             <div class="footer-logo mb-25">
-                                <a href="index.html"><img src="${pageContext.request.contextPath}/assets/img/logo/logo2_footer.png" alt=""></a>
+                                <a href="${pageContext.request.contextPath}"><img src="${pageContext.request.contextPath}/assets/img/logo/logo_5.png" alt=""></a>
                             </div>
                             <d iv class="header-area">
                                 <div class="main-header main-header2">
@@ -17,11 +19,10 @@
                                         <div class="main-menu main-menu2">
                                             <nav>
                                                 <ul>
-                                                    <li><a href="index.html">Home</a></li>
-                                                    <li><a href="about.html">About</a></li>
-                                                    <li><a href="services.html">Services</a></li>
-                                                    <li><a href="blog.html">Blog</a></li>
-                                                    <li><a href="contact.html">Contact</a></li>
+                                                    <li><a href="${pageContext.request.contextPath}">Trang Chủ</a></li>
+                                                    <li><a href="${pageContext.request.contextPath}/about">Thông Tin</a></li>
+                                                    <li><a href="services.html">Cẩm nang</a></li>
+                                             
                                                 </ul>
                                             </nav>
                                         </div>
@@ -36,32 +37,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
-                        <div class="single-footer-caption">
-                            <div class="footer-tittle mb-50">
-                                <h4>Subscribe newsletter</h4>
-                            </div>
-                            <!-- Form -->
-                            <div class="footer-form">
-                                <div id="mc_embed_signup">
-                                    <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="subscribe_form relative mail_part" novalidate="true">
-                                        <input type="email" name="EMAIL" id="newsletter-form-email" placeholder=" Email Address " class="placeholder hide-on-focus" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your email'">
-                                        <div class="form-icon">
-                                            <button type="submit" name="submit" id="newsletter-submit" class="email_icon newsletter-submit button-contactForm">
-                                                Subscribe
-                                            </button>
-                                        </div>
-                                        <div class="mt-10 info"></div>
-                                    </form>
-                                </div>
-                            </div>
-                            <div class="footer-tittle">
-                                <div class="footer-pera">
-                                    <p>Praesent porttitor, nulla vitae posuere iaculis, arcu nisl dignissim dolor, a pretium misem ut ipsum.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                   
                 </div>
             </div>
         </div>
@@ -71,11 +47,7 @@
                 <div class="footer-border">
                     <div class="row">
                         <div class="col-xl-10 ">
-                            <div class="footer-copy-right">
-                                <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                                    Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-                                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-                            </div>
+                          
                         </div>
                     </div>
                 </div>

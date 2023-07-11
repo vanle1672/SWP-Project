@@ -109,11 +109,12 @@ public class DoctorScheduleServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        if (req.getParameter("_method").equals("get_date")) {
+        if (req.getParameter("_method").equals("get_date")) { //yêu cầu lấy ngày và tuần
             String week_and_year = req.getParameter("week");
             req.getSession().setAttribute("week_and_year_url", week_and_year);
             resp.sendRedirect(req.getContextPath() + "/doctor/schedule");
-        } else if (req.getParameter("_method").equals("add_schedule")) {
+        } else if (req.getParameter("_method").equals("add_schedule"))//yêu cầu thêm lịch làm viec
+        {
             String from_date = req.getParameter("from_date");
             String to_date = req.getParameter("to_date");
             float start = Float.parseFloat(req.getParameter("from"));
