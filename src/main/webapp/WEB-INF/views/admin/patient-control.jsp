@@ -44,7 +44,7 @@
                     </select>
                 </div>
             </div>
-            <button class="btn btn-primary text-white" type="submit">Xác nhận</button> 
+            <button class="button-style" type="submit">Xác nhận</button> 
         </form>
 
         <br>
@@ -91,3 +91,15 @@
 </div>
 <jsp:include page="../master/foot.jsp"/>
 
+<style>
+    .button-style{
+        background-color: #234821;
+        color: #ffffff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+</style>

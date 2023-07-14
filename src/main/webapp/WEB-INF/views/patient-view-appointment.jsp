@@ -32,15 +32,80 @@
     input:checked ~ form{
         display: block;
     }
+
+
+    .custom-container {
+        background-color: #f5f5f5;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    h1 {
+        font-size: 28px;
+        margin: 10px 0;
+    }
+
+    ul {
+        font-size: 20px;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    li {
+        margin-bottom: 10px;
+    }
+
+    .patient-name,
+    .doctor-name,
+    .appointment-date,
+    .start-time,
+    .end-time,
+    .patient-note {
+        font-size: 22px;
+        font-weight: bold;
+    }
+
+    .row {
+        display: flex;
+        align-items: center;
+        margin-left: 5px;
+    }
+
+    select {
+        width: 150px;
+        height: 30px;
+        margin-left: 10px;
+    }
+
+    .button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        text-decoration: none;
+        cursor: pointer;
+        font-size: 18px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        transition: background-color 0.3s ease;
+        margin-top: 20px;
+    }
+
+
 </style>
 <div class="custom-container">
 
-    <h1>Đây là cuộc hẹn với bệnh nhân ${patient.getName()} với ${doctor.getName()}</h1>
-    <h1>Vào ngày ${fn:split(time[0], ' ')[0]}</h1>
-    <h1>Từ ${fn:split(time[0], ' ')[1]} Đến ${fn:split(time[1], ' ')[1]}</h1>
-    <h1>Lời nhắn của bệnh nhân : ${app.getNote()}</h1>
+    <ul>
+        <li>Đây là cuộc hẹn với bệnh nhân <span class="patient-name">${patient.getName()}</span> với <span class="doctor-name">${doctor.getName()}</span></li>
+        <li>Vào ngày <span class="appointment-date">${fn:split(time[0], ' ')[0]}</span></li>
+        <li>Từ <span class="start-time">${fn:split(time[0], ' ')[1]}</span> Đến <span class="end-time">${fn:split(time[1], ' ')[1]}</span></li>
+        <li>Lời nhắn của bệnh nhân: <span class="patient-note">${app.getNote()}</span></li>
+    </ul>
+
     <div class="row ml-1">
-        <h1>Tình trạng</h1>
+        <li>Tình trạng</li>
         <select name="status" disabled id="">
             <option value="finished" ${app.getStatus() == "finished" ? "selected" : ""}>Đã khám</option>
             <option value="canceled" ${app.getStatus() == "canceled" ? "selected" : ""}>Đã huỷ</option>
@@ -49,10 +114,10 @@
     </div>
     <c:if test="${app.getStatus() == 'not_yet'}">
         <a href="${pageContext.request.contextPath}/patient/cancel-appointment?app_id=${app.getId()}">
-            <button class="btn">Huỷ lịch</button>
+            <button class="button">Huỷ lịch</button>
         </a>
     </c:if>
-        <br><br>
+    <br><br>
     <c:if test="${app.getStatus() == 'finished'}">
         <form action="review" method="">
             <div class="form-group">

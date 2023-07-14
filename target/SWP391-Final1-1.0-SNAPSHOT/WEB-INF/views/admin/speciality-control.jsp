@@ -9,8 +9,8 @@
                 <input type="hidden" name="_method" value="">
                 <label for="name">Nhập tên chuyên khoa để thêm</label>
                 <input class="form-control custom-input" id="name" type="text" name="name" style="border: 1px solid #ced4da; border-radius: 6px; padding: 5px 10px;">
-
-                <button class="btn">Xác nhận</button>
+                <br>
+                <button class="button-style">Xác nhận</button>
             </form>
         </div>
         <div class="col-md-8">
@@ -41,3 +41,15 @@
     </div>
 </div>
 <jsp:include page="../master/foot.jsp"/>
+<style>
+    .button-style{
+        background-color: #234821;
+        color: #ffffff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+</style>

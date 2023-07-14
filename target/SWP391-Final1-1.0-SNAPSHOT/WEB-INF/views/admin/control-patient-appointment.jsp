@@ -6,8 +6,8 @@
         <thead>
         <tr>
             <th>id</th>
-            <th>name</th>
-            <th>email</th>
+            <th>Tên</th>
+            <th>Email</th>
             <th colspan="2">action</th>
         </tr>
         </thead>

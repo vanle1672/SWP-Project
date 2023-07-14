@@ -20,7 +20,7 @@
                     </select>
                 </div>
             </div>
-            <button class="btn">submit</button>
+            <button class="button-style">Xác nhận</button>
         </form>
     </div>
     <div class="row">
@@ -34,7 +34,7 @@
                 <div class="row">
                     <input value="${current_week}" required class="form-control m-2" name="week" style="width: 200px; height: 30px"
                            type="week">
-                    <button class="btn btn-warning">show</button>
+                    <button class="button-style">Hiển thị</button>
                 </div>
             </form>
             <p class="text-danger ml-5">${error}</p> <p class="text-success">${success}</p>
@@ -150,3 +150,16 @@
 
 </div>
 <jsp:include page="../master/foot.jsp" />
+
+<style>
+    .button-style{
+          background-color: #234821;
+        color: #ffffff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+</style>

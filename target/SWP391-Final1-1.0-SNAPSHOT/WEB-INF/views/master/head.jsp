@@ -90,9 +90,9 @@
                                                     <ul class="submenu">
                                                         <li><a href="${pageContext.request.contextPath}/about">Phòng khám</a></li>
                                                         <li><a href="${pageContext.request.contextPath}/search-doctor">Bác sĩ</a></li>
-                                                        <% if (doctor != null) {%>
+                                                            <% if (doctor != null) {%>
                                                         <li><a href="${pageContext.request.contextPath}/doctor/view-finished-appointment">Xem các cuộc hẹn đã khám</a></li>
-                                                        <% } %>
+                                                            <% } %>
                                                     </ul>
                                                 </li>
                                                 <li><a href="${pageContext.request.contextPath}/show-blog">Cẩm nang</a></li>

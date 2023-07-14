@@ -38,7 +38,7 @@
                 </div>
             </div>
         </div>
-        <button type="submit" class="btn">Cập nhật</button>
+        <button type="submit" class="button-style">Cập nhật</button>
     </form>
     <%--    <form action="" method="post">--%>
     <%--        <input type="text">--%>
@@ -46,3 +46,15 @@
     <%--    </form>--%>
 </div>
 <jsp:include page="../master/foot.jsp"/>
+<style>
+    .button-style{
+        background-color: #234821;
+        color: #ffffff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+</style>

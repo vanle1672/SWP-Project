@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java"  pageEncoding="UTF-8" %>
 <jsp:include page="../master/head.jsp"/>
 <form action="" method="post" class="bd-example">
+    <div class="container">
     <div class="form-group col-md-6">
         <div class="form-group ">
             <label for="inputEmail4">Email</label>
@@ -39,7 +40,20 @@
         </div>
         
     </div><br><br>
-    <button class="btn btn-primary" >Cập nhật</button>
-    <button type="reset" class="btn btn-primary" >Hủy</button>
+    
+    <button class="button-style" >Cập nhật</button>
+    </div>
 </form>
 <jsp:include page="../master/foot.jsp"/>
+<style>
+    .button-style{
+        background-color: #234821;
+        color: #ffffff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+</style>
