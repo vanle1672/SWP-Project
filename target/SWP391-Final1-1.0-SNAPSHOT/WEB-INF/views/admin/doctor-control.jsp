@@ -2,6 +2,8 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
 <jsp:include page="../master/head.jsp"/>
 <div class="custom-container">
+     <h1>Bác sĩ</h1>
+         <c:if test="${status == \"error\"}"><p class="text-danger">${message}</p><br></c:if>
     <form action="" method="post" enctype="multipart/form-data">
         <div class="row">
             <div class="col-md-5">

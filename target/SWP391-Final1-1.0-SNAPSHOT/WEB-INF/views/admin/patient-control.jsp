@@ -3,9 +3,12 @@
 <jsp:include page="../master/head.jsp"/>
 <div class="row d-flex justify-content-center">
     <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
-        <h1>Views Patients</h1>
+        <h1>Bệnh nhân</h1>
+        <c:if test="${status == \"error\"}"><p class="text-danger">${mess}</p><br></c:if>
+        <c:if test="${status == \"success\"}"><p class="text-success">${mess}</p><br></c:if>
         <%--        Form Start--%>
         <form action="${pageContext.request.contextPath}/admin/patients-control" method="post" class="bd-example">
+
             <div class="form-row">
                 <div class="form-group col-md-5">
                     <label for="inputEmail4">Email</label>
@@ -31,12 +34,12 @@
                     <label for="inputDoB">Ngày sinh</label>
                     <input type="date" class="form-control custom-input" name="dob" id="inputDoB">
                 </div>
-               
+
                 <div class="form-group col-md-5">
                     <label for="address">Địa chỉ</label>
                     <input type="text" class="form-control custom-input" name="address" id="address" placeholder="Address">
                 </div>
-                 <div class="form-group col-md-5">
+                <div class="form-group col-md-5">
                     <h4>Chọn giới tính</h4>
                     <select id="gender" name="gender" >
                         <option value="0">Nữ</option>
