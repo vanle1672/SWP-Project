@@ -28,7 +28,7 @@ public class GetPassword extends HttpServlet {
                     new PatientDao().resetKey(key);
                 }
             } else {
-                req.setAttribute("warning", "Mật khẩu phải có 8-50 kí tự, bao gồm ít nhất một chữ hoa, một chữ thường và một số!");
+                req.setAttribute("warning", "Mật khẩu phải có ít nhất 8 kí tự, bao gồm ít nhất một chữ hoa, một chữ thường và một số!");
             }
         } else {
             req.setAttribute("warning", "Mật khẩu không trùng khớp.");

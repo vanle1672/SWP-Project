@@ -5,16 +5,16 @@
     <table class="table" border="1" id="table">
         <thead>
         <tr>
-            <th>id</th>
+         
             <th>Tên</th>
             <th>Email</th>
-            <th colspan="2">action</th>
+            <th colspan="2">Hành động</th>
         </tr>
         </thead>
         <tbody>
         <c:forEach items="${list}" var="item">
             <tr>
-                <td>${item.id}</td>
+            
                 <td>${item.name}</td>
                 <td>${item.email}</td>
                 <td><a href="${pageContext.request.contextPath}/admin/patient-appointment?user_id=${item.id}" style="color: black">Xem tất cả cuộc hẹn của bệnh nhân này</a></td>

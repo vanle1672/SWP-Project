@@ -105,7 +105,7 @@
     </ul>
 
     <div class="row ml-1">
-        <li>Tình trạng</li>
+        <li>Trạng thái</li>
         <select name="status" disabled id="">
             <option value="finished" ${app.getStatus() == "finished" ? "selected" : ""}>Đã khám</option>
             <option value="canceled" ${app.getStatus() == "canceled" ? "selected" : ""}>Đã huỷ</option>

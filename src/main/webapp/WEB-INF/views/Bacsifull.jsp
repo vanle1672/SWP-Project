@@ -30,7 +30,7 @@
             <input type="text" value="${search_name}" name="name">
         </c:if>
         <c:if test="${empty search_name}">
-            <input type="text" placeholder="Tên bác sĩ ..." name="name">
+            <input type="text" placeholder="Tìm kiếm ..." name="name">
         </c:if>
         <button type="submit"><i class="fa fa-search"></i></button>
     </form>

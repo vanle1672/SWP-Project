@@ -7,7 +7,7 @@
     <table class="table table-bordered">
         <thead>
             <tr>
-                <th>ID</th>
+             
                 <th>Bệnh nhân</th>
                 <th>Lời nhắn</th>
                 <th>Thời gian bắt đầu</th>
@@ -18,7 +18,7 @@
         <tbody>
             <c:forEach var="item" items="${appointments}">
                 <tr>
-                    <td>${item.getId()}</td>
+                 
                     <td >
                         <a style="color: black" href="${pageContext.request.contextPath}/doctor/view-patient-info?user_id=${item.getPatient_id()}">
                             ${item.getUsername()}

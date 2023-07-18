@@ -28,7 +28,7 @@ public class SearchDoctor extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String name = req.getParameter("name");
-        System.out.println(name);
+        String degree = req.getParameter("degree");
         int spe_id = Integer.parseInt(req.getParameter("speciality"));
         System.out.println(spe_id);
         DoctorDao doctorDao = new DoctorDao();

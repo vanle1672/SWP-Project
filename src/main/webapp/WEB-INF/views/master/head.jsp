@@ -130,7 +130,8 @@
                                                     <li><a href="${pageContext.request.contextPath}/logout">Đăng xuất</a></li>
                                                     <li><a href="${pageContext.request.contextPath}/doctor/profile">Trang cá
                                                             nhân</a></li>
-                                                    <li><a href="${pageContext.request.contextPath}/doctor-change-pass">Đổi mật khẩu</a></li>
+                                                    <li><a href="${pageContext.request.contextPath}/doctor/view-appointments">Lịch sử đặt lịch</a>
+                                                    <li><a href="${pageContext.request.contextPath}/doctor-view-rating">Xem đánh giá</a></li>
 
                                                 </ul>
                                             </li>

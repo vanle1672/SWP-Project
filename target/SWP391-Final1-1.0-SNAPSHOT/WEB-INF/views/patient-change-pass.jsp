@@ -28,9 +28,10 @@
                 <div class="p-3 py-5">
                     <div class="d-flex justify-content-between align-items-center mb-3">
                         <h4 class="text-right" style="font-size: 25px" >Đổi mật khẩu</h4>
-                        <c:if test="${status == \"error\"}"><p class="text-danger">${message}</p><br></c:if>
-                        <c:if test="${status == \"success\"}"><p class="text-success">${message}</p><br></c:if>    
+                    
                         </div>
+                        <c:if test="${status == \"error\"}"><p class="text-danger" style="text-align: center">${message}</p><br></c:if>
+                        <c:if test="${status == \"success\"}"><p class="text-success" style="text-align: center">${message}</p><br></c:if>    
                         <div class="row mt-3">
                             <div class="col-md-12">
                                 <form class="custom-form">

@@ -13,8 +13,7 @@
     }
 </style>
 <div class="custom-container">
-    <div class="row">
-        
+    <div class="row">        
         <form class="ml-5 mr-5" action="" method="post">
             <input type="hidden" name="_method" value="get_date">
             <div class="row">

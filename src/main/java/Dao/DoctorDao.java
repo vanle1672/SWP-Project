@@ -235,7 +235,7 @@ public class DoctorDao {
         return reviewArray;
     }
 
-    public boolean updateDoctor( String name, String degree, int experience,
+    public boolean updateDoctor(String name, String degree, int experience,
             int speciality_id, String phone, String dob, boolean gender, String address, int id) {
         String sql = "update doctors set name = ?, degree = ?, experience = ?, speciality_id = ?,"
                 + "phone = ?,  dob = ?, gender = ?, address = ? where id = ?";
@@ -275,11 +275,9 @@ public class DoctorDao {
         }
     }
 
-
-
     public static void main(String[] args) throws ClassNotFoundException, SQLException {
         DoctorDao a = new DoctorDao();
-       a.updateDoctor("son", "thac si", 10, 2, "099921232", "2012/12/30", true, "Quang nam", 1);
-      
+        a.updateDoctor("son", "thac si", 10, 2, "099921232", "2012/12/30", true, "Quang nam", 1);
+
     }
 }

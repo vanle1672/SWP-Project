@@ -31,10 +31,10 @@ public class ForgotPassword extends HttpServlet {
                     Mail.forgot_password(email, uuid, host);
                 });
                 executorService.shutdown();
-                req.setAttribute("success", "Vui lòng kiểm tra email.");
+                req.setAttribute("success", "Vui lòng kiểm tra email!");
             }
         } else {
-            req.setAttribute("warning", "Email và số điện thoại không trùng khớp.");
+            req.setAttribute("warning", "Email hoặc số điện thoại không đúng!");
         }
         req.getRequestDispatcher("/WEB-INF/views/auth/forgot-password.jsp").forward(req, resp);
     }

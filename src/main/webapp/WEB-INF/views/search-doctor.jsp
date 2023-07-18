@@ -9,6 +9,7 @@
                 <div class="form-group">
                     <label for="name">Nhập tên bác sĩ</label>
                     <input class="form-control" name="name" type="text" id="name">
+                    <input class="form-control" name="degree" type="text" id="degree">
                 </div>
                 <div class="">
                     <div class="row">

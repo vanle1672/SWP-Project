@@ -8,11 +8,11 @@ import java.sql.SQLException;
     public static Connection makeConnection() throws ClassNotFoundException {
 
         try {
-            String serverName = "LAPTOP-JG837OIA";
-            String databaseName = "newswp";
+            String serverName = "swpdata.database.windows.net";
+            String databaseName = "swpdata";
             String url = "jdbc:sqlserver://" + serverName + ";databaseName=" + databaseName + ";";
-            String username = "sa";
-            String password = "sa";
+            String username = "minh";
+            String password = "Matkhaulagivaytroi1";
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
             Connection con = (Connection) DriverManager.getConnection(url, username, password);
             return con;

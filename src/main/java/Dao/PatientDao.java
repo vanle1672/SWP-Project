@@ -11,9 +11,11 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class PatientDao {
+
     Connection connection = null;
     PreparedStatement preparedStatement = null;
     ResultSet resultSet = null;
+
     public boolean createUser(String name, String email, String password, String phone, String verify_key, String address, String dob, boolean gender) throws ClassNotFoundException {
         String sql = "insert into patients(name, email, password, phone, dob, gender, address, is_admin, verify_key, is_verified) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try {
@@ -30,19 +32,20 @@ public class PatientDao {
             preparedStatement.setString(9, verify_key);
             preparedStatement.setBoolean(10, false);
             preparedStatement.execute();
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             return false;
         }
         return true;
     }
+
     public boolean emailExist(String email) throws SQLException, ClassNotFoundException {
         String sql = "select count(id) from patients where email = ?";
         this.connection = ContactDB.makeConnection();
         preparedStatement = connection.prepareStatement(sql);
         preparedStatement.setString(1, email);
         resultSet = preparedStatement.executeQuery();
-        while (resultSet.next()){
+        while (resultSet.next()) {
             int status = resultSet.getInt(1);
             if (status == 0) {
                 return false;
@@ -59,7 +62,7 @@ public class PatientDao {
         preparedStatement = connection.prepareStatement(sql);
         preparedStatement.setString(1, phone);
         resultSet = preparedStatement.executeQuery();
-        while (resultSet.next()){
+        while (resultSet.next()) {
             int status = resultSet.getInt(1);
             if (status == 0) {
                 return false;
@@ -70,10 +73,9 @@ public class PatientDao {
         return false;
     }
 
-
-    public User getPatientById(int id){
+    public User getPatientById(int id) {
         String query = "select * from patients where id = ?;";
-        try{
+        try {
             connection = ContactDB.makeConnection();
             preparedStatement = connection.prepareStatement(query);
             preparedStatement.setInt(1, id);
@@ -88,9 +90,10 @@ public class PatientDao {
         }
         return null;
     }
-    public User getPatientByKey(String key){
+
+    public User getPatientByKey(String key) {
         String query = "select * from patients where verify_key = ?;";
-        try{
+        try {
             connection = ContactDB.makeConnection();
             preparedStatement = connection.prepareStatement(query);
             preparedStatement.setString(1, key);
@@ -105,7 +108,8 @@ public class PatientDao {
         }
         return null;
     }
-    public boolean updateUser(int id, String name, String email, String password, String dob, boolean gender, String address, String phone){
+
+    public boolean updateUser(int id, String name, String email, String password, String dob, boolean gender, String address, String phone) {
         String sql = "update patients set name = ?, email = ?, password = ?, dob = ?, gender = ?, address = ?, phone = ? where id = ?";
         try {
             connection = ContactDB.makeConnection();
@@ -125,8 +129,8 @@ public class PatientDao {
             return false;
         }
     }
-    
-     public void insertReview(String cmt, int rating, int doctorid, int patientID) {
+
+    public void insertReview(String cmt, int rating, int doctorid, int patientID) {
         LocalDateTime currentDate = LocalDateTime.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
         String formattedDate = currentDate.format(formatter);
@@ -136,7 +140,7 @@ public class PatientDao {
         try {
             connection = ContactDB.makeConnection();
             preparedStatement = connection.prepareStatement(query);
-             preparedStatement.setString(1, cmt);
+            preparedStatement.setString(1, cmt);
             preparedStatement.setInt(2, rating);
             preparedStatement.setString(3, formattedDate);
             preparedStatement.setInt(4, doctorid);
@@ -144,8 +148,20 @@ public class PatientDao {
             preparedStatement.executeUpdate();
         } catch (Exception e) {
         }
-     }
-       public boolean updatePassPatient(int id, String pass) {
+    }
+
+    public void getReviewbyId(int patientID) {
+        String query = "select * from Review where patientid = ?";
+        try {
+            connection = ContactDB.makeConnection();
+            preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setInt(1, patientID);
+            preparedStatement.executeQuery();
+        } catch (Exception e) {
+        }
+    }
+
+    public boolean updatePassPatient(int id, String pass) {
         String sql = "update patients set password = ? where id = ?";
         try {
             connection = ContactDB.makeConnection();
@@ -160,7 +176,8 @@ public class PatientDao {
             return false;
         }
     }
-    public boolean activeById(int id){
+
+    public boolean activeById(int id) {
         String sql = "update patients set is_verified = ? where id = ?";
         try {
             connection = ContactDB.makeConnection();
@@ -175,7 +192,8 @@ public class PatientDao {
             return false;
         }
     }
-    public boolean checkEmailTel(String email, String tel){
+
+    public boolean checkEmailTel(String email, String tel) {
         String sql = "select * from patients where email = ? and phone = ?;";
         try {
             connection = ContactDB.makeConnection();
@@ -183,7 +201,7 @@ public class PatientDao {
             preparedStatement.setString(1, email);
             preparedStatement.setString(2, tel);
             resultSet = preparedStatement.executeQuery();
-            if (resultSet.next()){
+            if (resultSet.next()) {
                 return true;
             } else {
                 return false;
@@ -193,7 +211,8 @@ public class PatientDao {
             return false;
         }
     }
-    public boolean updateKey(String key, String email, String tel){
+
+    public boolean updateKey(String key, String email, String tel) {
         String sql = "update patients set verify_key = ? where email = ? and phone = ?;";
         try {
             connection = ContactDB.makeConnection();
@@ -208,7 +227,8 @@ public class PatientDao {
             return false;
         }
     }
-    public boolean getPassword(String key, String password){
+
+    public boolean getPassword(String key, String password) {
         String sql = "update patients set password = ? where verify_key = ?;";
         try {
             connection = ContactDB.makeConnection();
@@ -222,7 +242,8 @@ public class PatientDao {
             return false;
         }
     }
-    public void resetKey(String key){
+
+    public void resetKey(String key) {
         String sql = "update patients set verify_key = ? where verify_key = ?;";
         try {
             connection = ContactDB.makeConnection();
@@ -234,8 +255,8 @@ public class PatientDao {
             e.printStackTrace();
         }
     }
-    
-     public static void main(String[] args) {
+
+    public static void main(String[] args) {
         PatientDao pt = new PatientDao();
 //        pt.insertReview("1", "2", 1, 1);
     }

@@ -35,21 +35,21 @@ public class PatientChangePass extends HttpServlet {
         String oldpass = req.getParameter("old-pass");
         String newpass = req.getParameter("new-pass");
         String confirm = req.getParameter("confirm-pass");
-        String passwordRegex = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[a-zA-Z\\d]{8,50}$";
+        String passwordRegex = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[a-zA-Z\\d]{8,16}$";
         if (!newpass.matches(passwordRegex)) {
-            req.setAttribute("message", "Mật khẩu mới phải có 8-50 kí tự, bao gồm ít nhất một chữ hoa, một chữ thường và một số!");
+            req.setAttribute("message", "Mật khẩu phải có ít nhất 8 kí tự, bao gồm ít nhất một chữ hoa, một chữ thường và một số! Vui lòng nhập lại!");
             req.setAttribute("status", "error");
         } else if (!pass.getPassword().equals(oldpass)) {
-            req.setAttribute("message", "Mật khẩu cũ không đúng!");
+            req.setAttribute("message", "Mật khẩu cũ không đúng! Vui lòng nhập lại!");
             req.setAttribute("status", "error");
         } else if (!newpass.equals(confirm)) {
-            req.setAttribute("message", "Mật khẩu không trùng khớp!");
+            req.setAttribute("message", "Mật khẩu mới không trùng khớp! Vui lòng nhập lại!");
             req.setAttribute("status", "error");
         } else {
             patientDao.updatePassPatient(id, newpass);
             boolean updateResult = patientDao.updatePassPatient(id, newpass);
             if (updateResult) {
-                req.setAttribute("message", "Thay đổi hoàn tất!");
+                req.setAttribute("message", "Thay đổi thành công!");
                 req.setAttribute("status", "success");
             } else {
                 req.setAttribute("message", "Lỗi hệ thống! Mời bạn thử lại!");
