@@ -18,7 +18,7 @@
                                         <!-- Main-menu -->
                                         <div class="main-menu main-menu2">
                                             <nav>
-                                               
+
                                             </nav>
                                         </div>
                                     </div>
@@ -26,10 +26,18 @@
                             </d>
                             <!-- social -->
                             <div class="footer-social mt-50">
-                                <a href="#"><i class="fab fa-twitter"></i></a>
-                                <a href="https://bit.ly/sai4ull"><i class="fab fa-facebook-f"></i></a>
-                                <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                              
+                                <a href="https://www.facebook.com/profile.php?id=100092981378234" target="_blank" ><i class="fab fa-facebook-f"></i></a>
+                              
                             </div>
+
+                        </div>
+                        <div class="contact-info">
+                            <ul>
+                                <li><h3 class="fas fa-map-marker-alt"> 123 Ngũ Hành Sơn, TP Đà Nẵng</h3></li> <br>
+                                <li><h3 class="fas fa-phone"> +84 1900 8369</h3></li> <br>
+                                <li><h3 class="far fa-envelope"> antam@gmail.com</h3></li>
+                            </ul>
                         </div>
                     </div>
 
