@@ -80,30 +80,38 @@ public class BlogControl extends HttpServlet {
         if (req.getParameter("_method").equals("DELETE")) {
             this.doDelete(req, resp);
         } else {
-        int day = Integer.parseInt(req.getParameter("day"));
-        String month = req.getParameter("month");
-        String title = req.getParameter("title");
-        String scriptS = req.getParameter("scriptshort");
-        String scriptF = req.getParameter("scriptfull");
-        Part filePart = req.getPart("image");
-        String fileName = getFileName(filePart);
-        assert fileName != null;
-        String newFileName = generateUniqueFileName(fileName);
-        String uploadDir = req.getServletContext().getRealPath("/") + "uploadsBlog";
+            int day = Integer.parseInt(req.getParameter("day"));
+            String month = req.getParameter("month");
+            String title = req.getParameter("title");
+            String scriptS = req.getParameter("scriptshort");
+            String scriptF = req.getParameter("scriptfull");
+            Part filePart = req.getPart("image");
+            String fileName = getFileName(filePart);
+            if (month == null || month.isEmpty()
+                    || title == null || title.isEmpty() || scriptS == null || scriptS.isEmpty()
+                    || scriptF == null || scriptF.isEmpty()) {
+                req.setAttribute("message", "Vui lòng nhập đầy đủ thông tin");
+                req.getRequestDispatcher("/WEB-INF/views/admin/blog-control.jsp").forward(req, resp);
+                return; // Kết thúc phương thức để ngăn chặn xử lý tiếp
+            }
+
+            assert fileName != null;
+            String newFileName = generateUniqueFileName(fileName);
+            String uploadDir = req.getServletContext().getRealPath("/") + "uploadsBlog";
 //            Path filePath = Path.of(uploadDir, newFileName);
-        Path filePath = Paths.get(uploadDir, newFileName);
-        try ( InputStream fileContent = filePart.getInputStream()) {
-            Files.copy(fileContent, filePath, StandardCopyOption.REPLACE_EXISTING);
+            Path filePath = Paths.get(uploadDir, newFileName);
+            try ( InputStream fileContent = filePart.getInputStream()) {
+                Files.copy(fileContent, filePath, StandardCopyOption.REPLACE_EXISTING);
+            }
+            BlogDao blogDao = new BlogDao();
+            boolean check = blogDao.createBlog(day, month, title, scriptS, scriptF, "uploadsBlog/" + newFileName);
+            if (check) {
+                resp.sendRedirect("blog-control");
+            } else {
+                req.setAttribute("message", "có lỗi");
+                req.getRequestDispatcher("/WEB-INF/views/admin/blog-control.jsp").forward(req, resp);
+            }
         }
-        BlogDao blogDao = new BlogDao();
-        boolean check = blogDao.createBlog(day, month, title, scriptS, scriptF, "uploadsBlog/" + newFileName);
-        if (check) {
-            resp.sendRedirect("blog-control");
-        } else {
-            req.setAttribute("message", "có lỗi");
-            req.getRequestDispatcher("/WEB-INF/views/admin/blog-control.jsp").forward(req, resp);
-        }
-    }
     }
 
     @Override
